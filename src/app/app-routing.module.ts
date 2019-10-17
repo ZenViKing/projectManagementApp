@@ -9,46 +9,51 @@ import { CreateProjectComponent } from './pages/projects/create-project/create-p
 import { EditProjectComponent } from './pages/projects/edit-project/edit-project.component';
 import { CreateTaskComponent } from './pages/tasks/create-task/create-task.component';
 import { EditTaskComponent } from './pages/tasks/edit-task/edit-task.component';
+import { DeleteProjectComponent } from './pages/projects/delete-project/delete-project.component';
 
 
 
 const routes: Routes = [
 
-//Routes User component 
-{
-path :'user/add',
-component: CreateUserComponent
-},
-{
-  path: 'user/edit',
-component: EditUserComponent
-},
-{
-  path: 'user/delete',
-  component: DeleteUserComponent
-},
+  //Routes User component 
+  {
+    path: 'user/add',
+    component: CreateUserComponent
+  },
+  {
+    path: 'user/edit',
+    component: EditUserComponent
+  },
+  {
+    path: 'user/delete',
+    component: DeleteUserComponent
+  },
 
-//Routes Project Components
-{
-  path: 'project/add',
-  component: CreateProjectComponent
-},
+  //Routes Project Components
+  {
+    path: 'project/add',
+    component: CreateProjectComponent
+  },
 
-{
-  path: 'project/edit',
-  component: EditProjectComponent
-},
+  {
+    path: 'project/edit',
+    component: EditProjectComponent
+  },
+  {
+    path: 'project/delete',
+    component: DeleteProjectComponent
+  },
 
-//Routes Task Component
-{
-  path: 'task/add',
-  component: CreateTaskComponent
-},
+  //Routes Task Component
+  {
+    path: 'task/add',
+    component: CreateTaskComponent
+  },
 
-{
-  path: 'task/edit',
-  component: EditTaskComponent
-}
+  {
+    path: 'task/edit',
+    component: EditTaskComponent
+  }
 
 ];
 
