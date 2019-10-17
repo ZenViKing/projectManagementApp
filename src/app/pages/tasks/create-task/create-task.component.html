@@ -2,14 +2,41 @@
     <h2>Create task</h2>
 </section>
 <section>
-    <form #f="ngForm" (submit)="submitForm()">
-        <label for="name">Task name</label>
+    <form  (submit)="submitForm()">
+        <label for="nameId">Task name : </label>
         <input 
             type="text"
             name="name"
-            id="name"
-            ngModel
+            id="nameId"
+            placeholder="task name"
             required>
         
+            <fieldset>
+                <legend>Priority status :</legend>
+            <label for="lowPriorityId">low</label>
+            <input type="radio" id="lowPiorityId" name="low-priority">
+            <label for="mediumPriorityId">medium</label>
+            <input type="radio" id="mediumPiorityId" name="medium-priority">
+            <label for="highPriorityId">hight</label>
+            <input type="radio" id="hightPiorityId" name="hight-priority">
+        </fieldset>
+        
+        <p>
+            <label for="estimatedTimeId">Estimated time : </label>
+            <input 
+                type="text"
+                name="estimated-time"
+                id="estimatedTimeId"
+                placeholder="estimated time"
+                >
+        </p>  
+        <p>
+            <label for="crewMembersId">Crew Members : </label>
+            <select name="crew-members" id=crewMembersId></select>
+        </p>
+
+        <label for="descriptionId">Description</label>
+        <br>
+        <textarea name="description" id="descriptionId" cols="30" rows="10"></textarea>
     </form>
 </section>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Task } from 'src/app/models/task.model';
-import { Router } from '@angular/router';
+// import { Task } from 'src/app/models/task.model';
+// import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-task',
