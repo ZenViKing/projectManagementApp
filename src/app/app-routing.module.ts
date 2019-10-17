@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {CreateUserComponent} from './pages/users/create-user/create-user.component'
+import { CreateUserComponent } from './pages/users/create-user/create-user.component'
+import { EditUserComponent } from './pages/users/edit-user/edit-user.component'
+import { DeleteUserComponent } from './pages/users/delete-user/delete-user.component';
 
 
 import {CreateProjectComponent} from './pages/projects/create-project/create-project.component'
@@ -14,6 +16,14 @@ const routes: Routes = [
 {
 path :'user/add',
 component: CreateUserComponent
+},
+{
+  path: 'user/edit',
+component: EditUserComponent
+},
+{
+  path: 'user/delete',
+  component: DeleteUserComponent
 },
 
 //Routes Project Components

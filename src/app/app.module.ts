@@ -12,6 +12,7 @@ import { DeleteProjectComponent } from './pages/projects/delete-project/delete-p
 import { CreateTaskComponent } from './pages/tasks/create-task/create-task.component';
 import { EditTaskComponent } from './pages/tasks/edit-task/edit-task.component';
 import { DeleteTaskComponent } from './pages/tasks/delete-task/delete-task.component';
+import { NavComponent } from './globals/nav/nav.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { DeleteTaskComponent } from './pages/tasks/delete-task/delete-task.compo
     DeleteProjectComponent,
     CreateTaskComponent,
     EditTaskComponent,
-    DeleteTaskComponent
+    DeleteTaskComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
