@@ -1,1 +1,16 @@
-<p>create-task works!</p>
+<section>
+    <h2>Create task</h2>
+</section>
+<section>
+    <form #f="ngForm" (submit)="submitForm()">
+        <label for="name">Task name</label>
+        <input 
+            type="text"
+            required
+            ngModel
+            name="name"
+            
+
+            >
+    </form>
+</section>
