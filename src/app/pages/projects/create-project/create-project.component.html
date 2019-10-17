@@ -1,1 +1,44 @@
-<p>create-project works!</p>
+<section>
+  <h1>Create a project</h1>
+</section>
+
+<!-- Pour Adrien et Tom -->
+<!-- Pour les 'name' avec un trait d'union entre les mots -->
+<!-- Pour les 'id' : en camelCase -->
+<section>
+
+  <form action="" method="POST">
+
+    <div>
+
+      <label for="projectName">Name : </label>
+      <input type="text" name="project-name" id="projectName" placeholder="Name your project">
+      <br>
+      <label for="dateStart">Starting date : </label>
+      <input type="datetime" name="date-start" id="dateStart" placeholder="mm/dd/yy">
+      <br>
+      <label for="dateStop">Deadline : </label>
+      <input type="datetime" name="date-stop" id="dateStop" placeholder="mm/dd/yy">
+      <br>
+      <label for="timeEstimation">Estimated time : </label>
+      <input type="number" name="time-estimation" id="timeEstimation" placeholder="237 hours">
+    </div>
+
+    <div>
+      <label for="crewMembers">Crew member(s) : </label>
+      <input type="text" name="crew-members" id="crewMembers" placeholder="Add a user">
+    </div>
+
+    <div>
+      <label for="descriptionProject">Description : </label>
+      <textarea name="description-project" id="descriptionProject" cols="30" rows="10"
+        placeholder="Describe your project"></textarea>
+    </div>
+
+    <div>
+      <button type="submit">Create</button>
+    </div>
+
+  </form>
+
+</section>
