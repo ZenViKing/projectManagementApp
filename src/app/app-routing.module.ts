@@ -7,9 +7,12 @@ import { DeleteUserComponent } from './pages/users/delete-user/delete-user.compo
 
 import { CreateProjectComponent } from './pages/projects/create-project/create-project.component';
 import { EditProjectComponent } from './pages/projects/edit-project/edit-project.component';
+import { DeleteProjectComponent } from './pages/projects/delete-project/delete-project.component';
+
 import { CreateTaskComponent } from './pages/tasks/create-task/create-task.component';
 import { EditTaskComponent } from './pages/tasks/edit-task/edit-task.component';
-import { DeleteProjectComponent } from './pages/projects/delete-project/delete-project.component';
+import { DeleteTaskComponent } from './pages/tasks/delete-task/delete-task.component';
+
 
 
 
@@ -53,6 +56,10 @@ const routes: Routes = [
   {
     path: 'task/edit',
     component: EditTaskComponent
+  },
+  {
+    path: 'task/delete',
+    component: DeleteTaskComponent
   }
 
 ];
