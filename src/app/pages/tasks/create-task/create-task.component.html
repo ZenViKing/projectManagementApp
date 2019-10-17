@@ -1,1 +1,44 @@
-<p>create-task works!</p>
+<section>
+    <h2>Create task</h2>
+</section>
+<section>
+    <form  (submit)="submitForm()" method="POST">
+        
+        <label for="name">Task name : </label>
+        <input 
+            type="text"
+            name="task-name"
+            id="name"
+            placeholder="task name"
+            required>
+        
+        <fieldset>
+            <legend>Priority status :</legend>
+            <label for="lowPriority">low</label>
+            <input type="radio" id="lowPiority" name="low-priority">
+            <label for="mediumPriority">medium</label>
+            <input type="radio" id="mediumPiority" name="medium-priority">
+            <label for="highPriority">hight</label>
+            <input type="radio" id="hightPiority" name="hight-priority">
+        </fieldset>
+        
+        <p>
+            <label for="estimatedTime">Estimated time : </label>
+            <input 
+                type="text"
+                name="task-estimated-time"
+                id="estimatedTime"
+                placeholder="estimated time"
+                >
+        </p> 
+
+        <p>
+            <label for="crewMembers">Crew Members : </label>
+            <select name="task-crew-members" id=crewMembers></select>
+        </p>
+
+        <label for="description">Description</label>
+        <br>
+        <textarea name="task-description" id="description" cols="30" rows="10"></textarea>
+    </form>
+</section>

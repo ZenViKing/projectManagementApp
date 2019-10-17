@@ -13,7 +13,7 @@
 
 //   constructor(private http: HttpClient) { }
 
-  
+
 //   getProjects(): Observable<Project[]>{
 //     return this.http.get('http://localhost:3000/projects').pipe(map(data=>data as Project[]));
 //   }
