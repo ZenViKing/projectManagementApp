@@ -3,15 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { CreateUserComponent } from './pages/users/create-user/create-user.component'
 import { EditUserComponent } from './pages/users/edit-user/edit-user.component'
-import { DeleteUserComponent } from './pages/users/delete-user/delete-user.component';
 
 import { CreateProjectComponent } from './pages/projects/create-project/create-project.component';
 import { EditProjectComponent } from './pages/projects/edit-project/edit-project.component';
-import { DeleteProjectComponent } from './pages/projects/delete-project/delete-project.component';
 
 import { CreateTaskComponent } from './pages/tasks/create-task/create-task.component';
 import { EditTaskComponent } from './pages/tasks/edit-task/edit-task.component';
-import { DeleteTaskComponent } from './pages/tasks/delete-task/delete-task.component';
+import { ListUserComponent } from './pages/users/list-user/list-user.component';
+import { ListProjectComponent } from './pages/projects/list-project/list-project.component';
+import { ListTaskComponent } from './pages/tasks/list-task/list-task.component';
 
 
 
@@ -28,8 +28,8 @@ const routes: Routes = [
     component: EditUserComponent
   },
   {
-    path: 'user/delete',
-    component: DeleteUserComponent
+    path: 'user/list',
+    component: ListUserComponent
   },
 
   //Routes Project Components
@@ -43,8 +43,8 @@ const routes: Routes = [
     component: EditProjectComponent
   },
   {
-    path: 'project/delete',
-    component: DeleteProjectComponent
+    path: 'project/list',
+    component: ListProjectComponent
   },
 
   //Routes Task Component
@@ -58,8 +58,8 @@ const routes: Routes = [
     component: EditTaskComponent
   },
   {
-    path: 'task/delete',
-    component: DeleteTaskComponent
+    path: 'task/list',
+    component: ListTaskComponent
   }
 
 ];
