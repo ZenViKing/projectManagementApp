@@ -27,12 +27,6 @@ import { ListUserComponent } from './pages/users/list-user/list-user.component';
 
 
 
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> 7bebb6094a57b257fd7a36326ff61babb1d6c205
 @NgModule({
   declarations: [
     AppComponent,
