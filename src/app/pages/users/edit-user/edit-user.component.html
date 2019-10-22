@@ -4,33 +4,37 @@
 
 <section>
 
-  <form action="" method="post">
+    <!-- <form [formGroup]="form" (submit)="submitForm()"> -->
+    <form [formGroup]="form">
 
-    <div>
+    <section>
+        <label>Firstname: </label>
+        <input type="text" name="firstname" id="firstname" placeholder="Firstname" formControlName="firstname"/>
+    </section>
 
-      <label for="lastname">Name: </label>
-      <input type="text" Name="" id="lastname" placeholder="Lastname">
-      <br>
-      <label for="firstname">Name: </label>
-      <input type="text" name="" id="firstname" placeholder="Firstname">
-      <br>
-      <label for="email">Email: </label>
-      <input type="email" name="" id="email" placeholder="Email">
-      <br>
-      <label for="function">function: </label>
+    <section>
+            <label>Lastname: </label>
+          <input type="text" name="lastname" id="lastname" placeholder="Lastname" formControlName="lastname">
+        </section>
 
-      <select name="function" id="function-select">
-        <option value="">--Choose below--</option>
-        <option value="projectmanager">Project Manager</option>
-        <option value="frontend">Front End</option>
-        <option value="backend">Back End</option>
-        <option value="fullstack">Full Stack</option>
-      </select>
-      <br />
-      <button type="submit">Submit</button>
+    <section>
+          <label>Email: </label>
+        <input type="email" name="email" id="email"  placeholder="Email" formControlName="email">
+    </section>
+<section>
+<label>Choose a function: </label>
+<select name="function" id="function-select">
+  <option value="">--Choose below--</option>
+  <option value="projectmanager">Project Manager</option>
+  <option value="frontend">Front End</option>
+  <option value="backend">Back End</option>
+  <option value="fullstack">Full Stack</option>
+  <option value="designer">Designer</option>
+</select>
+</section>
+<br />
 
-    </div>
-
+    <button type="submit">Submit</button>
   </form>
 
 </section>

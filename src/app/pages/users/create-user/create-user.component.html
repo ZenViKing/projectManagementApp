@@ -1,32 +1,38 @@
 <h1>Let's create an user !</h1>
 
+    <section>
+
+        <!-- <form [formGroup]="form" (submit)="submitForm()"> -->
+        <form [formGroup]="form">
+
+        <section>
+            <label>Firstname: </label>
+            <input type="text" name="firstname" id="firstname" placeholder="Firstname" formControlName="firstname"/>
+        </section>
+
+        <section>
+                <label>Lastname: </label>
+              <input type="text" name="lastname" id="lastname" placeholder="Lastname" formControlName="lastname">
+            </section>
+
+        <section>
+              <label>Email: </label>
+            <input type="email" name="email" id="email"  placeholder="Email" formControlName="email">
+        </section>
 <section>
-
-  <form action="" method="post">
-
-
-    <label for="firstname">First name: </label>
-    <input type="text" name="" id="firstname" placeholder="Firstname">
-    <br>
-    <label for="lastname">Last name: </label>
-    <input type="text" Name="" id="lastname" placeholder="Lastname">
-    <br>
-    <label for="email">Email: </label>
-    <input type="email" name="" id="email" placeholder="Email" required>
-    <br>
-    <label for="function">function: </label>
-
+  <label>Choose a function: </label>
     <select name="function" id="function-select">
       <option value="">--Choose below--</option>
       <option value="projectmanager">Project Manager</option>
       <option value="frontend">Front End</option>
       <option value="backend">Back End</option>
       <option value="fullstack">Full Stack</option>
+      <option value="designer">Designer</option>
     </select>
+  </section>
     <br />
-    <button type="submit">Submit</button>
+    
+        <button type="submit">Submit</button>
+      </form>
 
-
-  </form>
-
-</section>
+    </section>

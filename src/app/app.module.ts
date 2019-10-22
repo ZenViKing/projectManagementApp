@@ -1,6 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { MatSelectModule } from '@angular/material/select';
+// import { MatCardModule } from '@angular/material/card';
+// import { MatButtonModule } from '@angular/material/button';
+// import { MatFormFieldModule } from '@angular/material/form-field'
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +25,10 @@ import { ListTaskComponent } from './pages/tasks/list-task/list-task.component';
 import { ListUserComponent } from './pages/users/list-user/list-user.component';
 
 
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +39,7 @@ import { ListUserComponent } from './pages/users/list-user/list-user.component';
     CreateTaskComponent,
     EditTaskComponent,
     NavComponent,
+  
     ListProjectComponent,
     ListTaskComponent,
     ListUserComponent
@@ -36,7 +47,13 @@ import { ListUserComponent } from './pages/users/list-user/list-user.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
+    // MatCardModule,
+    // MatSelectModule,
+    // MatButtonModule,
+    // MatFormFieldModule,
+    // BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
