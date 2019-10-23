@@ -13,6 +13,7 @@
     <div>
 
       <label for="name">Name : </label>
+<<<<<<< HEAD
       <input type="text" name="name" id="name" placeholder="Name your project">
       <br>
       <label for="date">Starting date : </label>
@@ -23,18 +24,39 @@
       <br>
       <label for="time">Estimated time : </label>
       <input type="number" name="time" id="time" placeholder="237 hours">
+=======
+      <input type="text" name="project-name" id="name" placeholder="Name your project" formControlName="name">
+      <br>
+      <label for="date">Starting date : </label>
+      <input type="datetime" name="date-start" id="date" placeholder="mm/dd/yy" formControlName="date">
+      <br>
+      <label for="deadline">Deadline : </label>
+      <input type="datetime" name="date-stop" id="deadline" placeholder="mm/dd/yy" formControlName="deadline">
+      <br>
+      <label for="time">Estimated time : </label>
+      <input type="number" name="time-estimation" id="time" placeholder="237 hours" formControlName="time">
+>>>>>>> 5b904f865e08f4a1905441996e09080e1b5d1ae5
     </div>
 
     <div>
       <label for="staff">Crew member(s) : </label>
+<<<<<<< HEAD
       <input type="text" name="staff" id="staff" placeholder="Add a user">
+=======
+      <input type="text" name="crew-members" id="staff" placeholder="Add a user" formControlName="staff">
+>>>>>>> 5b904f865e08f4a1905441996e09080e1b5d1ae5
       <button type="submit">Add a user</button>
     </div>
 
     <div>
       <label for="desc">Description : </label>
+<<<<<<< HEAD
       <textarea name="desc" id="desc" cols="30" rows="10"
         placeholder="Describe your project"></textarea>
+=======
+      <textarea name="description-project" id="desc" cols="30" rows="10" placeholder="Describe your project"
+        formControlName="desc"></textarea>
+>>>>>>> 5b904f865e08f4a1905441996e09080e1b5d1ae5
     </div>
 
     <div>
