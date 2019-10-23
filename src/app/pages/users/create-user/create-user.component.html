@@ -2,8 +2,8 @@
 
     <section>
 
-        <!-- <form [formGroup]="form" (submit)="submitForm()"> -->
-        <form [formGroup]="form">
+        <form [formGroup]="form" (submit)="submitForm()">
+        <!-- <form [formGroup]="form"> -->
 
         <section>
             <label>Firstname: </label>
@@ -17,11 +17,11 @@
 
         <section>
               <label>Email: </label>
-            <input type="email" name="email" id="email"  placeholder="Email" formControlName="email">
+            <input type="email" name="email" id="email"  placeholder="Email"  formControlName="email">
         </section>
 <section>
   <label>Choose a function: </label>
-    <select name="function" id="function-select">
+    <select name="fonction" id="fonction-select">
       <option value="">--Choose below--</option>
       <option value="projectmanager">Project Manager</option>
       <option value="frontend">Front End</option>

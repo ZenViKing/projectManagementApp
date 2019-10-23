@@ -28,7 +28,7 @@ const routes: Routes = [
     component: EditUserComponent
   },
   {
-    path: 'user/list',
+    path: 'users',
     component: ListUserComponent
   },
 
