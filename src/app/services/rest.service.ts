@@ -56,9 +56,9 @@ export class RestService {
 
 
 
-//   getUsers(): Observable<User[]>{
-//     return this.http.get('http://localhost:3000/users').pipe(map(data=>data as User[]));
-//   }
+  getUsers(): Observable<User[]>{
+    return this.http.get('http://localhost:8001/api/users').pipe(map(data=>data as User[]));
+  }
 //   getUserByid(id: number): Observable<User>{
 //     return this.http.get(`http://localhost:3000/users/${id}`).pipe(map(data=>data as User));
 //   }
