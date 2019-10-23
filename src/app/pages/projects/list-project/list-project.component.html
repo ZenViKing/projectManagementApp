@@ -1,1 +1,9 @@
-<p>list-project works!</p>
+<h2>projects</h2>
+<ul *ngFor="let project of projects">
+  <li>
+    {{project.name}}
+    <ul>
+      <li>{{project.date}}</li>
+    </ul>
+  </li>
+</ul>
