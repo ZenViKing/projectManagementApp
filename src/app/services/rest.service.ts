@@ -6,7 +6,6 @@ import { map } from 'rxjs/operators';
 import { Project } from '../models/project.model';
 import { User } from '../models/user.model';
 // import { Task } from '../models/task.model';
-import { User } from 'src/app/models/user.model';
 
 @Injectable({
   providedIn: 'root'
