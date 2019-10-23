@@ -56,7 +56,6 @@ export class RestService {
 
 
 
-<<<<<<< HEAD
   getUsers(): Observable<User[]>{
     return this.http.get('http://localhost:8001/api/users').pipe(map(data=>data as User[]));
   }
@@ -66,17 +65,6 @@ export class RestService {
   postUser(user: User): Observable<User>{
     const headers = new HttpHeaders().set('content-type','application/json');
     return this.http.post('http://localhost:8001/api/users',user,{headers});
-=======
-  //   getUsers(): Observable<User[]>{
-  //     return this.http.get('http://localhost:3000/users').pipe(map(data=>data as User[]));
-  //   }
-  //   getUserByid(id: number): Observable<User>{
-  //     return this.http.get(`http://localhost:3000/users/${id}`).pipe(map(data=>data as User));
-  //   }
-  postUser(user: User): Observable<User> {
-    const headers = new HttpHeaders().set('content-type', 'application/json');
-    return this.http.post('http://localhost:8001/api/users', user, { headers });
->>>>>>> cd7b0ce450ea9e6a031b4b609acfd42966438d6e
   }
   //   deleteUser(id: number): Observable<User>{
   //     const headers = new HttpHeaders().set('content-type','application/json');
