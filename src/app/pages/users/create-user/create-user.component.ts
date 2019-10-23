@@ -17,14 +17,14 @@ export class CreateUserComponent implements OnInit {
   constructor(private _restService: RestService, private router: Router) {
   }
 
-  submitForm() {
-    this.user = this.form.value;
-    this._restService.postUser(this.user).subscribe((data: User) => {
-      this.user = data;
-      this.router.navigate(['/users'])
-    })
+  // submitForm() {
+  //   this.user = this.form.value;
+  //   this._restService.postUser(this.user).subscribe((data: User) => {
+  //     this.user = data;
+  //     this.router.navigate(['/users'])
+  //   })
 
-  }
+  // }
 
 
   ngOnInit() {
