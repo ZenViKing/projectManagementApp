@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 import { Project } from '../models/project.model';
 import { User } from '../models/user.model';
 // import { Task } from '../models/task.model';
-// import { User } from 'src/app/models/user.model';
+import { User } from 'src/app/models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -58,15 +58,15 @@ export class RestService {
 
 
 
-  getUsers(): Observable<User[]>{
-    return this.http.get('http://localhost:8001/api/users').pipe(map(data=>data as User[]));
+  getUsers(): Observable<User[]> {
+    return this.http.get('http://localhost:8001/api/users').pipe(map(data => data as User[]));
   }
-//   getUserByid(id: number): Observable<User>{
-//     return this.http.get(`http://localhost:3000/users/${id}`).pipe(map(data=>data as User));
-//   }
-  postUser(user: User): Observable<User>{
-    const headers = new HttpHeaders().set('content-type','application/json');
-    return this.http.post('http://localhost:8001/api/users',user,{headers});
+  //   getUserByid(id: number): Observable<User>{
+  //     return this.http.get(`http://localhost:3000/users/${id}`).pipe(map(data=>data as User));
+  //   }
+  postUser(user: User): Observable<User> {
+    const headers = new HttpHeaders().set('content-type', 'application/json');
+    return this.http.post('http://localhost:8001/api/users', user, { headers });
   }
   //   deleteUser(id: number): Observable<User>{
   //     const headers = new HttpHeaders().set('content-type','application/json');
