@@ -1,1 +1,7 @@
-<p>list-user works!</p>
+<h2>User list</h2>
+<section *ngFor="let user of users">
+    <p>Firstname : {{user.firstname}}</p>
+    <p>Lastname : {{user.lastname}}</p>
+    <p>Email : {{user.email}}</p>
+    <p>Function : {{user.fonction}}</p>
+</section>

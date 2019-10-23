@@ -43,7 +43,7 @@ const routes: Routes = [
     component: EditProjectComponent
   },
   {
-    path: 'project/list',
+    path: 'projects',
     component: ListProjectComponent
   },
 
