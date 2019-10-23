@@ -7,7 +7,8 @@
 <!-- Pour les 'id' : en camelCase -->
 <section>
 
-  <form action="" method="POST">
+  <!-- <form action="" method="POST"> -->
+  <form [formGroup]="form" (submit)="submitForm()">
 
     <div>
 
@@ -18,7 +19,7 @@
       <input type="datetime" name="date-start" id="dateStart" placeholder="mm/dd/yy">
       <br>
       <label for="dateStop">Deadline : </label>
-      <input type="date" name="date-stop" id="dateStop" placeholder="mm/dd/yy">
+      <input type="datetime" name="date-stop" id="dateStop" placeholder="mm/dd/yy">
       <br>
       <label for="timeEstimation">Estimated time : </label>
       <input type="number" name="time-estimation" id="timeEstimation" placeholder="237 hours">
