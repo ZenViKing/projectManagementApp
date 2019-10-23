@@ -1,22 +1,22 @@
-// import { Injectable } from '@angular/core';
-// import { HttpClient, HttpHeaders } from '@angular/common/http';
-// import { Observable } from 'rxjs';
-// import { map } from 'rxjs/operators';
-// import { Project } from '../models/project.model';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Project } from '../models/project.model';
 // import { Task } from '../models/task.model';
-// import { User } from '../models/user.model';
+import { User } from 'src/app/models/user.model';
 
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class RestService {
+@Injectable({
+  providedIn: 'root'
+})
+export class RestService {
 
-//   constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
 
-//   getProjects(): Observable<Project[]>{
-//     return this.http.get('http://localhost:3000/projects').pipe(map(data=>data as Project[]));
-//   }
+  getProjects(): Observable<Project[]>{
+    return this.http.get('http://localhost:8001/api/projects').pipe(map(data=>data as Project[]));
+  }
 //   getProjectByid(id: number): Observable<Project>{
 //     return this.http.get(`http://localhost:3000/projects/${id}`).pipe(map(data=>data as Task));
 //   }
@@ -62,10 +62,10 @@
 //   getUserByid(id: number): Observable<User>{
 //     return this.http.get(`http://localhost:3000/users/${id}`).pipe(map(data=>data as User));
 //   }
-//   postUser(user: User): Observable<User>{
-//     const headers = new HttpHeaders().set('content-type','application/json');
-//     return this.http.post('http://localhost:3000/users',user,{headers});
-//   }
+  postUser(user: User): Observable<User>{
+    const headers = new HttpHeaders().set('content-type','application/json');
+    return this.http.post('http://localhost:8001/api/users',user,{headers});
+  }
 //   deleteUser(id: number): Observable<User>{
 //     const headers = new HttpHeaders().set('content-type','application/json');
 //     return this.http.delete(`http://localhost:3000/users/${id}`,{headers});
@@ -75,4 +75,4 @@
 //     return this.http.patch(`http://localhost:3000/users/${id}`,{headers});
 //   }
 
-// }
+}
