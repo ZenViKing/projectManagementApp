@@ -24,7 +24,8 @@ import { ListTaskComponent } from './pages/tasks/list-task/list-task.component';
 import { CreateUserComponent } from './pages/users/create-user/create-user.component';
 import { EditUserComponent } from './pages/users/edit-user/edit-user.component';
 import { ListUserComponent } from './pages/users/list-user/list-user.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { DateDisplayPipe } from './pipes/date-display.pipe'
 
 
 
@@ -41,7 +42,8 @@ import {HttpClientModule} from '@angular/common/http'
   
     ListProjectComponent,
     ListTaskComponent,
-    ListUserComponent
+    ListUserComponent,
+    DateDisplayPipe
   ],
   imports: [
     BrowserModule,

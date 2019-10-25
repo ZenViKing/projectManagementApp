@@ -11,30 +11,39 @@
 
     <div>
 
-      <label for="projectName">Name : </label>
-      <input type="text" name="project-name" id="projectName" placeholder="Name your project">
-      <br>
-      <label for="dateStart">Starting date : </label>
-      <input type="datetime" name="date-start" id="dateStart" placeholder="mm/dd/yy">
-      <br>
-      <label for="dateStop">Deadline : </label>
-      <input type="datetime" name="date-stop" id="dateStop" placeholder="mm/dd/yy">
-      <br>
-      <label for="timeEstimation">Estimated time : </label>
-      <input type="number" name="time-estimation" id="timeEstimation" placeholder="237 hours">
+      <div>
+        <label for="name">Name : </label>
+        <input type="text" name="project-name" id="name" placeholder="Name your project" formControlName="name">
+      </div>
+
+      <div>
+        <label for="date">Starting date : </label>
+        <input type="datetime" name="date-start" id="date" placeholder="mm/dd/yy" formControlName="date">
+      </div>
+
+      <div>
+        <label for="deadline">Deadline : </label>
+        <input type="datetime" name="date-stop" id="deadline" placeholder="mm/dd/yy" formControlName="deadline">
+      </div>
+
+      <div>
+        <label for="time">Estimated time : </label>
+        <input type="number" name="time-estimation" id="time" placeholder="237 hours" formControlName="time">
+      </div>
+
     </div>
 
     <div>
-      <label for="crewMembers">Crew member(s) : </label>
-      <input type="text" name="crew-members" id="crewMembers" placeholder="Add or remove a user">
+      <label for="staff">Crew member(s) : </label>
+      <input type="text" name="crew-members" id="staff" placeholder="Add or remove a user" formControlName="staff">
       <button type="submit">Add</button>
       <button type="submit">Remove</button>
     </div>
 
     <div>
-      <label for="descriptionProject">Description : </label>
-      <textarea name="description-project" id="descriptionProject" cols="30" rows="10"
-        placeholder="Describe your project"></textarea>
+      <label for="desc">Description : </label>
+      <textarea name="description-project" id="desc" cols="30" rows="10" placeholder="Describe your project"
+        formControlName="desc"></textarea>
     </div>
 
     <div>
