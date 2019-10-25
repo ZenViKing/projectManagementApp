@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Project } from '../models/project.model';
 import { User } from '../models/user.model';
-// import { Task } from '../models/task.model';
+import { Task } from '../models/task.model';
 
 @Injectable({
   providedIn: 'root'
@@ -36,9 +36,9 @@ export class RestService {
 
 
 
-  // getTasks(): Observable<Task[]>{
-  //   return this.http.get('http://localhost:3000/tasks').pipe(map(data=>data as Task[]));
-  // }
+  getTasks(): Observable<Task[]>{
+    return this.http.get('http://localhost:8001/api/tasks').pipe(map(data=>data as Task[]));
+  }
   // getTaskByid(id: number): Observable<Task>{
   //   return this.http.get(`http://localhost:3000/tasks/${id}`).pipe(map(data=>data as Task));
   // }
