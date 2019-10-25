@@ -67,9 +67,11 @@ body{
     width: $larger-width;
 }
 
-section{
+form{
 
     margin: 0 auto;
     background-color: $pastelyellow;
     width: 800px;
+    padding: 20px;
+    border-radius: 5px;
 }
