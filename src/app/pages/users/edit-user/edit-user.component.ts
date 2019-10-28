@@ -1,6 +1,8 @@
+import { RestService } from 'src/app/services/rest.service';
 import { FormGroup, Validators,FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user.model';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-user',
@@ -9,27 +11,36 @@ import { User } from 'src/app/models/user.model';
 })
 export class EditUserComponent implements OnInit {
   user:User;
-  form:FormGroup
-  function: any
+  form:FormGroup;
+  // fonction: any
 
-  // constructor(private _restService: RestService, private router: Router, private route: ActivatedRoute, public _functionervice: FunctionsService) { this.functions = _functionsService.functions }
+constructor(private _restService:RestService, private router: Router, private route:ActivatedRoute){}
 
-// submitForm(){
-//   this.user=this.form.value;
-//   this._restService.patchUser(this.user).subscribe((data:User)=>{
-//     this.user=data;
-//     this.router.navigate(['/users'])
-//   })
-// }
+
+
+submitForm() {
+  this.user = this.form.value;
+  this._restService.updateUser(this.user).subscribe((data: User)=>{
+    this.user=data;
+    this.router.navigate(['/users'])
+  })
+}
 
   ngOnInit() {
     this.form=new FormGroup({
+      _id : new FormControl (Validators.required),
+      __v : new FormControl (Validators.required),
       firstname:new FormControl (null, [Validators.required]),
       lastname:new FormControl (null, [Validators.required]),
       email:new FormControl (null, [Validators.required, Validators.email]),
-      function:new FormControl (null, [Validators.required])
+      fonction:new FormControl (null, [Validators.required])
     })
-  }
 
-}
+    this.route.data.subscribe(data => {
+      console.log(data.user.Users)
+      this.form.setValue(data.user.Users);
+      this.user = data.user.Users;
+    })
+
+}}
  
