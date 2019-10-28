@@ -3,6 +3,8 @@ import { Project } from './../../../models/project.model';
 import { Component, OnInit } from '@angular/core';
 import { RestService } from 'src/app/services/rest.service';
 import { Router } from '@angular/router';
+// test ajout user
+// import { User } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-create-project',
@@ -12,6 +14,10 @@ import { Router } from '@angular/router';
 export class CreateProjectComponent implements OnInit {
   project: Project;
   form: FormGroup;
+  // TODO: ajouter seulement un user existant
+  // pour ajouter plusieurs users
+  // user: User;
+  // listUsers: User[] = []
 
   constructor(private _restService: RestService, private router: Router) { }
   submitForm() {
@@ -20,6 +26,8 @@ export class CreateProjectComponent implements OnInit {
       this.project = data;
       this.router.navigate(['/projects'])
     })
+
+
 
   }
   ngOnInit() {
@@ -33,5 +41,9 @@ export class CreateProjectComponent implements OnInit {
       inProgress: new FormControl(null, [Validators.required]),
     })
   }
-
+  // TODO: ajouter seulement un user existant
+  // pour ajouter plusieurs users
+  // onAdd() {
+  //   this.listUsers.push(this.user);
+  // }
 }

@@ -1,4 +1,77 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/*VARIABLES*/
+@import 'variables';
+
+/*FONTS*/
+
+@font-face {
+    font-family: 'simpelmedium';
+    src: url('fonts/simpel-medium-webfont.woff2') format('woff2'),
+         url('fonts/simpel-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('fonts/opensans-regular-webfont.woff2') format('woff2'),
+         url('fonts/opensans-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'open_sanslight';
+    src: url('fonts/opensans-light-webfont.woff2') format('woff2'),
+         url('fonts/opensans-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'open_sansbold';
+    src: url('fonts/opensans-bold-webfont.woff2') format('woff2'),
+         url('fonts/opensans-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*BASIC*/
+
+
+
+html{
+
+    margin:0;
+    padding:0;
+    width: 100%;
+
+}
+
+body{
+
+    background-color:#f2ede5;
+    margin: 0 auto;
+    font-size: 16px;
+    width: $larger-width;
+}
+
+form{
+
+    margin: 0 auto;
+    background-color: $pastelyellow;
+    width: 800px;
+    padding: 20px;
+    border-radius: 5px;
+}

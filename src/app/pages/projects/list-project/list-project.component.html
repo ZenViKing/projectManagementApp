@@ -3,7 +3,10 @@
   <li>
     {{project.name}}
     <ul>
-      <li>{{project.deadline}}</li>
+      <!-- <li>{{project.deadline}}</li> -->
+      <!-- changer l'affichage de la date avec le pipe dateDisplay -->
+      <!-- <li>{{project.deadline | date : 'longDate'}}</li> -->
+      <li>Deadline : {{project.deadline | date : 'longDate'}}</li>
     </ul>
   </li>
 </ul>
