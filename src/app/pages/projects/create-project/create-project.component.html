@@ -2,9 +2,7 @@
   <h1>Create a project</h1>
 </section>
 
-<!-- Pour Adrien et Tom -->
-<!-- Pour les 'name' avec un trait d'union entre les mots -->
-<!-- Pour les 'id' : en camelCase -->
+<!-- je teste le formulaire material angular, merci Adrien -->
 <section>
 
   <!-- <form action="" method="POST"> -->
@@ -13,35 +11,57 @@
     <div>
 
       <div>
-        <label for="name">Name</label>
-        <input type="text" name="project-name" id="name" placeholder="Name your project" formControlName="name">
+        <!-- <label for="name">Name</label>
+        <input type="text" name="project-name" id="name" placeholder="Name your project" formControlName="name"> -->
+        <mat-form-field>
+          <mat-label for="name">Name</mat-label>
+          <input matInput type="text" name="project-name" id="name" placeholder="Name your project"
+            formControlName="name">
+        </mat-form-field>
       </div>
 
       <div>
-        <label for="date">Starting date</label>
-        <input type="datetime" name="date-start" id="date" placeholder="mm/dd/yyyy" formControlName="date">
+        <!-- <label for="date">Starting date</label>
+        <input type="datetime" name="date-start" id="date" placeholder="mm/dd/yyyy" formControlName="date"> -->
+        <mat-form-field>
+          <mat-label for="date">Starting Date</mat-label>
+          <input matInput type="datetime" name="date-start" id="date" placeholder="mm/dd/yyyy" formControlName="date">
+        </mat-form-field>
       </div>
 
       <div>
-        <label for="deadline">Deadline</label>
-        <input type="datetime" name="date-stop" id="deadline" placeholder="mm/dd/yyyy" formControlName="deadline">
+        <!-- <label for="deadline">Deadline</label>
+        <input type="datetime" name="date-stop" id="deadline" placeholder="mm/dd/yyyy" formControlName="deadline"> -->
+        <mat-form-field>
+          <mat-label for="deadline">Deadline</mat-label>
+          <input matInput type="datetime" name="date-stop" id="deadline" placeholder="mm/dd/yyyy"
+            formControlName="deadline">
+        </mat-form-field>
       </div>
 
       <div>
-        <label for="time">Estimated time</label>
-        <input type="number" name="time-estimation" id="time" placeholder="42 hours" formControlName="time">
+        <!-- <label for="time">Estimated time</label>
+        <input type="number" name="time-estimation" id="time" placeholder="42 hours" formControlName="time"> -->
+        <mat-form-field>
+          <mat-label for="time">Deadline</mat-label>
+          <input matInput type="number" name="time-estimation" id="time" placeholder="42 hours" formControlName="time">
+        </mat-form-field>
       </div>
 
     </div>
 
     <div>
-      <label for="staff">Crew member(s)</label>
+      <!-- <label for="staff">Crew member(s)</label> -->
       <!-- ajouter seulement un user existant -->
-      <!-- <select type="text" name="crew-members" id="staff" formControlName="staff"> -->
-      <select type="text" name="crew-members" id="staff" formControlName="staff">
-        <!-- <option value=""></option> -->
+      <!-- <select type="text" name="crew-members" id="staff" formControlName="staff">
         <option *ngFor="let user of staff">{{user.firstname}} {{user.lastname}}</option>
-      </select>
+      </select> -->
+      <mat-form-field>
+        <mat-label for="staff">Crew members</mat-label>
+        <mat-select multiple name="crew-members" id="staff" formControlName="staff">
+          <mat-option *ngFor="let user of staff" value="{{user.firstname}}">{{user.firstname}}</mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
 
     <!-- TODO: ne fonctionne pas -->
@@ -70,7 +90,8 @@
     <div>
       <!-- https://stackoverflow.com/questions/18407832/how-to-create-a-html-cancel-button-that-redirects-to-a-url -->
       <a href="http://localhost:4200/">Cancel</a>
-      <button type="submit">Create</button>
+      <!-- <button type="submit">Create</button> -->
+      <button mat-raised-button type="submit">Create project</button>
     </div>
 
   </form>
