@@ -1,13 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatDialog, MatDialogRef} from '@angular/material';
 
-// import { MatSelectModule } from '@angular/material/select';
-// import { MatCardModule } from '@angular/material/card';
-// import { MatButtonModule } from '@angular/material/button';
-// import { MatFormFieldModule } from '@angular/material/form-field'
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatListModule } from '@angular/material/list';
+import { MatRadioModule} from '@angular/material/radio';
+import { MatButtonModule } from '@angular/material/button';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -27,7 +28,8 @@ import { CreateUserComponent } from './pages/users/create-user/create-user.compo
 import { EditUserComponent } from './pages/users/edit-user/edit-user.component';
 import { ListUserComponent } from './pages/users/list-user/list-user.component';
 import {HttpClientModule} from '@angular/common/http';
-import { DateDisplayPipe } from './pipes/date-display.pipe'
+import { DateDisplayPipe } from './pipes/date-display.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 
 
@@ -53,13 +55,14 @@ import { DateDisplayPipe } from './pipes/date-display.pipe'
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    // MatDialog, 
-    // MatDialogRef
-
+    BrowserAnimationsModule,
     // MatCardModule,
-    // MatSelectModule,
-    // MatButtonModule,
-    // MatFormFieldModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatRadioModule,
+    MatFormFieldModule,
+    MatListModule,
+    MatInputModule,
     // BrowserAnimationsModule
   ],
   providers: [],

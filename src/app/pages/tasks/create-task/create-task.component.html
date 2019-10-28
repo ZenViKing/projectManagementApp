@@ -2,27 +2,49 @@
     <h2>Create task</h2>
 </section>
 <section>
-    <form  (submit)="submitForm()" method="POST">
-        
-        <label for="name">Task name : </label>
+    <form  (submit)="submitForm()" [formGroup]="form">
+        <mat-form-field>
+        <mat-label for="name">Task name : </mat-label>
         <input 
+        matInput
             type="text"
             name="task-name"
             id="name"
             placeholder="task name"
-            required>
+            formControlName="name">
+        </mat-form-field>
         
-        <fieldset>
-            <legend>Priority status :</legend>
-            <label for="lowPriority">low</label>
-            <input type="radio" id="lowPiority" name="low-priority">
-            <label for="mediumPriority">medium</label>
-            <input type="radio" id="mediumPiority" name="medium-priority">
-            <label for="highPriority">hight</label>
-            <input type="radio" id="hightPiority" name="hight-priority">
-        </fieldset>
+<!-- ---------------------------- bug radio mat ---------------------------- -->
+        <!-- <fieldset>
+            <mat-form-field>
+                <mat-radio-group formControlName="status">
+                
+                <mat-label for="lowPriority">low</mat-label>
+                <mat-radio-button id="lowPiority" name="status"  value="1" formControlName="status">test</mat-radio-button>
+                <mat-label for="mediumPiority">medium</mat-label>
+                <mat-radio-button id="mediumPiority" name="status"  value="2" formControlName="status">test</mat-radio-button>
+                <mat-label for="hightPiority">hight</mat-label>
+                <mat-radio-button id="hightPiority" name="status"  value="3" formControlName="status">test</mat-radio-button>
+            </mat-radio-group>
+            </mat-form-field>
+        </fieldset> -->
+
+<!-- -------------------------- radio without mat -------------------------- -->
         
-        <p>
+            
+                
+                <!-- <legend>Priority status :</legend> -->
+                <label for="lowPriority">low</label>
+                <input type="radio" id="lowPiority" name="status"  value="1" formControlName="status">
+                <label for="lowPriority">medium</label>
+                <input type="radio" id="mediumPiority" name="status"  value="2" formControlName="status">
+                <label for="hightPiority">hight</label>
+                <input type="radio" id="hightPiority" name="status"  value="3" formControlName="status">
+            
+            
+        
+        
+        <!-- <p>
             <label for="estimatedTime">Estimated time : </label>
             <input 
                 type="text"
@@ -30,15 +52,28 @@
                 id="estimatedTime"
                 placeholder="estimated time"
                 >
-        </p> 
+        </p>  -->
 
         <p>
-            <label for="crewMembers">Crew Members : </label>
-            <select name="task-crew-members" id=crewMembers></select>
+            <label for="assignedUsers">Choose users to assign : </label>
+            <select 
+            multiple
+                name="assignedUsers"
+                id=assignedUsers
+                formControlName="assignedUsers"
+                >
+                <option *ngFor="let user of users" >{{user.firstname}}</option>
+            </select>
         </p>
+        
 
         <label for="description">Description</label>
         <br>
-        <textarea name="task-description" id="description" cols="30" rows="10"></textarea>
+        <textarea name="task-description" id="description" cols="30" rows="10" FormControlName="description"></textarea>
+
+        <div>
+            <button type="submit">Create task</button>
+        </div>
+    
     </form>
 </section>
