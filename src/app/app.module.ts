@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatDialog, MatDialogRef} from '@angular/material';
+
 // import { MatSelectModule } from '@angular/material/select';
 // import { MatCardModule } from '@angular/material/card';
 // import { MatButtonModule } from '@angular/material/button';
@@ -50,7 +52,10 @@ import { DateDisplayPipe } from './pipes/date-display.pipe'
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    // MatDialog, 
+    // MatDialogRef
+
     // MatCardModule,
     // MatSelectModule,
     // MatButtonModule,
