@@ -60,7 +60,8 @@
       <label for="inProgress">Is your project already in progress ? :</label>
       <!-- TODO:trouver solution pour avoir false par default et pas null -->
       <!-- <input type="checkbox" name="inProgress" value="0" formControlName="inProgress"> -->
-      <input type="checkbox" name="in-progress" id="inProgress" value="FALSE" formControlName="inProgress">
+      <input type="checkbox" name="in-progress" id="inProgress" formControlName="inProgress" [class]="isInProgress"
+        (click)="setInProgress()">
     </div>
 
     <div>
