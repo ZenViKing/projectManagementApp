@@ -30,7 +30,7 @@ export class CreateTaskComponent implements OnInit {
     this.form = new FormGroup({
       name: new FormControl(null, [Validators.required]),
       description: new FormControl(null),
-      status: new FormControl(null),
+      status: new FormControl(null,[Validators.required]),
       assignedUsers: new FormControl(null)
     })
 
