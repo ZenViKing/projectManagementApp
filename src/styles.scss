@@ -55,16 +55,20 @@ html{
 
     margin:0;
     padding:0;
-    width: 100%;
+    width: 100vw;
+    height:100vh;
+    
 
 }
 
 body{
 
-    background-color:#f2ede5;
-    margin: 0 auto;
-    font-size: 16px;
+    background-color:$lightergrey;
     width: $larger-width;
+    font-size: 16px;
+    margin:0 auto;
+    
+    
 }
 
 form{
@@ -74,4 +78,91 @@ form{
     width: 800px;
     padding: 20px;
     border-radius: 5px;
+}
+
+//MAIN
+
+.main{
+
+    padding-top: 150px;
+    margin:0 auto;
+    width:$larger-width;
+    display:flex;
+    justify-content:center;
+    
+    
+
+    .right{
+
+        width:800px;
+        background-color:$pastelyellow;
+
+
+    }
+
+    .left{
+
+        background-color:$pastel-greenblue;
+        height:60vh;
+        width:224px;
+
+        .click{
+            margin-left:50px;
+            margin-top: 50px;
+        }
+    }
+
+}
+
+.click{
+
+    width:120px;
+    height:40px;
+    border: 1px solid $lightergrey;
+    border-radius: 25px;
+    background-color:$lightergrey;
+   
+
+    a{  
+        
+        
+        color:$titles;
+        text-decoration:none;
+    }
+
+    p{
+        vertical-align:40px;
+    }
+    
+    &:hover{
+
+        background-color:$vibrant-greenblue;
+        border: 1px solid $vibrant-greenblue;
+
+        a{
+            color:$pastelyellow;
+        }
+
+
+    }
+    
+}
+
+//FOOTER
+
+footer{
+    position: absolute;
+    bottom: 0;
+    left:0;
+    height:70px;
+    margin:0;
+    padding:0;
+    background-color: $pastelyellow;
+    width: 100%;
+
+    p{
+    text-align: center;
+    font-family: 'open_sansregular';
+    color:$lightgrey;
+    }
 }
