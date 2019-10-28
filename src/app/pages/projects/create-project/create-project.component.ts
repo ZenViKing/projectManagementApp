@@ -19,10 +19,6 @@ export class CreateProjectComponent implements OnInit {
   // user: User;
   // listUsers: User[] = []
 
-  // pour avoir valeur false si on ne clique pas la checkbox inProgress
-  // isInProgress = false;
-  // isInProgress: boolean;
-
   constructor(private _restService: RestService, private router: Router) { }
 
   // pour avoir valeur false si on ne clique pas la checkbox inProgress
@@ -46,6 +42,8 @@ export class CreateProjectComponent implements OnInit {
       time: new FormControl(null, [Validators.required]),
       staff: new FormControl(null, [Validators.required]),
       desc: new FormControl(null, [Validators.required]),
+      // pour avoir valeur false si on ne clique pas la checkbox inProgress
+      // false à la place de null
       inProgress: new FormControl(false, [Validators.required]),
     })
   }
