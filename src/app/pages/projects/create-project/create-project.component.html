@@ -13,30 +13,30 @@
     <div>
 
       <div>
-        <label for="name">Name : </label>
+        <label for="name">Name</label>
         <input type="text" name="project-name" id="name" placeholder="Name your project" formControlName="name">
       </div>
 
       <div>
-        <label for="date">Starting date : </label>
+        <label for="date">Starting date</label>
         <input type="datetime" name="date-start" id="date" placeholder="mm/dd/yyyy" formControlName="date">
       </div>
 
       <div>
-        <label for="deadline">Deadline : </label>
+        <label for="deadline">Deadline</label>
         <input type="datetime" name="date-stop" id="deadline" placeholder="mm/dd/yyyy" formControlName="deadline">
       </div>
 
       <div>
-        <label for="time">Estimated time : </label>
-        <input type="number" name="time-estimation" id="time" placeholder="237 hours" formControlName="time">
+        <label for="time">Estimated time</label>
+        <input type="number" name="time-estimation" id="time" placeholder="42 hours" formControlName="time">
       </div>
 
     </div>
 
     <div>
-      <label for="staff">Crew member(s) : </label>
-      <!-- TODO: ajouter seulement un user existant -->
+      <label for="staff">Crew member(s)</label>
+      <!-- ajouter seulement un user existant -->
       <!-- <select type="text" name="crew-members" id="staff" formControlName="staff"> -->
       <select type="text" name="crew-members" id="staff" formControlName="staff">
         <!-- <option value=""></option> -->
@@ -53,17 +53,18 @@
     </div> -->
 
     <div>
-      <label for="desc">Description : </label>
+      <label for="desc">Description</label>
       <textarea name="description-project" id="desc" cols="30" rows="10" placeholder="Describe your project"
         formControlName="desc"></textarea>
     </div>
 
     <div>
-      <label for="inProgress">Is your project already in progress ? :</label>
+      <label for="inProgress">Is your project already in progress ?</label>
       <!-- pour avoir false par default et pas null -->
       <!-- <input type="checkbox" name="inProgress" value="0" formControlName="inProgress"> -->
       <input type="checkbox" name="in-progress" id="inProgress" formControlName="inProgress" [class]="isInProgress"
         (click)="setInProgress()">
+
     </div>
 
     <div>
