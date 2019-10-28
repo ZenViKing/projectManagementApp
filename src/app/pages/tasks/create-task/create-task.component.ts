@@ -22,7 +22,7 @@ export class CreateTaskComponent implements OnInit {
     this.task = this.form.value;
     this._restService.postTask(this.task).subscribe((data: Task)=>{
       this.task = data;
-      this.router.navigate(['/task/list'])
+      this.router.navigate(['/projects/:id/task/list'])
     })
   }
 
