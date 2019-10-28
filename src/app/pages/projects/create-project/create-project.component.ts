@@ -26,9 +26,6 @@ export class CreateProjectComponent implements OnInit {
       this.project = data;
       this.router.navigate(['/projects'])
     })
-
-
-
   }
   ngOnInit() {
     this.form = new FormGroup({
