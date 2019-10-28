@@ -12,6 +12,19 @@ export class ListUserComponent implements OnInit {
 
   constructor(private _restService: RestService) { }
 
+  deleteUser(id){
+    prompt('Are you sure to delete this user?')
+    this._restService.deleteUser(id).subscribe(res =>{
+      this._restService.getUsers().subscribe((data:User[])=>{
+        this.users=data;
+        alert('User deleted successfully.')
+      })
+    })
+  }
+
+  
+
+
   ngOnInit() {
     this._restService.getUsers().subscribe((data:User[])=>{
       this.users=data;

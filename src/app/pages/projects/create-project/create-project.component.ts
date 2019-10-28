@@ -1,6 +1,6 @@
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Project } from './../../../models/project.model';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { RestService } from 'src/app/services/rest.service';
 import { Router } from '@angular/router';
 // test ajout user
@@ -20,15 +20,19 @@ export class CreateProjectComponent implements OnInit {
   // listUsers: User[] = []
 
   constructor(private _restService: RestService, private router: Router) { }
+
+  // pour avoir valeur false si on ne clique pas la checkbox inProgress
+  @Input('isInProgress') isInProgress: boolean;
+  setInProgress() {
+    this.isInProgress = !this.isInProgress;
+  }
+
   submitForm() {
     this.project = this.form.value;
     this._restService.postProject(this.project).subscribe((data: Project) => {
       this.project = data;
       this.router.navigate(['/projects'])
     })
-
-
-
   }
   ngOnInit() {
     this.form = new FormGroup({
@@ -38,7 +42,9 @@ export class CreateProjectComponent implements OnInit {
       time: new FormControl(null, [Validators.required]),
       staff: new FormControl(null, [Validators.required]),
       desc: new FormControl(null, [Validators.required]),
-      inProgress: new FormControl(null, [Validators.required]),
+      // pour avoir valeur false si on ne clique pas la checkbox inProgress
+      // false à la place de null
+      inProgress: new FormControl(false, [Validators.required]),
     })
   }
   // TODO: ajouter seulement un user existant

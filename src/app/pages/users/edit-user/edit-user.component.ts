@@ -20,7 +20,7 @@ constructor(private _restService:RestService, private router: Router, private ro
 
 submitForm() {
   this.user = this.form.value;
-  this._restService.updateUser(this.user).subscribe((data: User)=>{
+  this._restService.patchUser(this.user).subscribe((data: User)=>{
     this.user=data;
     this.router.navigate(['/users'])
   })

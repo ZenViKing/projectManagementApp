@@ -1,8 +1,16 @@
 <h2>User list</h2>
 <section *ngFor="let user of users">
-    <p>Firstname : {{user.firstname}}</p>
-    <p>Lastname : {{user.lastname}}</p>
-    <p>Email : {{user.email}}</p>
-    <p>Function : {{user.fonction}}</p>
-    <a routerLink="/users/{{user._id}}">Edit</a>
+  <p>Firstname : {{user.firstname}}</p>
+  <p>Lastname : {{user.lastname}}</p>
+  <p>Email : {{user.email}}</p>
+  <p>Function : {{user.fonction}}</p>
+  <div>
+    <a routerLink="/users/{{user._id}}">Edit</a><br />
+    <a prompt(click)="deleteUser(user._id)">Delete</a>
+
+<!-- <button onclick="deleteUser(user._id)">Delete user</button>
+<input type="button" value="Delete" onclick="prompt('Are you sure to delete this user?');"> -->
+
+
+  </div>
 </section>
