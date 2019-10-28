@@ -37,8 +37,10 @@
     <div>
       <label for="staff">Crew member(s) : </label>
       <!-- TODO: ajouter seulement un user existant -->
+      <!-- <select type="text" name="crew-members" id="staff" formControlName="staff"> -->
       <select type="text" name="crew-members" id="staff" formControlName="staff">
-        <option value=""></option>
+        <!-- <option value=""></option> -->
+        <option *ngFor="let user of staff">{{user.firstname}} {{user.lastname}}</option>
       </select>
     </div>
 

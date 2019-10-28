@@ -4,7 +4,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { RestService } from 'src/app/services/rest.service';
 import { Router } from '@angular/router';
 // test ajout user
-// import { User } from 'src/app/models/user.model';
+import { User } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-create-project',
@@ -14,10 +14,9 @@ import { Router } from '@angular/router';
 export class CreateProjectComponent implements OnInit {
   project: Project;
   form: FormGroup;
-  // TODO: ajouter seulement un user existant
-  // pour ajouter plusieurs users
-  // user: User;
-  // listUsers: User[] = []
+  // ajouter seulement un user existant
+  // TODO: pour ajouter plusieurs users
+  staff: User[]
 
   constructor(private _restService: RestService, private router: Router) { }
 
@@ -45,6 +44,10 @@ export class CreateProjectComponent implements OnInit {
       // pour avoir valeur false si on ne clique pas la checkbox inProgress
       // false à la place de null
       inProgress: new FormControl(false, [Validators.required]),
+    })
+    // pour avoir liste users existants
+    this._restService.getUsers().subscribe((data: User[]) => {
+      this.staff = data;
     })
   }
   // TODO: ajouter seulement un user existant
