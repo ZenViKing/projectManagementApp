@@ -42,10 +42,10 @@ export class RestService {
   // getTaskByid(id: number): Observable<Task>{
   //   return this.http.get(`http://localhost:3000/tasks/${id}`).pipe(map(data=>data as Task));
   // }
-  // postTask(task: Task): Observable<Task>{
-  //   const headers = new HttpHeaders().set('content-type','application/json');
-  //   return this.http.post('http://localhost:3000/tasks',task,{headers});
-  // }
+  postTask(task: Task): Observable<Task>{
+    const headers = new HttpHeaders().set('content-type','application/json');
+    return this.http.post('http://localhost:8001/api/tasks',task,{headers});
+  }
   // deleteTask(id: number): Observable<Task>{
   //   const headers = new HttpHeaders().set('content-type','application/json');
   //   return this.http.delete(`http://localhost:3000/tasks/${id}`,{headers});
