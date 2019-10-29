@@ -14,6 +14,7 @@ import { EditTaskComponent } from './pages/tasks/edit-task/edit-task.component';
 import { ListUserComponent } from './pages/users/list-user/list-user.component';
 import { ListProjectComponent } from './pages/projects/list-project/list-project.component';
 import { ListTaskComponent } from './pages/tasks/list-task/list-task.component';
+import { DeleteUserComponent } from './pages/users/delete-user/delete-user.component';
 
 
 
@@ -33,11 +34,10 @@ const routes: Routes = [
     path: 'user/edit',
     component: EditUserComponent
   }, 
-
   {
-    path: 'user/:id/del',
-    component: EditUserComponent,
-    resolve:{user:UserDeleterResolver}
+    path: 'user/delete/:id',
+    component: DeleteUserComponent,
+    resolve:{user:UserResolver}
 
   },  
   {

@@ -27,7 +27,8 @@ import { EditUserComponent } from './pages/users/edit-user/edit-user.component';
 import { ListUserComponent } from './pages/users/list-user/list-user.component';
 import {HttpClientModule} from '@angular/common/http';
 import { DateDisplayPipe } from './pipes/date-display.pipe';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DeleteUserComponent } from './pages/users/delete-user/delete-user.component'
 
 
 
@@ -45,7 +46,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     ListProjectComponent,
     ListTaskComponent,
     ListUserComponent,
-    DateDisplayPipe
+    DateDisplayPipe,
+    DeleteUserComponent
   ],
   imports: [
     BrowserModule,

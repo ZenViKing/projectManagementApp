@@ -1,0 +1,29 @@
+<h1>Are you sure to delete this user ?</h1>
+
+<section>
+    <form [formGroup]="form" (submit)="deleteForm()">
+
+    <section>
+        <label>Firstname: </label>
+        <input type="text" name="firstname" id="firstname"  formControlName="firstname"/>
+    </section>
+    <section>
+            <label>Lastname: </label>
+          <input type="text" name="lastname" id="lastname" formControlName="lastname">
+        </section>
+
+    <section>
+          <label>Email: </label>
+        <input type="email" name="email" id="email" formControlName="email">
+    </section>
+
+    <section>
+        <label>Fonction: </label>
+      <input type="email" name="email" id="email" formControlName="fonction">
+  </section>
+<br />
+
+    <button type="submit">Delete ?</button>
+  </form>
+
+</section>

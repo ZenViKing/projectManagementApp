@@ -75,7 +75,7 @@ export class RestService {
     return this.http.post('http://localhost:8001/api/users', user, { headers });
   }
 
-  deleteUser(id:number):Observable<User>{
+  deleteUser(id:User):Observable<User>{
     const headers =new HttpHeaders().set('content-type', 'application/json');
     return this.http.delete(`http://localhost:8001/api/users/${id}`, {headers})
   }
