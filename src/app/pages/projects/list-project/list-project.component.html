@@ -7,6 +7,12 @@
       <!-- changer l'affichage de la date avec le pipe dateDisplay -->
       <!-- <li>{{project.deadline | date : 'longDate'}}</li> -->
       <li>Deadline : {{project.deadline | date : 'longDate'}}</li>
+      <li>User(s) : {{project.staff}}</li>
     </ul>
   </li>
+  <!-- d'abord faire component editProject -->
+  <!-- <div>
+    <button routerLink="/projects/{{project._id}}">Edit</button>
+    <button (click)="deleteProject()">Delete</button>
+  </div> -->
 </ul>

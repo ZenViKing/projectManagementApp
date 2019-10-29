@@ -14,8 +14,6 @@ import { User } from 'src/app/models/user.model';
 export class CreateProjectComponent implements OnInit {
   project: Project;
   form: FormGroup;
-  // ajouter seulement un user existant
-  // TODO: pour ajouter plusieurs users
   staff: User[]
 
   constructor(private _restService: RestService, private router: Router) { }

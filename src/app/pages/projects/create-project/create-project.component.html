@@ -43,7 +43,7 @@
         <!-- <label for="time">Estimated time</label>
         <input type="number" name="time-estimation" id="time" placeholder="42 hours" formControlName="time"> -->
         <mat-form-field>
-          <mat-label for="time">Deadline</mat-label>
+          <mat-label for="time">Estimated time</mat-label>
           <input matInput type="number" name="time-estimation" id="time" placeholder="42 hours" formControlName="time">
         </mat-form-field>
       </div>
@@ -59,18 +59,15 @@
       <mat-form-field>
         <mat-label for="staff">Crew members</mat-label>
         <mat-select multiple name="crew-members" id="staff" formControlName="staff">
-          <mat-option *ngFor="let user of staff" value="{{user.firstname}}">{{user.firstname}}</mat-option>
+          <mat-option *ngFor="let user of staff" value="{{user.firstname}} {{user.lastname}}">{{user.firstname}}
+            {{user.lastname}}</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
 
-    <!-- TODO: ne fonctionne pas -->
-    <!-- TODO: afficher le(s) user(s) ajouté(s) -->
-    <!-- <div>
-      <ul>
-        <li>{{project.staff}}</li>
-      </ul>
-    </div> -->
+
+    <!-- TODO: ? afficher le(s) user(s) ajouté(s) ? -->
+
 
     <div>
       <label for="desc">Description</label>
@@ -83,7 +80,7 @@
       <!-- pour avoir false par default et pas null -->
       <!-- <input type="checkbox" name="inProgress" value="0" formControlName="inProgress"> -->
       <input type="checkbox" name="in-progress" id="inProgress" formControlName="inProgress" [class]="isInProgress"
-        (click)="setInProgress()">
+        (click)="setInProgress()"> YES
 
     </div>
 
