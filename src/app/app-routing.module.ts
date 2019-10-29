@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CreateUserComponent } from './pages/users/create-user/create-user.component'
 import { EditUserComponent } from './pages/users/edit-user/edit-user.component'
 import { UserResolver } from './services/user.resolver'
+import { UserDeleterResolver } from './services/userDeleter.resolver'
 
 import { CreateProjectComponent } from './pages/projects/create-project/create-project.component';
 import { EditProjectComponent } from './pages/projects/edit-project/edit-project.component';
@@ -20,6 +21,10 @@ import { ListTaskComponent } from './pages/tasks/list-task/list-task.component';
 const routes: Routes = [
 
   //Routes User component 
+    {
+    path: 'users',
+    component: ListUserComponent
+  },
   {
     path: 'user/add',
     component: CreateUserComponent
@@ -27,14 +32,22 @@ const routes: Routes = [
   {
     path: 'user/edit',
     component: EditUserComponent
-  },
-  {
-    path: 'users',
-    component: ListUserComponent
-  },
+  }, 
 
   {
-    path:'users/:id', component:EditUserComponent, resolve:{user:UserResolver}
+    path: 'user/:id/del',
+    component: EditUserComponent,
+    resolve:{user:UserDeleterResolver}
+
+  },  
+  {
+    path:'user/:id',
+    component : EditUserComponent
+  },
+  {
+    path:'users/:id', 
+    component:EditUserComponent, 
+    resolve:{user:UserResolver}
   },
 
   //Routes Project Components

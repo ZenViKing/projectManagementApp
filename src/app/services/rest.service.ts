@@ -67,20 +67,23 @@ export class RestService {
 
   patchUser(user: User): Observable<User> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json')
-    return this.http.patch(`http://localhost/8001/api/users/${user._id}`, user, { headers });
+    return this.http.patch(`http://localhost:8001/api/users/${user._id}`, user, { headers });
   }
 
   postUser(user: User): Observable<User> {
     const headers = new HttpHeaders().set('content-type', 'application/json');
     return this.http.post('http://localhost:8001/api/users', user, { headers });
   }
-  //   deleteUser(id: number): Observable<User>{
-  //     const headers = new HttpHeaders().set('content-type','application/json');
-  //     return this.http.delete(`http://localhost:3000/users/${id}`,{headers});
-  //   }
-    updateUser(user: User): Observable<User>{
-      const headers = new HttpHeaders().set('content-type','application/json');
-      return this.http.patch(`http://localhost:8001/api/users/${user._id}`,{headers});
-    }
+
+  deleteUser(id:number):Observable<User>{
+    const headers =new HttpHeaders().set('content-type', 'application/json');
+    return this.http.delete(`http://localhost:8001/api/users/${id}`, {headers})
+  }
+
+    // updateUser(user: User): Observable<User>{
+    //   const headers = new HttpHeaders().set('content-type','application/json');
+    //   return this.http.patch(`http://localhost:8001/api/users/${user._id}`,{headers});
+    // }
+
 
 }

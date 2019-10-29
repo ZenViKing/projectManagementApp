@@ -3,47 +3,40 @@
 </section>
 <section>
     <form  (submit)="submitForm()" [formGroup]="form">
+
         <mat-form-field>
         <mat-label for="name">Task name : </mat-label>
         <input 
-        matInput
+            matInput
             type="text"
             name="task-name"
             id="name"
             placeholder="task name"
             formControlName="name">
         </mat-form-field>
-        
-<!-- ---------------------------- bug radio mat ---------------------------- -->
-        <!-- <fieldset>
-            <mat-form-field>
-                <mat-radio-group formControlName="status">
-                
-                <mat-label for="lowPriority">low</mat-label>
-                <mat-radio-button id="lowPiority" name="status"  value="1" formControlName="status">test</mat-radio-button>
-                <mat-label for="mediumPiority">medium</mat-label>
-                <mat-radio-button id="mediumPiority" name="status"  value="2" formControlName="status">test</mat-radio-button>
-                <mat-label for="hightPiority">hight</mat-label>
-                <mat-radio-button id="hightPiority" name="status"  value="3" formControlName="status">test</mat-radio-button>
-            </mat-radio-group>
-            </mat-form-field>
-        </fieldset> -->
+<!-- ---------------------------- mat radio ---------------------------- -->
 
+        <fieldset>
+                <h3>Select a priority :</h3>
+                <mat-radio-group formControlName="status">
+                    <mat-label for="lowPriority">low</mat-label>
+                    <mat-radio-button id="lowPiority"  name="lol" value="1" ></mat-radio-button>
+                    <mat-label for="mediumPiority">medium</mat-label>
+                    <mat-radio-button id="mediumPiority"  name="lol" value="2"></mat-radio-button>
+                    <mat-label for="hightPiority">hight</mat-label>
+                    <mat-radio-button id="hightPiority"  name="lol" value="3"></mat-radio-button>
+            </mat-radio-group>
+        </fieldset>
 <!-- -------------------------- radio without mat -------------------------- -->
-        
-            
-                
                 <!-- <legend>Priority status :</legend> -->
-                <label for="lowPriority">low</label>
+                <!-- <label for="lowPriority">low</label>
                 <input type="radio" id="lowPiority" name="status"  value="1" formControlName="status">
                 <label for="lowPriority">medium</label>
                 <input type="radio" id="mediumPiority" name="status"  value="2" formControlName="status">
                 <label for="hightPiority">hight</label>
                 <input type="radio" id="hightPiority" name="status"  value="3" formControlName="status">
-            
-            
-        
-        
+             -->
+<!-- --------------------------- estimated time ---------------------------- -->
         <!-- <p>
             <label for="estimatedTime">Estimated time : </label>
             <input 
@@ -54,7 +47,9 @@
                 >
         </p>  -->
 
-        <p>
+<!-- ---------------------------------- x ---------------------------------- -->
+<!-- ------------------------- base assigned users ------------------------- -->
+        <!-- <p>
             <label for="assignedUsers">Choose users to assign : </label>
             <select 
             multiple
@@ -64,15 +59,29 @@
                 >
                 <option *ngFor="let user of users" >{{user.firstname}}</option>
             </select>
-        </p>
+        </p> -->
+<!-- ------------------------- mat assigned users ------------------------- -->
+    
+        <mat-form-field>
+            <mat-label for="assignedUsers">Choose users to assign : </mat-label>
+            <mat-select 
+                multiple
+                name="assignedUsers"
+                id="assignedUsers"
+                formControlName="assignedUsers"
+                >
+                <mat-option *ngFor="let user of users" value="{{user.firstname}}">{{user.firstname}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    
         
-
+    <div>
         <label for="description">Description</label>
         <br>
         <textarea name="task-description" id="description" cols="30" rows="10" FormControlName="description"></textarea>
-
+    </div>
         <div>
-            <button type="submit">Create task</button>
+            <button mat-raised-button type="submit">Create task</button>
         </div>
     
     </form>
