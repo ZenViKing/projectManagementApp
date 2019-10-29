@@ -44,7 +44,7 @@ export class RestService {
   // }
   postTask(task: Task): Observable<Task>{
     const headers = new HttpHeaders().set('content-type','application/json');
-    return this.http.post('http://localhost:8001/api/projects/:id/tasks',task,{headers});
+    return this.http.post(`http://localhost:8001/api/projects/:id/tasks`,task,{headers});
   }
   // deleteTask(id: number): Observable<Task>{
   //   const headers = new HttpHeaders().set('content-type','application/json');

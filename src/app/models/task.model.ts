@@ -4,6 +4,7 @@ export class Task {
         public name?: string,
         public desc?: string,
         public assignedUsers?: Array<User[]>,
-        public status?: string
+        public status?: string,
+        public project?: string
     ){}
 }
