@@ -30,7 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DateDisplayPipe } from './pipes/date-display.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DeleteUserComponent } from './pages/users/delete-user/delete-user.component'
-import { MatCardModule } from '@angular/material';
+
 
 
 
@@ -64,8 +64,7 @@ import { MatCardModule } from '@angular/material';
     MatRadioModule,
     MatFormFieldModule,
     MatListModule,
-    MatInputModule,
-    MatCardModule
+    MatInputModule
     // BrowserAnimationsModule
   ],
   providers: [],
