@@ -31,10 +31,6 @@ import { DateDisplayPipe } from './pipes/date-display.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './pages/home/home.component'
 import { DeleteUserComponent } from './pages/users/delete-user/delete-user.component'
-<<<<<<< HEAD
-
-=======
->>>>>>> 194669d328ee955f19ab78946877c13e5931fbfe
 
 
 
