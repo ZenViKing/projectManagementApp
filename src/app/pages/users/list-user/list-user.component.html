@@ -4,12 +4,19 @@
   <p>Lastname : {{user.lastname}}</p>
   <p>Email : {{user.email}}</p>
   <p>Function : {{user.fonction}}</p>
+
+  <!-- Test debug -->
+  <p>id : {{user._id}}</p>
   <div>
-    <button routerLink="/users/{{user._id}}">Edit</button>
+  <button routerLink="/users/{{user._id}}">Edit</button>
+  <!-- Modification pour le deleteUser   -->
+  <button (click)="deleteUser(user._id)">Delete</button>
+
+
 <!-- <button (click)="deleteUser(user._id)">Delete</button> -->
 <!-- <button onclick="deleteUser(user._id)">Delete user</button> -->
 <!-- <button (click)="delUser()">Delete user?</button> -->
-<button routerLink="/user/:id/delete">Delete user?</button>
+<!-- <button routerLink="/user/:id/delete">Delete user?</button> -->
 
 
   </div>

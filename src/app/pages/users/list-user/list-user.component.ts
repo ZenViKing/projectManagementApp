@@ -4,6 +4,8 @@ import { User } from 'src/app/models/user.model';
 import { ActivatedRoute, Router } from '@angular/router';
 
 
+
+
 @Component({
   selector: 'app-list-user',
   templateUrl: './list-user.component.html',
@@ -13,6 +15,20 @@ export class ListUserComponent implements OnInit {
   users: User[];
 
   constructor(private _restService: RestService, private router:Router) { }
+
+  deleteUser(id){
+    var r = confirm('Deleted user ?');
+    if(r == true) {
+      console.log('ok');
+      this._restService.deleteUser(id).subscribe(response => {
+        this._restService.getUsers().subscribe((data: User[]) => {
+          this.users = data;
+        })
+      })
+    } else {
+      console.log('pas ok');
+    }
+  }
 
 
   //  delUser(){
@@ -32,8 +48,6 @@ export class ListUserComponent implements OnInit {
   ngOnInit() {
     this._restService.getUsers().subscribe((data: User[]) => {
       this.users = data;
-
-
     })
   }
 
