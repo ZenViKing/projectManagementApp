@@ -1,4 +1,4 @@
-// import { Injectable } from '@angular/core';
+
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -18,21 +18,22 @@ export class RestService {
   listProjects(): Observable<Project[]> {
     return this.http.get('http://localhost:8001/api/projects/').pipe(map(data => data as Project[]));
   }
-  // getProjectByid(id: number): Observable<Project>{
-  //   return this.http.get(`http://localhost:3000/projects/${id}`).pipe(map(data=>data as Task));
-  // }
+  getProjectByid(id: number): Observable<Project> {
+    return this.http.get(`http://localhost:8001/api/projects/${id}`).pipe(map(data => data as Task));
+  }
   postProject(project: Project): Observable<Project> {
     const headers = new HttpHeaders().set('content-type', 'application/json');
     return this.http.post('http://localhost:8001/api/projects', project, { headers });
   }
-  // deleteProject(id: number): Observable<Project>{
-  //   const headers = new HttpHeaders().set('content-type','application/json');
-  //   return this.http.delete(`http://localhost:3000/projects/${id}`,{headers});
-  // }
-  // updateProject(id: number): Observable<Project>{
-  //   const headers = new HttpHeaders().set('content-type','application/json');
-  //   return this.http.patch(`http://localhost:3000/projects/${id}`,{headers});
-  // }
+  patchProject(id: number): Observable<Project> {
+    const headers = new HttpHeaders().set('content-type', 'application/json');
+    return this.http.patch(`http://localhost:8001/api/projects/${id}`, { headers });
+  }
+  deleteProject(id: number): Observable<Project> {
+    const headers = new HttpHeaders().set('content-type', 'application/json');
+    return this.http.delete(`http://localhost:8001/api/projects/${id}`, { headers });
+  }
+
 
 
 
@@ -61,9 +62,9 @@ export class RestService {
     return this.http.get('http://localhost:8001/api/users').pipe(map(data => data as User[]));
   }
 
-  getUserByid(id: number): Observable<User>{
-  return this.http.get(`http://localhost:8001/api/users/${id}`).pipe(map(data=>data as User));
-    }
+  getUserByid(id: number): Observable<User> {
+    return this.http.get(`http://localhost:8001/api/users/${id}`).pipe(map(data => data as User));
+  }
 
   patchUser(user: User): Observable<User> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json')
@@ -75,15 +76,15 @@ export class RestService {
     return this.http.post('http://localhost:8001/api/users', user, { headers });
   }
 
-  deleteUser(id:number):Observable<User>{
+  deleteUser(id:User):Observable<User>{
     const headers =new HttpHeaders().set('content-type', 'application/json');
     return this.http.delete(`http://localhost:8001/api/users/${id}`, {headers})
   }
 
-    // updateUser(user: User): Observable<User>{
-    //   const headers = new HttpHeaders().set('content-type','application/json');
-    //   return this.http.patch(`http://localhost:8001/api/users/${user._id}`,{headers});
-    // }
+  // updateUser(user: User): Observable<User>{
+  //   const headers = new HttpHeaders().set('content-type','application/json');
+  //   return this.http.patch(`http://localhost:8001/api/users/${user._id}`,{headers});
+  // }
 
 
 }
