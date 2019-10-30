@@ -1,7 +1,7 @@
 import { RestService } from 'src/app/services/rest.service';
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user.model';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 
 

@@ -1,23 +1,23 @@
-<h2>User list</h2>
-<section *ngFor="let user of users">
-  <p>Firstname : {{user.firstname}}</p>
-  <p>Lastname : {{user.lastname}}</p>
-  <p>Email : {{user.email}}</p>
-  <p>Function : {{user.fonction}}</p>
+<mat-card>
+  <mat-card-content>
+    <section>
+      <h2>User list</h2>
+    </section>
+    <mat-list>
+      <mat-list-item *ngFor="let user of users">
+        <p matLine>Firstname : {{user.firstname}}</p>
+        <p matLine>Lastname : {{user.lastname}}</p>
+        <p matLine>Email : {{user.email}}</p>
+        <p matLine>Function : {{user.fonction}}</p>
 
-  <!-- Test debug -->
-  <p>id : {{user._id}}</p>
-  <div>
-  <button routerLink="/users/{{user._id}}">Edit</button>
-  <!-- Modification pour le deleteUser   -->
-  <button (click)="deleteUser(user._id)">Delete</button>
+        <section>
+          <button routerLink="/users/{{user._id}}">Edit</button>
+          <button (click)="deleteUser(user._id)">Delete user?</button>
+        </section>
+      </mat-list-item>
+    </mat-list>
 
 
-<!-- <button (click)="deleteUser(user._id)">Delete</button> -->
-<!-- <button onclick="deleteUser(user._id)">Delete user</button> -->
-<!-- <button (click)="delUser()">Delete user?</button> -->
-<!-- <button routerLink="/user/:id/delete">Delete user?</button> -->
 
-
-  </div>
-</section>
+  </mat-card-content>
+</mat-card>
