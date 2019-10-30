@@ -8,6 +8,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatListModule } from '@angular/material/list';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -64,6 +65,7 @@ import { MatCardModule } from '@angular/material';
     MatFormFieldModule,
     MatListModule,
     MatInputModule,
+    MatCardModule
     // BrowserAnimationsModule
   ],
   providers: [],
