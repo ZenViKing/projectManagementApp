@@ -17,13 +17,34 @@ ul{
 }
 
 li{
-    padding-right: 10px;
+    padding-right: 50px;
     list-style: none;
+    max-width:$larger-width;
+
+    a{
+        text-decoration: none;
+        color: #b9c0be;
+        font-family:'open_sanslight';
+        text-transform:uppercase;
+
+        &:hover{
+            color:$vibrant-greenblue;
+        }
+    
+        }
+
+        
+
+        #logo{
+            position:absolute;
+            top:0;
+            left:10%;
+            
+        }
+        
+    
 }
 
-a{
-    text-decoration: none;
-    color: #b9c0be;
 
-}
+
 

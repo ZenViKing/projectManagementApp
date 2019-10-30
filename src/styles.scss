@@ -67,8 +67,11 @@ body{
     width: $larger-width;
     font-size: 16px;
     margin:0 auto;
-    
-    
+  
+}
+
+a{
+    font-family:$titles-font;
 }
 
 form{
@@ -76,11 +79,34 @@ form{
     margin: 0 auto;
     background-color: $pastelyellow;
     width: 800px;
+    height:70vh;
     padding: 20px;
     border-radius: 5px;
 }
 
-//MAIN
+// MAIN CONTENT
+
+.content{
+
+    h1{
+        
+        color:$titles;
+        font-size:2.5em;
+        font-family:$titles-font;
+        text-align:center;
+    }
+
+    p{
+        color:$lightgrey;
+        text-align:justify;
+        line-height:1.3em;
+        
+    }
+
+
+}
+
+//MAIN (( home page à déplacer dans component plus tard ))
 
 .main{
 
@@ -94,59 +120,64 @@ form{
 
     .right{
 
-        width:800px;
+        max-width:800px;
         background-color:$pastelyellow;
+        padding:75px;
 
+        .flex-button{
+            display:flex;
+            justify-content:space-evenly;
 
-    }
-
-    .left{
-
-        background-color:$pastel-greenblue;
-        height:60vh;
-        width:224px;
-
-        .click{
-            margin-left:50px;
-            margin-top: 50px;
+            .click{
+                margin-top: 20%;
+            }
         }
-    }
+ }
+
+ .left{
+
+    background-color:$pastel-greenblue;
+    padding:50px;
+ }
+
+
 
 }
 
-.click{
+// BUTTONS
 
-    width:120px;
-    height:40px;
-    border: 1px solid $lightergrey;
-    border-radius: 25px;
-    background-color:$lightergrey;
+.click {
+
+    
+    
    
 
     a{  
-        
-        
         color:$titles;
         text-decoration:none;
+        padding: 1em 1.5em;
+        background-color:$lightergrey;
+        border-radius:25px;
+        transition: all .3s;
+        
+        
     }
 
-    p{
-        vertical-align:40px;
-    }
-    
-    &:hover{
+   
+ &:hover{
 
-        background-color:$vibrant-greenblue;
-        border: 1px solid $vibrant-greenblue;
-
-        a{
+       
+  a{
             color:$pastelyellow;
+            background-color:$vibrant-greenblue;
+            transition: all .3s;
         }
 
 
     }
     
 }
+
 
 //FOOTER
 
@@ -162,7 +193,6 @@ footer{
 
     p{
     text-align: center;
-    font-family: 'open_sansregular';
     color:$lightgrey;
     }
 }
