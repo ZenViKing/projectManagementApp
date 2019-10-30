@@ -30,17 +30,20 @@
         <div class="flex-button-l">
             <a href="">PROJECT LIST</a>
         </div>
-        <ul *ngFor='let project of projects'>
-                <li>
-                    {{project.name}}
-                </li>
-                <li>
-                    {{project.inProgress}}
-                </li>
-                <li>
-                    Deadline : {{project.deadline | date : 'longDate'}}
-                </li>
-            </ul>
+        <div *ngFor='let project of projects'>
+            <div>
+                {{project.name}}
+            </div>
+            <div *ngIf="project.inProgress">
+                inProgress
+            </div>
+            <div *ngIf="!project.inProgress">
+                to do
+            </div>
+            <div>
+                Deadline
+            </div>
+        </div>
     </section>
       
     <section class="right">
