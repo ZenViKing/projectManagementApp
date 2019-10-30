@@ -24,3 +24,39 @@
         <button class="click"><a href=""><p>CREATE USER</p></a></button>
         </section>
 </div>-->
+
+<div class="main">
+    <section class="left">
+        <div class="flex-button-l">
+            <a href="">PROJECT LIST</a>
+        </div>
+        <div *ngFor='let project of projects'>
+            <div>
+                {{project.name}}
+            </div>
+            <div *ngIf="project.inProgress">
+                inProgress
+            </div>
+            <div *ngIf="!project.inProgress">
+                to do
+            </div>
+            <div>
+                Deadline
+            </div>
+        </div>
+    </section>
+      
+    <section class="right">
+            
+          
+        <div class="content"><h1>WHAT'S 6PM ?</h1>
+           <p>6PM is Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium consequatur quasi nulla asperiores soluta rem, sequi voluptas deleniti rerum iusto libero explicabo doloribus dolores in non, commodi distinctio totam odio aperiam. Suscipit neque quam a quod fuga ex earum officia?
+           </p>
+           <p>6PM is Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium consequatur quasi nulla asperiores soluta rem, sequi voluptas deleniti rerum iusto libero explicabo doloribus dolores in non, commodi distinctio totam odio aperiam. Suscipit neque quam a quod fuga ex earum officia?</p>
+        </div>
+        <div class="flex-button">
+            <div class="click"><a href="">CREATE PROJECT</a></div>
+            <div class="click"><a href="">CREATE USER</a></div>
+        </div>
+    </section>
+</div>
