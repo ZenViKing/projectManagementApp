@@ -1,37 +1,51 @@
-<h1>Let's create an user !</h1>
-
-    <section>
-
-        <form [formGroup]="form" (submit)="submitForm()">
-
-        <section>
-            <label>Firstname: </label>
-            <input type="text" name="firstname" id="firstname" placeholder="Firstname" formControlName="firstname"/>
-        </section>
-
-        <section>
-                <label>Lastname: </label>
-              <input type="text" name="lastname" id="lastname" placeholder="Lastname" formControlName="lastname">
-            </section>
-
-        <section>
-              <label>Email: </label>
-            <input type="email" name="email" id="email"  placeholder="Email"  formControlName="email">
-        </section>
-<section>
-  <label>Choose a function: </label>
-    <select name="fonction" id="fonction-select" formControlName="fonction">
-      <option value="">--Choose below--</option>
-      <option value="Project Manager">Project Manager</option>
-      <option value="Front End">Front End</option>
-      <option value="Back End">Back End</option>
-      <option value="Full Stack">Full Stack</option>
-      <option value="Designer">Designer</option>
-    </select>
+<mat-card>
+  <mat-card-content>
+  <section>
+    <h2>Let's create an user !</h2>
   </section>
-    <br />
-    
-        <button type="submit">Submit</button>
-      </form>
 
-    </section>
+  <section>
+    <form [formGroup]="form" (submit)="submitForm()">
+      <section>
+        <mat-form-field>
+          <mat-label>Firstname: </mat-label>
+          <input type="text" name="firstname" id="firstname" matInput placeholder="Firstname"
+            formControlName="firstname" />
+        </mat-form-field>
+      </section>
+
+      <section>
+        <mat-form-field>
+          <mat-label>Lastname: </mat-label>
+          <input type="text" name="lastname" id="lastname" matInput placeholder="Lastname" formControlName="lastname">
+        </mat-form-field>
+      </section>
+
+      <section>
+        <mat-form-field>
+          <mat-label>Email: </mat-label>
+          <input type="email" name="email" id="email" matInput placeholder="Email" formControlName="email">
+        </mat-form-field>
+      </section>
+
+      <section>
+        <mat-label>Choose a function below: </mat-label>
+        <mat-select name="fonction" id="fonction-mat-" formControlName="fonction">
+          <!-- <mat-option value="">--Choose below--</mat-option> -->
+          <mat-option value="Project Manager">Project Manager</mat-option>
+          <mat-option value="Front End">Front End</mat-option>
+          <mat-option value="Back End">Back End</mat-option>
+          <mat-option value="Full Stack">Full Stack</mat-option>
+          <mat-option value="Designer">Designer</mat-option>
+        </mat-select>
+      </section>
+
+      <section>
+        <button type="submit">Submit</button>
+      </section>
+
+    </form>
+  </section>
+
+  </mat-card-content>
+</mat-card>
