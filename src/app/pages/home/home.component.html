@@ -1,0 +1,26 @@
+<h2>Home</h2>
+
+<div class="main">
+    <section class="left">
+        <h3 class="click">PROJECT LIST</h3>
+        <ul *ngFor='let project of projects'>
+            <li>
+                {{project.name}}
+            </li>
+            <li>
+                {{project.inProgress}}
+            </li>
+            <li>
+                Deadline : {{project.deadline | date : 'longDate'}}
+            </li>
+        </ul>
+        
+    </section>
+    <section class="right">
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ipsum modi error harum quam explicabo deleniti ducimus aliquid illum! Culpa provident dignissimos expedita quasi vero enim totam nobis voluptas facilis?
+        </div>
+        <button class="click"><a href=""><p>CREATE PROJECT</p></a></button>
+        <button class="click"><a href=""><p>CREATE USER</p></a></button>
+        </section>
+</div>
