@@ -12,7 +12,7 @@
 
         <section>
           <button routerLink="/users/{{user._id}}">Edit</button>
-          <button routerLink="/user/:id/delete">Delete user?</button>
+          <button (click)="deleteUser(user._id)">Delete user?</button>
         </section>
       </mat-list-item>
     </mat-list>
