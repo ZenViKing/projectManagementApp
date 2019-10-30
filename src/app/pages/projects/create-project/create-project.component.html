@@ -21,6 +21,13 @@
               <mat-label for="name">Name</mat-label>
               <input matInput type="text" name="project-name" id="name" placeholder="Name your project"
                 formControlName="name">
+              <!-- TODO: exo-form Anissa et https://angular.io/guide/form-validation -->
+              <!-- <input matInput type="text" name="projectName" id="name" placeholder="Name your project"
+                formControlName="name" required ngModel #projectName="ngModel" class="form-control">
+              <div *ngIf="name.invalid" class="alert alert-danger">
+                <div *ngIf="projectName.errors.required">Please name your project</div>
+              </div> -->
+
             </mat-form-field>
           </div>
 
