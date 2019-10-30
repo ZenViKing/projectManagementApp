@@ -74,75 +74,46 @@ a{
     font-family:$titles-font;
 }
 
-form{
 
-    margin: 0 auto;
-    background-color: $pastelyellow;
-    width: 800px;
-    height:70vh;
-    padding: 20px;
-    border-radius: 5px;
+
+.mat-card-content{
+
+   margin: 0 auto;
+   background-color: $pastelyellow;
+   width: 700px;
+   padding: 20px;
+   border-radius: 5px;
 }
 
-// MAIN CONTENT
-
-.content{
-
-    h1{
-        
-        color:$titles;
-        font-size:2.5em;
-        font-family:$titles-font;
-        text-align:center;
-    }
-
-    p{
-        color:$lightgrey;
-        text-align:justify;
-        line-height:1.3em;
-        
-    }
-
-
-}
-
-//MAIN (( home page à déplacer dans component plus tard ))
-
-.main{
-
-    padding-top: 150px;
-    margin:0 auto;
-    width:$larger-width;
-    display:flex;
-    justify-content:center;
+.mat-card{
+    background-color:$lightergrey;
     
-    
-
-    .right{
-
-        max-width:800px;
-        background-color:$pastelyellow;
-        padding:75px;
-
-        .flex-button{
-            display:flex;
-            justify-content:space-evenly;
-
-            .click{
-                margin-top: 20%;
-            }
-        }
- }
-
- .left{
-
-    background-color:$pastel-greenblue;
-    padding:50px;
- }
-
-
-
 }
+
+
+
+h1{
+        
+    color:$titles;
+    font-size:2.5em;
+    font-family:$titles-font;
+    text-align:center;
+    text-transform:uppercase;
+}
+
+
+
+p{
+    color:$lightgrey;
+    text-align:justify;
+    line-height:1.3em;
+    font-family: 'open_sansregular';
+    
+}
+
+
+
+
 
 // BUTTONS
 
