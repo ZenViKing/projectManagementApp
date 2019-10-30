@@ -14,12 +14,17 @@ import { EditTaskComponent } from './pages/tasks/edit-task/edit-task.component';
 import { ListUserComponent } from './pages/users/list-user/list-user.component';
 import { ListProjectComponent } from './pages/projects/list-project/list-project.component';
 import { ListTaskComponent } from './pages/tasks/list-task/list-task.component';
+import { HomeComponent } from './pages/home/home.component';
 import { DeleteUserComponent } from './pages/users/delete-user/delete-user.component';
 
 
 
 
 const routes: Routes = [
+  {
+    path: 'home',
+    component: HomeComponent
+  },
 
   //Routes User component 
     {
@@ -67,7 +72,7 @@ const routes: Routes = [
 
   //Routes Task Component
   {
-    path: 'task/add',
+    path: 'projects/:id/task/add',
     component: CreateTaskComponent
   },
 
@@ -76,7 +81,7 @@ const routes: Routes = [
     component: EditTaskComponent
   },
   {
-    path: 'task/list',
+    path: 'projects/:id/task/list',
     component: ListTaskComponent
   }
 
