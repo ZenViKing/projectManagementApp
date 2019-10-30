@@ -38,7 +38,8 @@ export class CreateProjectComponent implements OnInit {
       deadline: new FormControl(null, [Validators.required]),
       time: new FormControl(null, [Validators.required]),
       staff: new FormControl(null, [Validators.required]),
-      desc: new FormControl(null, [Validators.required]),
+      // desc: new FormControl(null, [Validators.required]),
+      desc: new FormControl(null),
       // pour avoir valeur false si on ne clique pas la checkbox inProgress
       // false à la place de null
       inProgress: new FormControl(false, [Validators.required]),
@@ -48,9 +49,4 @@ export class CreateProjectComponent implements OnInit {
       this.staff = data;
     })
   }
-  // TODO: ajouter seulement un user existant
-  // pour ajouter plusieurs users
-  // onAdd() {
-  //   this.listUsers.push(this.user);
-  // }
 }

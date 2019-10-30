@@ -65,7 +65,7 @@ import { DeleteUserComponent } from './pages/users/delete-user/delete-user.compo
     MatRadioModule,
     MatFormFieldModule,
     MatListModule,
-    MatInputModule,
+    MatInputModule
     // BrowserAnimationsModule
   ],
   providers: [],
