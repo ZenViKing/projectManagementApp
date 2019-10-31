@@ -3,11 +3,6 @@
     <h1>Create a project</h1>
     <mat-card-content>
 
-    <!-- je teste le formulaire material angular, merci Adrien -->
-    <section class="content">
-
-
-      <!-- je teste le formulaire material angular, merci Adrien -->
       <section>
 
         <!-- <form action="" method="POST"> -->
@@ -20,16 +15,59 @@
             <div>
               <!-- <label for="name">Name</label>
         <input type="text" name="project-name" id="name" placeholder="Name your project" formControlName="name"> -->
-            <mat-form-field>
-              <mat-label for="name" class="label">Name</mat-label>
-              <input matInput type="text" name="project-name" id="name" placeholder="Name your project"
-                formControlName="name">
-              <!-- TODO: exo-form Anissa et https://angular.io/guide/form-validation -->
-              <!-- <input matInput type="text" name="projectName" id="name" placeholder="Name your project"
-                formControlName="name" required ngModel #projectName="ngModel" class="form-control">
-              <div *ngIf="name.invalid" class="alert alert-danger">
-                <div *ngIf="projectName.errors.required">Please name your project</div>
-              </div> -->
+              <mat-form-field>
+                <!-- <mat-label for="name">Name</mat-label>
+                <input matInput type="text" name="project-name" id="name" placeholder="Name your project"
+                  formControlName="name"> -->
+                <!-- https://angular.io/guide/form-validation -->
+                <mat-label for="name">Name</mat-label>
+                <input matInput type="text" name="project-name" id="name" placeholder="Name your project"
+                  formControlName="name">
+                <mat-error *ngIf="form.controls['name'].invalid">Choose a name for your project</mat-error>
+              </mat-form-field>
+            </div>
+
+            <div>
+              <!-- <label for="date">Starting date</label>
+        <input type="datetime" name="date-start" id="date" placeholder="mm/dd/yyyy" formControlName="date"> -->
+              <mat-form-field>
+                <!-- <mat-label for="date">Starting Date</mat-label>
+                <input matInput type="datetime" name="date-start" id="date" placeholder="mm/dd/yyyy"
+                  formControlName="date"> -->
+                <!-- datePicker -->
+                <!-- https://material.angular.io/components/datepicker/overview -->
+                <input matInput [matDatepicker]="date" placeholder="Choose a starting date" formControlName="date">
+                <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
+                <mat-datepicker #date></mat-datepicker>
+                <mat-error *ngIf="form.controls['date'].invalid">Choose a starting date</mat-error>
+              </mat-form-field>
+            </div>
+
+            <div>
+              <!-- <label for="deadline">Deadline</label>
+        <input type="datetime" name="date-stop" id="deadline" placeholder="mm/dd/yyyy" formControlName="deadline"> -->
+              <mat-form-field>
+                <!-- <mat-label for="deadline">Deadline</mat-label>
+                <input matInput type="datetime" name="date-stop" id="deadline" placeholder="mm/dd/yyyy"
+                  formControlName="deadline"> -->
+                <!-- datePicker -->
+                <input matInput [matDatepicker]="deadline" placeholder="Choose a deadline" formControlName="deadline">
+                <mat-datepicker-toggle matSuffix [for]="deadline"></mat-datepicker-toggle>
+                <mat-datepicker #deadline></mat-datepicker>
+                <mat-error *ngIf="form.controls['deadline'].invalid">Choose a name for your project</mat-error>
+              </mat-form-field>
+            </div>
+
+            <div>
+              <!-- <label for="time">Estimated time</label>
+        <input type="number" name="time-estimation" id="time" placeholder="42 hours" formControlName="time"> -->
+              <mat-form-field>
+                <mat-label for="time">Estimated time</mat-label>
+                <input matInput type="number" name="time-estimation" id="time" placeholder="42 hours"
+                  formControlName="time">
+                <mat-error *ngIf="form.controls['time'].invalid">Choose the estimated time for your project</mat-error>
+              </mat-form-field>
+            </div>
 
           </div>
 
@@ -61,8 +99,8 @@
 
           <div>
             <label for="inProgress">Is your project already in progress ?</label>
-            <!-- pour avoir false par default et pas null -->
             <!-- <input type="checkbox" name="inProgress" value="0" formControlName="inProgress"> -->
+            <!-- pour avoir false par default et pas null -->
             <input type="checkbox" name="in-progress" id="inProgress" formControlName="inProgress"
               [class]="isInProgress" (click)="setInProgress()"> YES
 
@@ -71,6 +109,7 @@
           <div>
             <!-- https://stackoverflow.com/questions/18407832/how-to-create-a-html-cancel-button-that-redirects-to-a-url -->
             <!--<a href="http://localhost:4200/">Cancel</a>-->
+            <!-- routerLink au lieu de href car angular -->
             <a routerLink="/">Cancel</a>
             <!-- <button type="submit">Create</button> -->
             <button mat-raised-button type="submit" [disabled]="form.invalid">Create project</button>
