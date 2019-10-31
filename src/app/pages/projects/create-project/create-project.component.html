@@ -10,7 +10,7 @@
 
         <!-- <form action="" method="POST"> -->
         <!-- <form [formGroup]="form" (submit)="submitForm()"> -->
-        <!-- test validators -->
+        <!-- validators -->
         <form [formGroup]="form" (submit)="submitForm()">
 
           <div>
@@ -34,9 +34,13 @@
               <!-- <label for="date">Starting date</label>
         <input type="datetime" name="date-start" id="date" placeholder="mm/dd/yyyy" formControlName="date"> -->
               <mat-form-field>
-                <mat-label for="date">Starting Date</mat-label>
+                <!-- <mat-label for="date">Starting Date</mat-label>
                 <input matInput type="datetime" name="date-start" id="date" placeholder="mm/dd/yyyy"
-                  formControlName="date">
+                  formControlName="date"> -->
+                <!-- datePicker -->
+                <input matInput [matDatepicker]="date" placeholder="Choose a starting date" formControlName="date">
+                <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
+                <mat-datepicker #date></mat-datepicker>
                 <mat-error *ngIf="form.controls['date'].invalid">Choose a starting date</mat-error>
               </mat-form-field>
             </div>
@@ -45,9 +49,13 @@
               <!-- <label for="deadline">Deadline</label>
         <input type="datetime" name="date-stop" id="deadline" placeholder="mm/dd/yyyy" formControlName="deadline"> -->
               <mat-form-field>
-                <mat-label for="deadline">Deadline</mat-label>
+                <!-- <mat-label for="deadline">Deadline</mat-label>
                 <input matInput type="datetime" name="date-stop" id="deadline" placeholder="mm/dd/yyyy"
-                  formControlName="deadline">
+                  formControlName="deadline"> -->
+                <!-- datePicker -->
+                <input matInput [matDatepicker]="deadline" placeholder="Choose a deadline" formControlName="deadline">
+                <mat-datepicker-toggle matSuffix [for]="deadline"></mat-datepicker-toggle>
+                <mat-datepicker #deadline></mat-datepicker>
                 <mat-error *ngIf="form.controls['deadline'].invalid">Choose a name for your project</mat-error>
               </mat-form-field>
             </div>
