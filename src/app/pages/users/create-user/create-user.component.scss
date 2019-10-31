@@ -8,9 +8,34 @@ text-align: center;
 text-transform: uppercase;
 }
 
-.click {
+form{
+    text-align: center;
+    // width: 80%;
+}
 
-    a{  
+.btns{
+    display:flex;
+    justify-content: space-around;
+    padding-top: 25px;
+}
+
+
+
+.btns button{
+    margin-top:-15px;
+
+}
+.click {
+    
+button{
+box-shadow:none;
+border:0 none;
+outline:0;
+font-family:$titles-font;
+}
+
+
+    a, button{  
         color:$titles;
         text-decoration:none;
         padding: 1em 1.5em;
@@ -18,13 +43,14 @@ text-transform: uppercase;
         border-radius:25px;
         transition: all .3s;
         
+        
     }
 
    
  &:hover{
 
        
-  a{
+  a, button{
             color:$pastelyellow;
             background-color:$vibrant-greenblue;
             transition: all .3s;
@@ -32,5 +58,6 @@ text-transform: uppercase;
 
 
     }
-    
-}
+}    
+
+
