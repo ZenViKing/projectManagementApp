@@ -30,9 +30,9 @@
         <div class="flex-button-l">
             <div class="click"><a href="">PROJECT LIST</a></div>
         </div>
-        <mat-list *ngFor='let project of projects'>
+        <mat-list *ngFor='let project of projects' class="list">
             <mat-list-item>
-                <h4>
+               <div class="list-content"> <h4>
                     {{project.name}}
                 </h4>
                 <p *ngIf="project.inProgress">
@@ -44,7 +44,7 @@
                 <p>
                     Deadline
                 </p>
-            </mat-list-item>
+            </div></mat-list-item>
         </mat-list>
     </section>
       
