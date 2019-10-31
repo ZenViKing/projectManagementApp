@@ -7,7 +7,7 @@
     
 
     <!-- je teste le formulaire material angular, merci Adrien -->
-    <section>
+    <section class="content">
 
       <!-- <form action="" method="POST"> -->
       <form [formGroup]="form" (submit)="submitForm()">
@@ -18,7 +18,7 @@
             <!-- <label for="name">Name</label>
         <input type="text" name="project-name" id="name" placeholder="Name your project" formControlName="name"> -->
             <mat-form-field>
-              <mat-label for="name">Name</mat-label>
+              <mat-label for="name" class="label">Name</mat-label>
               <input matInput type="text" name="project-name" id="name" placeholder="Name your project"
                 formControlName="name">
               <!-- TODO: exo-form Anissa et https://angular.io/guide/form-validation -->
@@ -102,7 +102,7 @@
           <!--<a href="http://localhost:4200/">Cancel</a>-->
           <a routerLink="/">Cancel</a>
           <!-- <button type="submit">Create</button> -->
-          <button mat-raised-button type="submit">Create project</button>
+          <button mat-raised-button type="submit" class="click">Create project</button>
         </div>
 
       </form>
