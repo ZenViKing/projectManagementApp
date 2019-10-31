@@ -1,0 +1,36 @@
+@import '../../../../variables.scss';
+
+h1{
+color:$titles;
+font-size:2.5em;
+font-family: $titles-font;
+text-align: center;
+text-transform: uppercase;
+}
+
+.click {
+
+    a{  
+        color:$titles;
+        text-decoration:none;
+        padding: 1em 1.5em;
+        background-color:$lightergrey;
+        border-radius:25px;
+        transition: all .3s;
+        
+    }
+
+   
+ &:hover{
+
+       
+  a{
+            color:$pastelyellow;
+            background-color:$vibrant-greenblue;
+            transition: all .3s;
+        }
+
+
+    }
+    
+}

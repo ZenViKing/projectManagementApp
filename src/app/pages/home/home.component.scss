@@ -1,0 +1,39 @@
+@import '../../../variables.scss';
+
+//MAIN (( home page à déplacer dans component plus tard ))
+
+.main{
+
+    padding-top: 150px;
+    margin:0 auto;
+    width:$larger-width;
+    display:flex;
+    justify-content:center;
+    
+    
+
+    .right{
+
+        max-width:800px;
+        background-color:$pastelyellow;
+        padding:75px;
+
+        .flex-button{
+            display:flex;
+            justify-content:space-evenly;
+
+            .click{
+                margin-top: 20%;
+            }
+        }
+ }
+
+ .left{
+
+    background-color:$pastel-greenblue;
+    padding:50px;
+ }
+
+
+
+}

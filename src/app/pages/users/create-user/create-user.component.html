@@ -1,19 +1,17 @@
 <mat-card>
   <mat-card-content>
-  <section>
-    <h2>Let's create an user !</h2>
-  </section>
+    <h1>Let's create an user!</h1>
 
-  <section>
+    <div class="main-div">
     <form [formGroup]="form" (submit)="submitForm()">
       <section>
+        
         <mat-form-field>
           <mat-label>Firstname: </mat-label>
           <input type="text" name="firstname" id="firstname" matInput placeholder="Firstname"
             formControlName="firstname" />
         </mat-form-field>
       </section>
-
       <section>
         <mat-form-field>
           <mat-label>Lastname: </mat-label>
@@ -41,11 +39,12 @@
       </section>
 
       <section>
-        <button type="submit">Submit</button>
+        <button class="click" type="submit">Submit</button>
       </section>
 
     </form>
-  </section>
+  </div>
+
 
   </mat-card-content>
 </mat-card>
