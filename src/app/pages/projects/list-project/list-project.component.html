@@ -1,18 +1,17 @@
 <h2>projects</h2>
-<ul *ngFor="let project of projects">
-  <li>
-    {{project.name}}
-    <ul>
-      <!-- <li>{{project.deadline}}</li> -->
-      <!-- changer l'affichage de la date avec le pipe dateDisplay -->
-      <!-- <li>{{project.deadline | date : 'longDate'}}</li> -->
-      <li>Deadline : {{project.deadline | date : 'longDate'}}</li>
-      <li>User(s) : {{project.staff}}</li>
-    </ul>
-  </li>
+<mat-list *ngFor="let project of projects">
+  <mat-list-item>
+    <h3>{{project.name}}</h3>
+    <!-- <li>{{project.deadline}}</li> -->
+    <!-- changer l'affichage de la date avec le pipe dateDisplay -->
+    <!-- <li>{{project.deadline | date : 'longDate'}}</li> -->
+    <p>Deadline : {{project.deadline | date : 'longDate'}}</p>
+    <p>User(s) : {{project.staff}}</p>
+  
   <!-- d'abord faire component editProject -->
   <!-- <div>
     <button routerLink="/projects/{{project._id}}">Edit</button>
     <button (click)="deleteProject()">Delete</button>
   </div> -->
-</ul>
+  </mat-list-item>
+</mat-list>
