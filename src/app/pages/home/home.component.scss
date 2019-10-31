@@ -29,9 +29,22 @@
  }
 
  .left{
-
+    width:700px;
     background-color:$pastel-greenblue;
-    padding:50px;
+    padding:70px;
+
+    .flex-button-l{
+        padding-bottom:20px;
+    }
+
+    .list{
+
+        background-color:$pastelyellow;
+        width:200px;
+        height:80px;
+        margin-top:10px;
+        margin-bottom:10px;
+    }
  }
 
 
