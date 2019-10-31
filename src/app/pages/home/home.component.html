@@ -30,20 +30,22 @@
         <div class="flex-button-l">
             <div class="click"><a href="">PROJECT LIST</a></div>
         </div>
-        <div *ngFor='let project of projects'class="list">
-            <div>
-                {{project.name}}
-            </div>
-            <div *ngIf="project.inProgress">
-                inProgress
-            </div>
-            <div *ngIf="!project.inProgress">
-                to do
-            </div>
-            <div>
-                Deadline
-            </div>
-        </div>
+        <mat-list *ngFor='let project of projects'>
+            <mat-list-item>
+                <h4>
+                    {{project.name}}
+                </h4>
+                <p *ngIf="project.inProgress">
+                    inProgress
+                </p>
+                <p *ngIf="!project.inProgress">
+                    to do
+                </p>
+                <p>
+                    Deadline
+                </p>
+            </mat-list-item>
+        </mat-list>
     </section>
       
     <section class="right">
