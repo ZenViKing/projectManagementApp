@@ -1,8 +1,8 @@
-<div class="main-div"><mat-card>
+<div class="main-div">
+  <mat-card>
   <mat-card-content>
     <h1>Let's create an user!</h1>
 
-    <div class="main-div">
     <form [formGroup]="form" (submit)="submitForm()">
       <section>
         
@@ -38,13 +38,14 @@
         </mat-select>
       </section>
 
-      <section>
-        <button class="click" type="submit">Submit</button>
+      <section class="btns">
+       <div class="click"> <a routerLink="/">Cancel</a></div>    
+        <div class="click"> <button class="click" >Submit</button></div>
       </section>
 
     </form>
-  </div>
 
 
   </mat-card-content>
-</mat-card></div>
+</mat-card>
+</div>

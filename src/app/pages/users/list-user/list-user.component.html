@@ -1,7 +1,9 @@
+<div class="main-div">
+
 <mat-card>
   <mat-card-content>
     <section>
-      <h2>User list</h2>
+      <h1>Users list</h1>
     </section>
     <mat-list>
       <mat-list-item *ngFor="let user of users">
@@ -10,9 +12,9 @@
         <p matLine>Email : {{user.email}}</p>
         <p matLine>Function : {{user.fonction}}</p>
 
-        <section>
-          <button routerLink="/users/{{user._id}}">Edit</button>
-          <button (click)="deleteUser(user._id)">Delete user?</button>
+        <section class="btnsListUsers">
+          <div class="click"><a routerLink="/users/{{user._id}}">Edit</a></div> 
+          <div class="click"><a (click)="deleteUser(user._id)">Delete user?</a></div>
         </section>
       </mat-list-item>
     </mat-list>
@@ -21,3 +23,4 @@
 
   </mat-card-content>
 </mat-card>
+</div>

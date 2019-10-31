@@ -1,0 +1,67 @@
+@import '../../../../variables.scss';
+
+h1{
+color:$titles;
+font-size:2.5em;
+font-family: $titles-font;
+text-align: center;
+text-transform: uppercase;
+}
+
+form{
+    text-align: center;
+}
+
+.btnsListUsers{
+    display:flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+p.mat-line{
+    color: black;
+}
+
+.mat-list-item{
+    border-bottom: 1px solid $lightgrey;
+}
+
+.click {
+    
+button{
+box-shadow:none;
+border:0 none;
+outline:0;
+font-family:$titles-font;
+}
+
+
+
+    a, button{  
+        color:$titles;
+        font-size: 15px;
+        text-decoration:none;
+        padding: 1em 1.5em;
+        background-color:$lightergrey;
+        border-radius:10px;
+        margin-left: 15px;
+        transition: all .3s;
+        
+        
+    }
+
+   
+ &:hover{
+
+       
+  a, button{
+            color:$pastelyellow;
+            background-color:$vibrant-greenblue;
+            transition: all .3s;
+        }
+
+
+    }
+}    
+
+
