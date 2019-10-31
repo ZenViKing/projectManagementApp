@@ -31,6 +31,7 @@ export class CreateProjectComponent implements OnInit {
       this.router.navigate(['/projects'])
     })
   }
+
   ngOnInit() {
     this.form = new FormGroup({
       name: new FormControl(null, [Validators.required]),
