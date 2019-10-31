@@ -22,7 +22,7 @@ import { DeleteUserComponent } from './pages/users/delete-user/delete-user.compo
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     component: HomeComponent
   },
 

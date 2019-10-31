@@ -30,8 +30,49 @@
 
  .left{
 
+    width:700px;
     background-color:$pastel-greenblue;
-    padding:50px;
+    padding:70px;
+
+    .flex-button-l{
+        padding-bottom:20px;
+    }
+
+    .list{
+
+        background-color:$pastelyellow;
+        width:200px;
+        height:65px;
+        margin-top:10px;
+        margin-bottom:10px;
+        border-radius:5px;
+        transition: all .3s;
+    
+
+        &:hover{
+            background-color:$vibrant-greenblue;
+            transition: all .3s;
+            cursor:pointer;
+
+            p{
+                color:$pastelyellow;
+                transition: all .3s;
+            }
+        }
+       
+       
+    .list-content{
+
+        display:block;
+        padding-top:15px;
+
+        h4,p{
+            padding:0;
+            margin:0;
+        }
+    }
+        
+    }
  }
 
 
