@@ -3,9 +3,6 @@
     <h1>Create a project</h1>
     <mat-card-content>
 
-
-
-      <!-- je teste le formulaire material angular, merci Adrien -->
       <section>
 
         <!-- <form action="" method="POST"> -->
@@ -22,7 +19,7 @@
                 <!-- <mat-label for="name">Name</mat-label>
                 <input matInput type="text" name="project-name" id="name" placeholder="Name your project"
                   formControlName="name"> -->
-                <!-- TODO: exo-form Anissa et https://angular.io/guide/form-validation -->
+                <!-- https://angular.io/guide/form-validation -->
                 <mat-label for="name">Name</mat-label>
                 <input matInput type="text" name="project-name" id="name" placeholder="Name your project"
                   formControlName="name">
@@ -38,6 +35,7 @@
                 <input matInput type="datetime" name="date-start" id="date" placeholder="mm/dd/yyyy"
                   formControlName="date"> -->
                 <!-- datePicker -->
+                <!-- https://material.angular.io/components/datepicker/overview -->
                 <input matInput [matDatepicker]="date" placeholder="Choose a starting date" formControlName="date">
                 <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
                 <mat-datepicker #date></mat-datepicker>
@@ -101,8 +99,8 @@
 
           <div>
             <label for="inProgress">Is your project already in progress ?</label>
-            <!-- pour avoir false par default et pas null -->
             <!-- <input type="checkbox" name="inProgress" value="0" formControlName="inProgress"> -->
+            <!-- pour avoir false par default et pas null -->
             <input type="checkbox" name="in-progress" id="inProgress" formControlName="inProgress"
               [class]="isInProgress" (click)="setInProgress()"> YES
 
@@ -111,6 +109,7 @@
           <div>
             <!-- https://stackoverflow.com/questions/18407832/how-to-create-a-html-cancel-button-that-redirects-to-a-url -->
             <!--<a href="http://localhost:4200/">Cancel</a>-->
+            <!-- routerLink au lieu de href car angular -->
             <a routerLink="/">Cancel</a>
             <!-- <button type="submit">Create</button> -->
             <button mat-raised-button type="submit" [disabled]="form.invalid">Create project</button>
