@@ -7,11 +7,11 @@
     <!-- <li>{{project.deadline | date : 'longDate'}}</li> -->
     <p>Deadline : {{project.deadline | date : 'longDate'}}</p>
     <p>User(s) : {{project.staff}}</p>
-  
-  <!-- d'abord faire component editProject -->
-  <!-- <div>
-    <button routerLink="/projects/{{project._id}}">Edit</button>
-    <button (click)="deleteProject()">Delete</button>
-  </div> -->
+
+
+    <div>
+      <button routerLink="/project/{{project._id}}">Edit</button>
+      <button (click)="deleteProject()">Delete</button>
+    </div>
   </mat-list-item>
 </mat-list>
