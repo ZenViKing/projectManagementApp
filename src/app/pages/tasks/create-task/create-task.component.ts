@@ -18,6 +18,11 @@ export class CreateTaskComponent implements OnInit {
   task: Task;
   form: FormGroup;
   constructor(private _restService: RestService, private router: Router) { }
+
+  onSubmit(){
+    console.warn(this.form.value);
+  }
+
   submitForm(){
     this.task = this.form.value;
     this._restService.postTask(this.task).subscribe((data: Task)=>{
@@ -26,14 +31,27 @@ export class CreateTaskComponent implements OnInit {
     })
   }
 
+  getErrorMessage(field: string): string {
+    const errors = {
+      required: 'This field is required',
+      minlength: 'Enter at least 3 letters'
+    };
+    let returnValue = '';
+    
+    
+    Object.keys(this.form.controls[field].errors).map((key, index) => {
+      returnValue += `Rule ${index} - ${errors[key]} `;
+    });
+    return returnValue;
+  }
+
   ngOnInit() {
     this.form = new FormGroup({
-      name: new FormControl(null, [Validators.required]),
-      description: new FormControl(null),
+      name: new FormControl(null, [Validators.required,Validators.minLength(3)]),
+      desc: new FormControl(null),
       status: new FormControl(null,[Validators.required]),
       assignedUsers: new FormControl(null)
     })
-
     this._restService.getUsers().subscribe((data: User[])=>{
       this.users = data;
     })
