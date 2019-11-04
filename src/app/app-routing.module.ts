@@ -72,7 +72,7 @@ const routes: Routes = [
 
   //Routes Task Component
   {
-    path: 'projects/:id/task/add',
+    path: 'task/add',
     component: CreateTaskComponent
   },
 
@@ -80,10 +80,12 @@ const routes: Routes = [
     path: 'task/edit',
     component: EditTaskComponent
   },
+ 
   {
-    path: 'projects/:id/task/list',
+    path: 'task/list',
     component: ListTaskComponent
-  }
+  },
+  
 
 ];
 

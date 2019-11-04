@@ -29,7 +29,7 @@ export class CreateTaskComponent implements OnInit {
     console.log(this.router.url);
     this._restService.postTask(this.task).subscribe((data: Task)=>{
       this.task = data;
-      this.router.navigate([`/projects/:id/task/list`])
+      this.router.navigate([`/task/list`])
     })
   }
 
