@@ -10,12 +10,16 @@
           <mat-label>Firstname: </mat-label>
           <input type="text" name="firstname" id="firstname" matInput placeholder="Firstname"
             formControlName="firstname" />
+            <mat-error *ngIf="form.controls['firstname'].invalid">{{getErrorMessage('firstname')}}</mat-error>
+
         </mat-form-field>
+
       </section>
       <section>
         <mat-form-field>
           <mat-label>Lastname: </mat-label>
           <input type="text" name="lastname" id="lastname" matInput placeholder="Lastname" formControlName="lastname">
+          <mat-error *ngIf="form.controls['lastname'].invalid">{{getErrorMessage('lastname')}}</mat-error>
         </mat-form-field>
       </section>
 
@@ -23,6 +27,7 @@
         <mat-form-field>
           <mat-label>Email: </mat-label>
           <input type="email" name="email" id="email" matInput placeholder="Email" formControlName="email">
+          <mat-error *ngIf="form.controls['email'].invalid">{{getErrorMessage('email')}}</mat-error>
         </mat-form-field>
       </section>
 
@@ -40,7 +45,7 @@
 
       <section class="btns">
        <div class="click"> <a routerLink="/">Cancel</a></div>    
-        <div class="click"> <button class="click" >Submit</button></div>
+        <div class="click"> <button class="click" type="submit" [disabled]="form.invalid">Submit</button></div>
       </section>
 
     </form>
