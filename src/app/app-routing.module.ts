@@ -16,6 +16,7 @@ import { ListProjectComponent } from './pages/projects/list-project/list-project
 import { ListTaskComponent } from './pages/tasks/list-task/list-task.component';
 import { HomeComponent } from './pages/home/home.component';
 import { DeleteUserComponent } from './pages/users/delete-user/delete-user.component';
+import { ProjectResolver } from './services/project.resolver';
 
 
 
@@ -60,10 +61,14 @@ const routes: Routes = [
     path: 'project/add',
     component: CreateProjectComponent
   },
-
   {
     path: 'project/:id',
     component: EditProjectComponent
+  },
+  {
+    path: 'projects/:id',
+    component: EditProjectComponent,
+    resolve: { project: ProjectResolver }
   },
   {
     path: 'projects',
