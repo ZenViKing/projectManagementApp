@@ -1,77 +1,103 @@
-<section>
-  <h1>Create a project</h1>
-</section>
+<div class="main-div">
+  <mat-card>
+    <h1>Create a project</h1>
+    <mat-card-content>
 
-<!-- Pour Adrien et Tom -->
-<!-- Pour les 'name' avec un trait d'union entre les mots -->
-<!-- Pour les 'id' : en camelCase -->
-<section>
+      <section>
+        <form [formGroup]="form" (submit)="submitForm()">
 
-  <!-- <form action="" method="POST"> -->
-  <form [formGroup]="form" (submit)="submitForm()">
+          <div class="content">
 
-    <div>
+            <div>
+              <mat-form-field>
+                <!-- https://angular.io/guide/form-validation -->
+                <mat-label for="name">Name</mat-label>
+                <input matInput type="text" name="project-name" id="name" placeholder="Name your project"
+                  formControlName="name">
+                <mat-error *ngIf="form.controls['name'].invalid">Choose a name for your project</mat-error>
+              </mat-form-field>
+            </div>
 
-      <div>
-        <label for="name">Name : </label>
-        <input type="text" name="project-name" id="name" placeholder="Name your project" formControlName="name">
-      </div>
+            <div>
+              <mat-form-field>
+                <!-- datePicker -->
+                <!-- https://material.angular.io/components/datepicker/overview -->
+                <input matInput [matDatepicker]="date" placeholder="Choose a starting date" formControlName="date">
+                <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
+                <mat-datepicker #date></mat-datepicker>
+                <mat-error *ngIf="form.controls['date'].invalid">Choose a starting date</mat-error>
+              </mat-form-field>
+            </div>
 
-      <div>
-        <label for="date">Starting date : </label>
-        <input type="datetime" name="date-start" id="date" placeholder="mm/dd/yyyy" formControlName="date">
-      </div>
+            <div>
+              <mat-form-field>
+                <input matInput [matDatepicker]="deadline" placeholder="Choose a deadline" formControlName="deadline">
+                <mat-datepicker-toggle matSuffix [for]="deadline"></mat-datepicker-toggle>
+                <mat-datepicker #deadline></mat-datepicker>
+                <mat-error *ngIf="form.controls['deadline'].invalid">Choose a name for your project</mat-error>
+              </mat-form-field>
+            </div>
 
-      <div>
-        <label for="deadline">Deadline : </label>
-        <input type="datetime" name="date-stop" id="deadline" placeholder="mm/dd/yyyy" formControlName="deadline">
-      </div>
+            <div>
+              <mat-form-field>
+                <mat-label for="time">Estimated time</mat-label>
+                <input matInput type="number" name="time-estimation" id="time" placeholder="42 hours"
+                  formControlName="time">
+                <mat-error *ngIf="form.controls['time'].invalid">Choose the estimated time for your project</mat-error>
+              </mat-form-field>
+            </div>
 
-      <div>
-        <label for="time">Estimated time : </label>
-        <input type="number" name="time-estimation" id="time" placeholder="237 hours" formControlName="time">
-      </div>
+         
 
-    </div>
+          <div>
+            <mat-form-field>
+              <mat-label for="staff">Crew members</mat-label>
+              <mat-select multiple name="crew-members" id="staff" formControlName="staff">
+                <mat-option *ngFor="let user of staff" value="{{user.firstname}} {{user.lastname}}">{{user.firstname}}
+                  {{user.lastname}}</mat-option>
+              </mat-select>
+              <mat-error *ngIf="form.controls['staff'].invalid">Choose at least one crew member</mat-error>
+            </mat-form-field>
+          </div>
 
-    <div>
-      <label for="staff">Crew member(s) : </label>
-      <!-- TODO: ajouter seulement un user existant -->
-      <!-- <select type="text" name="crew-members" id="staff" formControlName="staff"> -->
-      <select type="text" name="crew-members" id="staff" formControlName="staff">
-        <!-- <option value=""></option> -->
-        <option *ngFor="let user of staff">{{user.firstname}} {{user.lastname}}</option>
-      </select>
-    </div>
 
-    <!-- TODO: ne fonctionne pas -->
-    <!-- TODO: afficher le(s) user(s) ajouté(s) -->
-    <!-- <div>
-      <ul>
-        <li>{{project.staff}}</li>
-      </ul>
-    </div> -->
+          <!-- TODO: ? afficher le(s) user(s) ajouté(s) ? -->
 
-    <div>
-      <label for="desc">Description : </label>
-      <textarea name="description-project" id="desc" cols="30" rows="10" placeholder="Describe your project"
-        formControlName="desc"></textarea>
-    </div>
 
-    <div>
-      <label for="inProgress">Is your project already in progress ? :</label>
-      <!-- pour avoir false par default et pas null -->
-      <!-- <input type="checkbox" name="inProgress" value="0" formControlName="inProgress"> -->
-      <input type="checkbox" name="in-progress" id="inProgress" formControlName="inProgress" [class]="isInProgress"
-        (click)="setInProgress()">
-    </div>
+          <div>
+            <label for="desc">Description</label>
+            <textarea name="description-project" id="desc" cols="30" rows="10" placeholder="Describe your project"
+              formControlName="desc"></textarea>
+          </div>
 
-    <div>
-      <!-- https://stackoverflow.com/questions/18407832/how-to-create-a-html-cancel-button-that-redirects-to-a-url -->
-      <a href="http://localhost:4200/">Cancel</a>
-      <button type="submit">Create</button>
-    </div>
+          <div>
+            <label for="inProgress">Is your project already in progress ?</label>
+            <!-- <input type="checkbox" name="inProgress" value="0" formControlName="inProgress"> -->
+            <!-- pour avoir false par default et pas null -->
+            <input type="checkbox" name="in-progress" id="inProgress" formControlName="inProgress"
+              [class]="isInProgress" (click)="setInProgress()"> YES
 
-  </form>
+          </div>
 
-</section>
+          <div>
+            <!-- https://stackoverflow.com/questions/18407832/how-to-create-a-html-cancel-button-that-redirects-to-a-url -->
+            <!--<a href="http://localhost:4200/">Cancel</a>-->
+            <!-- routerLink au lieu de href car angular -->
+            <a routerLink="/">Cancel</a>
+            <!-- <button type="submit">Create</button> -->
+            <button mat-raised-button type="submit" [disabled]="form.invalid">Create project</button>
+          </div>
+
+        
+
+     
+
+</div>
+        
+
+      </form>
+
+    </section>
+  </mat-card-content>
+</mat-card>
+</div>

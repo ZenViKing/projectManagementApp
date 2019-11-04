@@ -14,8 +14,6 @@ import { User } from 'src/app/models/user.model';
 export class CreateProjectComponent implements OnInit {
   project: Project;
   form: FormGroup;
-  // ajouter seulement un user existant
-  // TODO: pour ajouter plusieurs users
   staff: User[]
 
   constructor(private _restService: RestService, private router: Router) { }
@@ -33,6 +31,7 @@ export class CreateProjectComponent implements OnInit {
       this.router.navigate(['/projects'])
     })
   }
+
   ngOnInit() {
     this.form = new FormGroup({
       name: new FormControl(null, [Validators.required]),
@@ -40,7 +39,8 @@ export class CreateProjectComponent implements OnInit {
       deadline: new FormControl(null, [Validators.required]),
       time: new FormControl(null, [Validators.required]),
       staff: new FormControl(null, [Validators.required]),
-      desc: new FormControl(null, [Validators.required]),
+      // desc: new FormControl(null, [Validators.required]),
+      desc: new FormControl(null),
       // pour avoir valeur false si on ne clique pas la checkbox inProgress
       // false à la place de null
       inProgress: new FormControl(false, [Validators.required]),
@@ -50,9 +50,4 @@ export class CreateProjectComponent implements OnInit {
       this.staff = data;
     })
   }
-  // TODO: ajouter seulement un user existant
-  // pour ajouter plusieurs users
-  // onAdd() {
-  //   this.listUsers.push(this.user);
-  // }
 }

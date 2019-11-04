@@ -17,21 +17,35 @@ export class CreateUserComponent implements OnInit {
   constructor(private _restService: RestService, private router: Router) {
   }
 
+
   submitForm() {
     this.user = this.form.value;
     this._restService.postUser(this.user).subscribe((data: User) => {
       this.user = data;
       this.router.navigate(['/users'])
     })
-
   }
 
+  getErrorMessage(field: string): string {
+    const error = {
+      required: 'This field is required',
+      email: 'This field requires a valid email'
+    }
+
+    let returnValue = '';
+
+    Object.keys(this.form.controls[field].errors).map(key => {
+      returnValue += `${error[key]}`
+    })
+
+    return returnValue;
+  }
 
   ngOnInit() {
     this.form = new FormGroup({
       firstname: new FormControl(null, [Validators.required]),
       lastname: new FormControl(null, [Validators.required]),
-      email: new FormControl(null, [Validators.required, Validators.email]),
+      email: new FormControl(null, [Validators.email, Validators.required]),
       fonction: new FormControl(null, [Validators.required])
     })
   }

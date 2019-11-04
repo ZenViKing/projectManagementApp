@@ -4,6 +4,7 @@ import { RestService } from 'src/app/services/rest.service';
 import { Task } from 'src/app/models/task.model';
 import { User } from 'src/app/models/user.model';
 import { Router } from '@angular/router';
+import { Project } from 'src/app/models/project.model';
 
 // import { Task } from 'src/app/models/task.model';
 // import { Router } from '@angular/router';
@@ -25,9 +26,10 @@ export class CreateTaskComponent implements OnInit {
 
   submitForm(){
     this.task = this.form.value;
+    console.log(this.router.url);
     this._restService.postTask(this.task).subscribe((data: Task)=>{
       this.task = data;
-      this.router.navigate(['/task/list'])
+      this.router.navigate([`/projects/:id/task/list`])
     })
   }
 

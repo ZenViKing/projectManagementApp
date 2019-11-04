@@ -1,0 +1,35 @@
+@import '../../../../variables.scss';
+
+.main-div{
+
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:1024px;
+  
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: $vibrant-greenblue !important;
+ }
+
+ ::ng-deep.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: $vibrant-greenblue !important;
+} 
+
+::ng-deep.mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: $pastel-greenblue !important;;
+ }
+
+
+
+ .content{
+
+  justify-content:center;
+  text-align:center;
+ }
+

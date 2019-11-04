@@ -67,86 +67,99 @@ body{
     width: $larger-width;
     font-size: 16px;
     margin:0 auto;
-    
-    
+  
 }
 
-form{
-
-    margin: 0 auto;
-    background-color: $pastelyellow;
-    width: 800px;
-    padding: 20px;
-    border-radius: 5px;
+a{
+    font-family:$titles-font;
 }
 
-//MAIN
-
-.main{
-
-    padding-top: 150px;
-    margin:0 auto;
-    width:$larger-width;
-    display:flex;
-    justify-content:center;
-    
-    
-
-    .right{
-
-        width:800px;
-        background-color:$pastelyellow;
 
 
-    }
+.mat-card-content{
 
-    .left{
-
-        background-color:$pastel-greenblue;
-        height:60vh;
-        width:224px;
-
-        .click{
-            margin-left:50px;
-            margin-top: 50px;
-        }
-    }
-
+   margin: 0 auto;
+   background-color: $pastelyellow;
+   width: 700px;
+   padding: 20px;
+   border-radius: 5px;
 }
 
-.click{
-
-    width:120px;
-    height:40px;
-    border: 1px solid $lightergrey;
-    border-radius: 25px;
+.mat-card{
     background-color:$lightergrey;
+    
+}
+
+
+
+h1{
+        
+    color:$titles;
+    font-size:2.5em;
+    font-family:$titles-font;
+    text-align:center;
+    text-transform:uppercase;
+}
+
+
+
+p{
+    color:$lightgrey;
+    text-align:justify;
+    line-height:1.3em;
+    font-family: 'open_sansregular';
+    
+}
+
+
+
+
+
+// BUTTONS
+
+.click {
+
+    
+    
    
 
     a{  
-        
-        
         color:$titles;
         text-decoration:none;
+        padding: 0.5em 1.2em;
+        background-color:$lightergrey;
+        border-radius:25px;
+        transition: all .3s;
+        
+        
     }
 
-    p{
-        vertical-align:40px;
-    }
-    
-    &:hover{
+   
+ &:hover{
 
-        background-color:$vibrant-greenblue;
-        border: 1px solid $vibrant-greenblue;
-
-        a{
+       
+  a{
             color:$pastelyellow;
+            background-color:$vibrant-greenblue;
+            transition: all .3s;
         }
 
 
     }
     
 }
+
+//FORMS
+
+.main-div{
+
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
 
 //FOOTER
 
@@ -162,7 +175,6 @@ footer{
 
     p{
     text-align: center;
-    font-family: 'open_sansregular';
     color:$lightgrey;
     }
 }

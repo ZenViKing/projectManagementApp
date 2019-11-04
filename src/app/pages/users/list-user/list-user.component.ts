@@ -1,6 +1,10 @@
 import { RestService } from 'src/app/services/rest.service';
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user.model';
+import { Router } from '@angular/router';
+
+
+
 
 @Component({
   selector: 'app-list-user',
@@ -10,29 +14,22 @@ import { User } from 'src/app/models/user.model';
 export class ListUserComponent implements OnInit {
   users: User[];
 
-  constructor(private _restService: RestService) { }
+  constructor(private _restService: RestService, private router:Router) { }
 
-  delUser(id) {
-
-    var r = confirm("Are you sure that you want to delete this user?");
-    if (r == true) {
-      console.log("TEST 2");
-
-    }
-    else {
-      console.log("test 3")
-    }
-
-
-  }
-
-  deleteUser(id) {
-    this._restService.deleteUser(id).subscribe(res => {
-      this._restService.getUsers().subscribe((data: User[]) => {
-        this.users = data;
+  deleteUser(id){
+    var r = confirm('Deleted user ?');
+    if(r == true) {
+      console.log('ok');
+      this._restService.deleteUser(id).subscribe(response => {
+        this._restService.getUsers().subscribe((data: User[]) => {
+          this.users = data;
+        })
       })
-    })
+    } else {
+      console.log('pas ok');
+    }
   }
+
 
   //  delUser(){
   //   var txt;
@@ -51,8 +48,6 @@ export class ListUserComponent implements OnInit {
   ngOnInit() {
     this._restService.getUsers().subscribe((data: User[]) => {
       this.users = data;
-
-
     })
   }
 
