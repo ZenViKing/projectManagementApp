@@ -27,7 +27,7 @@ const routes: Routes = [
   },
 
   //Routes User component 
-    {
+  {
     path: 'users',
     component: ListUserComponent
   },
@@ -38,21 +38,21 @@ const routes: Routes = [
   {
     path: 'user/edit',
     component: EditUserComponent
-  }, 
+  },
   {
     path: 'user/delete/:id',
     component: DeleteUserComponent,
-    resolve:{user:UserResolver}
+    resolve: { user: UserResolver }
 
-  },  
-  {
-    path:'user/:id',
-    component : EditUserComponent
   },
   {
-    path:'users/:id', 
-    component:EditUserComponent, 
-    resolve:{user:UserResolver}
+    path: 'user/:id',
+    component: EditUserComponent
+  },
+  {
+    path: 'users/:id',
+    component: EditUserComponent,
+    resolve: { user: UserResolver }
   },
 
   //Routes Project Components
@@ -62,7 +62,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'project/edit',
+    path: 'project/:id',
     component: EditProjectComponent
   },
   {

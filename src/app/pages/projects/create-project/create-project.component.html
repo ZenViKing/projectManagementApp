@@ -34,7 +34,7 @@
                 <input matInput [matDatepicker]="deadline" placeholder="Choose a deadline" formControlName="deadline">
                 <mat-datepicker-toggle matSuffix [for]="deadline"></mat-datepicker-toggle>
                 <mat-datepicker #deadline></mat-datepicker>
-                <mat-error *ngIf="form.controls['deadline'].invalid">Choose a name for your project</mat-error>
+                <mat-error *ngIf="form.controls['deadline'].invalid">Choose a deadline for your project</mat-error>
               </mat-form-field>
             </div>
 
@@ -47,57 +47,50 @@
               </mat-form-field>
             </div>
 
-         
 
-          <div>
-            <mat-form-field>
-              <mat-label for="staff">Crew members</mat-label>
-              <mat-select multiple name="crew-members" id="staff" formControlName="staff">
-                <mat-option *ngFor="let user of staff" value="{{user.firstname}} {{user.lastname}}">{{user.firstname}}
-                  {{user.lastname}}</mat-option>
-              </mat-select>
-              <mat-error *ngIf="form.controls['staff'].invalid">Choose at least one crew member</mat-error>
-            </mat-form-field>
+
+            <div>
+              <mat-form-field>
+                <mat-label for="staff">Crew members</mat-label>
+                <mat-select multiple name="crew-members" id="staff" formControlName="staff">
+                  <mat-option *ngFor="let user of staff" value="{{user.firstname}} {{user.lastname}}">{{user.firstname}}
+                    {{user.lastname}}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="form.controls['staff'].invalid">Choose at least one crew member</mat-error>
+              </mat-form-field>
+            </div>
+
+
+            <!-- TODO: ? afficher le(s) user(s) ajouté(s) ? -->
+
+
+            <div>
+              <label for="desc">Description</label>
+              <textarea name="description-project" id="desc" cols="30" rows="10" placeholder="Describe your project"
+                formControlName="desc"></textarea>
+            </div>
+
+            <div>
+              <label for="inProgress">Is your project already in progress ?</label>
+              <!-- <input type="checkbox" name="inProgress" value="0" formControlName="inProgress"> -->
+              <!-- pour avoir false par default et pas null -->
+              <input type="checkbox" name="in-progress" id="inProgress" formControlName="inProgress"
+                [class]="isInProgress" (click)="setInProgress()"> YES
+
+            </div>
+
+            <div>
+              <!-- https://stackoverflow.com/questions/18407832/how-to-create-a-html-cancel-button-that-redirects-to-a-url -->
+              <!--<a href="http://localhost:4200/">Cancel</a>-->
+              <!-- routerLink au lieu de href car angular -->
+              <a routerLink="/">Cancel</a>
+              <!-- <button type="submit">Create</button> -->
+              <button mat-raised-button type="submit" [disabled]="form.invalid">Create project</button>
+            </div>
+
           </div>
-
-
-          <!-- TODO: ? afficher le(s) user(s) ajouté(s) ? -->
-
-
-          <div>
-            <label for="desc">Description</label>
-            <textarea name="description-project" id="desc" cols="30" rows="10" placeholder="Describe your project"
-              formControlName="desc"></textarea>
-          </div>
-
-          <div>
-            <label for="inProgress">Is your project already in progress ?</label>
-            <!-- <input type="checkbox" name="inProgress" value="0" formControlName="inProgress"> -->
-            <!-- pour avoir false par default et pas null -->
-            <input type="checkbox" name="in-progress" id="inProgress" formControlName="inProgress"
-              [class]="isInProgress" (click)="setInProgress()"> YES
-
-          </div>
-
-          <div>
-            <!-- https://stackoverflow.com/questions/18407832/how-to-create-a-html-cancel-button-that-redirects-to-a-url -->
-            <!--<a href="http://localhost:4200/">Cancel</a>-->
-            <!-- routerLink au lieu de href car angular -->
-            <a routerLink="/">Cancel</a>
-            <!-- <button type="submit">Create</button> -->
-            <button mat-raised-button type="submit" [disabled]="form.invalid">Create project</button>
-          </div>
-
-        
-
-     
-
-</div>
-        
-
-      </form>
-
-    </section>
-  </mat-card-content>
-</mat-card>
+        </form>
+      </section>
+    </mat-card-content>
+  </mat-card>
 </div>
