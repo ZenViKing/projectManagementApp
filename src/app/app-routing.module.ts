@@ -1,24 +1,26 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { UserResolver } from './services/user.resolver'
 import { CreateUserComponent } from './pages/users/create-user/create-user.component'
 import { ListUserComponent } from './pages/users/list-user/list-user.component';
 import { EditUserComponent } from './pages/users/edit-user/edit-user.component'
 import { DeleteUserComponent } from './pages/users/delete-user/delete-user.component';
-import { UserResolver } from './services/user.resolver'
+
 import { UserDeleterResolver } from './services/userDeleter.resolver'
 
+import { ProjectResolver } from './services/project.resolver';
 import { CreateProjectComponent } from './pages/projects/create-project/create-project.component';
 import { EditProjectComponent } from './pages/projects/edit-project/edit-project.component';
 import { ListProjectComponent } from './pages/projects/list-project/list-project.component';
+
 import { TaskResolver } from './services/task.resolver';
-
-
 import { CreateTaskComponent } from './pages/tasks/create-task/create-task.component';
 import { ListTaskComponent } from './pages/tasks/list-task/list-task.component';
 import { EditTaskComponent } from './pages/tasks/edit-task/edit-task.component';
 
 import { HomeComponent } from './pages/home/home.component';
+
 
 
 
@@ -64,10 +66,14 @@ const routes: Routes = [
     path: 'project/add',
     component: CreateProjectComponent
   },
-
   {
     path: 'project/:id',
     component: EditProjectComponent
+  },
+  {
+    path: 'projects/:id',
+    component: EditProjectComponent,
+    resolve: { project: ProjectResolver }
   },
   {
     path: 'projects',
@@ -87,7 +93,6 @@ const routes: Routes = [
       task: TaskResolver
     }
   },
- 
   {
     path: 'task/list',
     component: ListTaskComponent
