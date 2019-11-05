@@ -30,9 +30,9 @@
           </mat-form-field>
         </section>
   
-        <section>
-          <mat-label>Choose a function below: </mat-label>
-          <mat-select name="fonction" id="fonction-mat-" formControlName="fonction">
+        <section class="selectBox">
+          <mat-label> Function: </mat-label>
+          <mat-select name="fonction" id="fonction-mat-" formControlName="fonction" matInput placeholder="Choose below">
             <!-- <mat-option value="">--Choose below--</mat-option> -->
             <mat-option value="Project Manager">Project Manager</mat-option>
             <mat-option value="Front End">Front End</mat-option>
@@ -42,10 +42,10 @@
           </mat-select>
         </section>
   
-        <section class="btns">
+        <div class="containerbtns"><section class="btns">
             <div class="click"> <a routerLink="/">Cancel</a></div>    
              <div class="click"> <button class="click" >Submit</button></div>
-           </section>
+           </section></div>
        
       </form>
     </section>

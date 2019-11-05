@@ -1,30 +1,50 @@
 @import '../../../../variables.scss';
 
-h1{
-color:$titles;
-font-size:2.5em;
-font-family: $titles-font;
-text-align: center;
-text-transform: uppercase;
+
+//Rajout par tom
+.selectBox{
+    border: 1px solid;
+    margin : 0 auto;
+    width:180px;
+    padding:8px 0px;
+    background-color:$vibrant-greenblue;
+    color: white;
+    border-radius:0px 0px 5px 5px;
+    font-weight: 500;
 }
+
+// mat-option {
+//   }
+  
+
 
 form{
     text-align: center;
-    // width: 80%;
+    width: 100%;
+    margin : 0 auto;
 }
 
 .btns{
     display:flex;
-    justify-content: space-around;
+    justify-content:  space-between;  ;
     padding-top: 25px;
+    padding-bottom:25px;
 }
 
+.containerbtns{
 
+    width:20vw;
+    margin: 0 auto;
+
+
+    
+}
 
 .btns button{
     margin-top:-15px;
 
 }
+
 .click {
     
 button{
@@ -40,7 +60,7 @@ font-family:$titles-font;
         text-decoration:none;
         padding: 1em 1.5em;
         background-color:$lightergrey;
-        border-radius:25px;
+        border-radius:15px;
         transition: all .3s;
         
         
@@ -48,8 +68,6 @@ font-family:$titles-font;
 
    
  &:hover{
-
-       
   a, button{
             color:$pastelyellow;
             background-color:$vibrant-greenblue;

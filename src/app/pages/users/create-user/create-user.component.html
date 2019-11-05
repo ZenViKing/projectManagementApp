@@ -1,7 +1,7 @@
 <div class="main-div">
   <mat-card>
   <mat-card-content>
-    <h1>Let's create an user!</h1>
+   <section> <h1>Let's create an user !</h1></section>
 
     <form [formGroup]="form" (submit)="submitForm()">
       <section>
@@ -43,10 +43,10 @@
         </mat-select>
       </section>
 
-      <section class="btns">
+      <div class="containerbtns"><section class="btns">
        <div class="click"> <a routerLink="/">Cancel</a></div>    
         <div class="click"> <button class="click" type="submit" [disabled]="form.invalid">Submit</button></div>
-      </section>
+      </section></div>
 
     </form>
 
