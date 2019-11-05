@@ -5,5 +5,8 @@
         {{task.desc}}
         {{task.assignedUsers}}
         {{task.status}}
+        <button routerLink="/task/edit/{{task._id}}">Edit</button>
+        <button (click)="deleteTask(task._id)">delete</button>
+        {{task._id}}
     </li>
 </ul>
