@@ -60,14 +60,14 @@
                     cols="30"
                     rows="10"
                     formControlName="desc"
-                    value="description here...">
+                    value="{{task.desc}}">
         </textarea>
         </mat-form-field>
         </div>
 
         <div>
             <button mat-raised-button type="submit" [disabled]="!form.valid">Edit task</button>
-            <a routerLink="/task/list">Cancel</a>
+            <a routerLink="/tasks">Cancel</a>
         </div>
     
     </form>

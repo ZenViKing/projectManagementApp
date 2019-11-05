@@ -24,7 +24,8 @@ export class EditTaskComponent implements OnInit {
       this.task = this.form.value;
       this._restService.updateTask(this.task).subscribe((data: Task)=>{
         this.task = data;
-        this.router.navigate(['/task/list']);
+        this.router.navigate(['/tasks']);
+        // this.router.navigate(['/tasks/']);
       })
     }
 
@@ -59,7 +60,7 @@ export class EditTaskComponent implements OnInit {
     this.route.data.subscribe(data => {
       this.form.setValue(data.task);
       this.task = data.task;
-      console.log(this.task);
+      console.log(this.task._id);
     });
   }
 

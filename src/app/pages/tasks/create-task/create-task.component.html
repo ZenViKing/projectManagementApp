@@ -60,14 +60,16 @@
                     cols="30"
                     rows="10"
                     formControlName="desc"
-                    value="description here...">
+                    value="{{desc}}"
+                    (click)="clear()">
+                    
         </textarea>
         </mat-form-field>
         </div>
-
+        
         <div>
             <button mat-raised-button type="submit" [disabled]="!form.valid">Create task</button>
-            <button mat-raised-button type="submit">Cancel</button>
+            <a routerLink="/">Cancel</a>    
         </div>
     
     </form>
