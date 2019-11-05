@@ -87,23 +87,23 @@ const routes: Routes = [
   },
 
   {
-    path: 'task/edit/:id',
+    path: 'tasks/edit/:id',
     component: EditTaskComponent,
     resolve:{
       task: TaskResolver
     }
   },
   {
-    path: 'task/list',
+    path: 'tasks',
     component: ListTaskComponent
-  },
-  {
-    path: 'task/:id',
-    component: EditTaskComponent,
-    resolve:{
-      task: TaskResolver
-    }
   }
+  // {
+  //   path: 'task/:id',
+  //   component: EditTaskComponent,
+  //   resolve:{
+  //     task: TaskResolver
+  //   }
+  // }
   
 
 ];
