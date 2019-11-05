@@ -2,7 +2,7 @@
 <!-- TODO: validators -->
 <div class="main-div">
   <mat-card>
-    <h1>Update a project</h1>
+    <h1>Edit a project</h1>
     <mat-card-content>
 
       <section>
@@ -15,7 +15,8 @@
                 <!-- https://angular.io/guide/form-validation -->
                 <mat-label for="name">Name</mat-label>
                 <input matInput type="text" name="project-name" id="name" formControlName="name">
-                <mat-error *ngIf="form.controls['name'].invalid">Choose a name for your project</mat-error>
+                <!-- <mat-error *ngIf="form.controls['name'].invalid">Choose a name for your project</mat-error> -->
+                <mat-error *ngIf="form.controls['name'].invalid">{{getErrorMessage('name')}}</mat-error>
               </mat-form-field>
             </div>
 
@@ -26,7 +27,8 @@
                 <input matInput [matDatepicker]="date" formControlName="date">
                 <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
                 <mat-datepicker #date></mat-datepicker>
-                <mat-error *ngIf="form.controls['date'].invalid">Choose a starting date</mat-error>
+                <!-- <mat-error *ngIf="form.controls['date'].invalid">Choose a starting date</mat-error> -->
+                <mat-error *ngIf="form.controls['date'].invalid">{{getErrorMessage('date')}}</mat-error>
               </mat-form-field>
             </div>
 
@@ -35,7 +37,8 @@
                 <input matInput [matDatepicker]="deadline" formControlName="deadline">
                 <mat-datepicker-toggle matSuffix [for]="deadline"></mat-datepicker-toggle>
                 <mat-datepicker #deadline></mat-datepicker>
-                <mat-error *ngIf="form.controls['deadline'].invalid">Choose a name for your project</mat-error>
+                <!-- <mat-error *ngIf="form.controls['deadline'].invalid">Choose a name for your project</mat-error> -->
+                <mat-error *ngIf="form.controls['deadline'].invalid">{{getErrorMessage('deadline')}}</mat-error>
               </mat-form-field>
             </div>
 
@@ -43,7 +46,8 @@
               <mat-form-field>
                 <mat-label for="time">Estimated time</mat-label>
                 <input matInput type="number" name="time-estimation" id="time" formControlName="time">
-                <mat-error *ngIf="form.controls['time'].invalid">Choose the estimated time for your project</mat-error>
+                <!-- <mat-error *ngIf="form.controls['time'].invalid">Choose the estimated time for your project</mat-error> -->
+                <mat-error *ngIf="form.controls['time'].invalid">{{getErrorMessage('time')}}</mat-error>
               </mat-form-field>
             </div>
 
@@ -58,7 +62,8 @@
                   <mat-option *ngFor="let user of staff" value="{{user.firstname}} {{user.lastname}}">{{user.firstname}}
                     {{user.lastname}}</mat-option>
                 </mat-select>
-                <mat-error *ngIf="form.controls['staff'].invalid">Choose at least one crew member</mat-error>
+                <!-- <mat-error *ngIf="form.controls['staff'].invalid">Choose at least one crew member</mat-error> -->
+                <mat-error *ngIf="form.controls['staff'].invalid">{{getErrorMessage('staff')}}</mat-error>
               </mat-form-field>
             </div>
 
@@ -82,7 +87,7 @@
 
             <div>
               <a routerLink="/">Cancel</a>
-              <button mat-raised-button type="submit" [disabled]="form.invalid">Create project</button>
+              <button mat-raised-button type="submit" [disabled]="form.invalid">Edit</button>
             </div>
 
           </div>
