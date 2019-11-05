@@ -12,7 +12,9 @@ ul{
     width:100%;
     top: 0; left: 0;
     
-   
+   .addBtn{ 
+       color:$vibrant-greenblue;
+   }
     
 
 }
@@ -26,7 +28,7 @@ ul{
 }
 
 li{
-    padding-right: 50px;
+    padding-right: 20px;
     list-style: none;
     
 
