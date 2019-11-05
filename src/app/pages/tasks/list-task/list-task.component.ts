@@ -9,6 +9,13 @@ import {RestService} from 'src/app/services/rest.service';
 export class ListTaskComponent implements OnInit {
   tasks: Task[];
   constructor(private _restService: RestService) {}
+  deleteTask(id){
+    this._restService.deleteTask(id).subscribe(res=>{
+      this._restService.getTasks().subscribe((data: Task[])=>{
+        this.tasks = data;
+      });
+    })
+  }
 
   ngOnInit() {
     this._restService.getTasks().subscribe((data: Task[])=>{
