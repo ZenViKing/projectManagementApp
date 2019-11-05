@@ -1,76 +1,58 @@
 <mat-card>
-    <mat-card-content>
-<section>
-    <h2>Edit task</h2>
-</section>
-<section>
-    <form  (submit)="submitForm()" [formGroup]="form">
+  <mat-card-content>
+    <section>
+      <h2>Edit task</h2>
+    </section>
+    <section>
+      <form (submit)="submitForm()" [formGroup]="form">
 
         <div>
-        <mat-form-field>
-        <mat-label for="name">Task name : </mat-label>
-        <input 
-            matInput
-            type="text"
-            name="task-name"
-            id="name"
-            placeholder="task name"
-            formControlName="name"
-            >
+          <mat-form-field>
+            <mat-label for="name">Task name : </mat-label>
+            <input matInput type="text" name="task-name" id="name" placeholder="task name" formControlName="name">
             <mat-error *ngIf="form.controls['name'].invalid">{{getErrorMessage('name')}}</mat-error>
-            
-        </mat-form-field>
+
+          </mat-form-field>
         </div>
-<!-- ---------------------------- mat radio ---------------------------- -->
+        <!-- ---------------------------- mat radio ---------------------------- -->
         <div>
-        <mat-label for="status">Priority status : </mat-label>
-        <mat-radio-group formControlName="status">
+          <mat-label for="status">Priority status : </mat-label>
+          <mat-radio-group formControlName="status">
             <mat-label for="lowPriority">low </mat-label>
-            <mat-radio-button id="lowPiority"  name="lol" value="1" ></mat-radio-button>
+            <mat-radio-button id="lowPiority" name="lol" value="1"></mat-radio-button>
             <mat-label for="mediumPiority">medium </mat-label>
-            <mat-radio-button id="mediumPiority"  name="lol" value="2"></mat-radio-button>
+            <mat-radio-button id="mediumPiority" name="lol" value="2"></mat-radio-button>
             <mat-label for="hightPiority">hight </mat-label>
-            <mat-radio-button id="hightPiority"  name="lol" value="3"></mat-radio-button>
-            <mat-error *ngIf="form.controls['status'].invalid && ['status'].touched">{{getErrorMessage('status')}}</mat-error>
-        </mat-radio-group>
+            <mat-radio-button id="hightPiority" name="lol" value="3"></mat-radio-button>
+            <mat-error *ngIf="form.controls['status'].invalid && ['status'].touched">{{getErrorMessage('status')}}
+            </mat-error>
+          </mat-radio-group>
         </div>
-<!-- ------------------------- mat assigned users ------------------------- -->
+        <!-- ------------------------- mat assigned users ------------------------- -->
         <div>
-        <mat-form-field>
-        <mat-label for="assignedUsers">Choose users to assign : </mat-label>
-        <mat-select 
-                multiple
-                name="assignedUsers"
-                id="assignedUsers"
-                formControlName="assignedUsers"
-                >
-                <mat-option *ngFor="let user of users" value="{{user.firstname}}">{{user.firstname}}</mat-option>
-        </mat-select>
-        </mat-form-field>
-        </div>
-        
-        <div>
-        <mat-form-field>
-        <mat-label for="desc">Task description : </mat-label>
-        <textarea
-                    matInput
-                    name="desc"
-                    id="description"
-                    placeholder="Description :"
-                    cols="30"
-                    rows="10"
-                    formControlName="desc"
-                    value="{{task.desc}}">
-        </textarea>
-        </mat-form-field>
+          <mat-form-field>
+            <mat-label for="assignedUsers">Choose users to assign : </mat-label>
+            <mat-select multiple name="assignedUsers" id="assignedUsers" formControlName="assignedUsers">
+              <mat-option *ngFor="let user of users" value="{{user.firstname}}">{{user.firstname}}</mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
 
         <div>
-            <button mat-raised-button type="submit" [disabled]="!form.valid">Edit task</button>
-            <a routerLink="/tasks">Cancel</a>
+          <mat-form-field>
+            <mat-label for="desc">Task description : </mat-label>
+            <textarea matInput name="desc" id="description" placeholder="Description :" cols="30" rows="10"
+              formControlName="desc" value="{{task.desc}}">
+        </textarea>
+          </mat-form-field>
         </div>
-    
-    </form>
-</section>
-</mat-card-content>
+
+        <div>
+          <button mat-raised-button type="submit" [disabled]="!form.valid">Edit task</button>
+          <a routerLink="/tasks">Cancel</a>
+        </div>
+
+      </form>
+    </section>
+  </mat-card-content>
 </mat-card>

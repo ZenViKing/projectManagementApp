@@ -41,8 +41,13 @@
             <div>
               <mat-form-field>
                 <mat-label for="time">Estimated time</mat-label>
-                <input matInput type="number" name="time-estimation" id="time" placeholder="42 hours"
-                  formControlName="time">
+                <input matInput type="number" name="time-estimation" id="time" placeholder="42" formControlName="time">
+                <!-- pattern juste pour des chiffres -->
+                <!-- https://www.npmjs.com/package/ng-pattern-restrict -->
+                <!-- <input matInput type="number" name="time-estimation" id="time" placeholder="42" formControlName="time"
+                  pattern="[0-9]+" ng-pattern-restrict> -->
+                <!-- https://angular.io/api/forms/PatternValidator -->
+                <!-- https://angular-templates.io/tutorials/about/angular-forms-and-validations -->
                 <mat-error *ngIf="form.controls['time'].invalid">Choose the estimated time for your project</mat-error>
               </mat-form-field>
             </div>

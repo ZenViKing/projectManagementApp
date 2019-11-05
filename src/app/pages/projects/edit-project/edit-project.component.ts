@@ -39,10 +39,10 @@ export class EditProjectComponent implements OnInit {
       inProgress: new FormControl(false, [Validators.required]),
     })
     // pour avoir liste users existants
-    // this._restService.getUsers().subscribe((data: User[]) => {
-    //   this.staff = 'data';
-    //   console.log(data)
-    // });
+    this._restService.getUsers().subscribe((data: User[]) => {
+      this.staff = data;
+      console.log(data)
+    });
     // console.log(Project);
 
     this.route.data.subscribe(data => {

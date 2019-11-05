@@ -39,7 +39,6 @@ export class CreateProjectComponent implements OnInit {
       deadline: new FormControl(null, [Validators.required]),
       time: new FormControl(null, [Validators.required]),
       staff: new FormControl(null, [Validators.required]),
-      // desc: new FormControl(null, [Validators.required]),
       desc: new FormControl(null),
       // pour avoir valeur false si on ne clique pas la checkbox inProgress
       // false à la place de null
