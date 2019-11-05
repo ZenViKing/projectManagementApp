@@ -2,20 +2,24 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { CreateUserComponent } from './pages/users/create-user/create-user.component'
+import { ListUserComponent } from './pages/users/list-user/list-user.component';
 import { EditUserComponent } from './pages/users/edit-user/edit-user.component'
+import { DeleteUserComponent } from './pages/users/delete-user/delete-user.component';
 import { UserResolver } from './services/user.resolver'
 import { UserDeleterResolver } from './services/userDeleter.resolver'
 
 import { CreateProjectComponent } from './pages/projects/create-project/create-project.component';
 import { EditProjectComponent } from './pages/projects/edit-project/edit-project.component';
+import { ListProjectComponent } from './pages/projects/list-project/list-project.component';
+import { TaskResolver } from './services/task.resolver';
+
 
 import { CreateTaskComponent } from './pages/tasks/create-task/create-task.component';
-import { EditTaskComponent } from './pages/tasks/edit-task/edit-task.component';
-import { ListUserComponent } from './pages/users/list-user/list-user.component';
-import { ListProjectComponent } from './pages/projects/list-project/list-project.component';
 import { ListTaskComponent } from './pages/tasks/list-task/list-task.component';
+import { EditTaskComponent } from './pages/tasks/edit-task/edit-task.component';
+
 import { HomeComponent } from './pages/home/home.component';
-import { DeleteUserComponent } from './pages/users/delete-user/delete-user.component';
+
 
 
 
@@ -77,14 +81,24 @@ const routes: Routes = [
   },
 
   {
-    path: 'task/edit',
-    component: EditTaskComponent
+    path: 'task/edit/:id',
+    component: EditTaskComponent,
+    resolve:{
+      task: TaskResolver
+    }
   },
  
   {
     path: 'task/list',
     component: ListTaskComponent
   },
+  {
+    path: 'task/:id',
+    component: EditTaskComponent,
+    resolve:{
+      task: TaskResolver
+    }
+  }
   
 
 ];

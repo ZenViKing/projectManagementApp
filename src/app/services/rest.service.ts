@@ -44,7 +44,7 @@ export class RestService {
     return this.http.get(`http://localhost:8001/api/tasks`).pipe(map(data=>data as Task[]));
   }
   getTaskByid(id: number): Observable<Task>{
-    return this.http.get(`http://localhost:8001/tasks/${id}`).pipe(map(data=>data as Task));
+    return this.http.get(`http://localhost:8001/api/tasks/${id}`).pipe(map(data=>data as Task));
   }
   postTask(task: Task): Observable<Task>{
     const headers = new HttpHeaders().set('content-type','application/json');
@@ -56,7 +56,8 @@ export class RestService {
   }
   updateTask(task: Task): Observable<Task>{
     const headers = new HttpHeaders().set('content-type','application/json');
-    return this.http.patch(`http://localhost:8001/tasks/${task._id}`,{headers});
+    console.log("id : " + task._id);
+    return this.http.patch(`http://localhost:8001/api/tasks/${task._id}`,task,{headers});
   }
 
 
