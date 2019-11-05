@@ -27,6 +27,7 @@ export class EditProjectComponent implements OnInit {
   ngOnInit() {
     this.form = new FormGroup({
       _id: new FormControl(Validators.required),
+      __v: new FormControl(Validators.required),
       name: new FormControl(null, [Validators.required]),
       date: new FormControl(null, [Validators.required]),
       deadline: new FormControl(null, [Validators.required]),
@@ -38,12 +39,17 @@ export class EditProjectComponent implements OnInit {
       inProgress: new FormControl(false, [Validators.required]),
     })
     // pour avoir liste users existants
-    this._restService.getUsers().subscribe((data: User[]) => {
-      this.staff = data;
-    });
+    // this._restService.getUsers().subscribe((data: User[]) => {
+    //   this.staff = 'data';
+    //   console.log(data)
+    // });
+    // console.log(Project);
+
     this.route.data.subscribe(data => {
-      this.form.setValue(data.project);
-      this.project = data.project
+      console.log(data);
+
+      this.form.setValue(data.project.projects);
+      this.project = data.project.projects
     });
   }
 

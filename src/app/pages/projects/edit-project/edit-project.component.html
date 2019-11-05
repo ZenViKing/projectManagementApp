@@ -14,7 +14,7 @@
               <mat-form-field>
                 <!-- https://angular.io/guide/form-validation -->
                 <mat-label for="name">Name</mat-label>
-                <input matInput type="text" name="project-name" id="name" value={{name}} formControlName="name">
+                <input matInput type="text" name="project-name" id="name" formControlName="name">
                 <mat-error *ngIf="form.controls['name'].invalid">Choose a name for your project</mat-error>
               </mat-form-field>
             </div>
@@ -50,6 +50,8 @@
 
 
             <div>
+              <!-- TODO:trouver solution afficher éléments déja cochés -->
+              <!-- https://stackoverflow.com/questions/50614991/angular-mat-select-multiple-selectionchange-finding-which-option-was-changed -->
               <mat-form-field>
                 <mat-label for="staff">Crew members</mat-label>
                 <mat-select multiple name="crew-members" id="staff" formControlName="staff">
