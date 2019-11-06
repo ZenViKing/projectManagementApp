@@ -10,6 +10,8 @@
   
 }
 
+
+
 form{
   text-align: center;
   width: 100%;
@@ -32,21 +34,24 @@ form{
  }
 
 
-
+ .mat-card-content{
+  width: 50vw;
+  height: 50vh;
+  overflow: scroll;
+}
 
 
  .click {
    
     
   button{
-  box-shadow:none;
-  border:0 none;
-  outline:0;
-  font-family:$titles-font;
-  }
+    box-shadow:none;
+    border:0 none;
+    outline:0;
+    font-family:$titles-font;
+    }
   
-  
-      a, button{  
+      a{  
           color:$titles;
           text-decoration:none;
           padding: 1em 1.5em;
@@ -87,7 +92,31 @@ form{
   padding-bottom:25px;
 }
 
+textarea {
+  width: 60%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+  margin-bottom:40px;
+  margin-top:40px;
+}
 
+
+
+
+.desc{
+  display:inline-block;
+  vertical-align: top;
+  width:50vw;
+  text-align:center;
+  
+ 
+  
+}
 
   
 

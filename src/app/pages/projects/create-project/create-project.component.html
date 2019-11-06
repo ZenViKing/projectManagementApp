@@ -80,8 +80,8 @@
 
 
             <div>
-              <label for="desc">Description</label>
-              <textarea name="description-project" id="desc" cols="30" rows="10" placeholder="Describe your project"
+              <mat-label for="desc" class="desc">Description</mat-label>
+              <textarea name="description-project" id="desc" cols="20" rows="3" placeholder="Describe your project"
                 formControlName="desc"></textarea>
             </div>
 
@@ -106,8 +106,8 @@
           
 
           <div class="containerbtns"><section class="btns">
-            <div class="click"> <a routerLink="/">Cancel</a></div>    
-             <div class="click"> <button class="click" type="submit" [disabled]="form.invalid">Create project</button></div>
+            <div class="click"> <a routerLink="/">Cancel</a> </div> 
+            <div class="click"> <button type="submit" [disabled]="form.invalid">Create project</button></div>
            </section></div>
         </form>
       </section>
