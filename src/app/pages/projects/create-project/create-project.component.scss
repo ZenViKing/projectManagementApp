@@ -10,6 +10,12 @@
   
 }
 
+form{
+  text-align: center;
+  width: 100%;
+  margin : 0 auto;
+}
+
 ::ng-deep .mat-focused .mat-form-field-label {
   /*change color of label*/
   color: $vibrant-greenblue !important;
@@ -27,9 +33,61 @@
 
 
 
- .content{
 
-  justify-content:center;
-  text-align:center;
- }
+
+ .click {
+   
+    
+  button{
+  box-shadow:none;
+  border:0 none;
+  outline:0;
+  font-family:$titles-font;
+  }
+  
+  
+      a, button{  
+          color:$titles;
+          text-decoration:none;
+          padding: 1em 1.5em;
+          background-color:$lightergrey;
+          border-radius:15px;
+          transition: all .3s;
+          
+          
+      }
+  
+     
+   &:hover{
+  
+         
+    a, button{
+              color:$pastelyellow;
+              background-color:$vibrant-greenblue;
+              transition: all .3s;
+          }
+  
+  
+      }
+  }    
+
+  .containerbtns{
+
+    width:20vw;
+    margin: 0 auto;
+
+
+}
+
+
+.btns{
+  display:flex;
+  justify-content: space-around;
+  padding-top: 45px;
+  padding-bottom:25px;
+}
+
+
+
+  
 
