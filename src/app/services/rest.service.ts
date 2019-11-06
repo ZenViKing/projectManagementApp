@@ -40,24 +40,25 @@ export class RestService {
 
 
 
-  getTasks(): Observable<Task[]>{
-    return this.http.get(`http://localhost:8001/api/tasks`).pipe(map(data=>data as Task[]));
+  getTasks(): Observable<Task[]> {
+    console.log('test')
+    return this.http.get(`http://localhost:8001/api/tasks`).pipe(map(data => data as Task[]));
   }
-  getTaskByid(id: number): Observable<Task>{
-    return this.http.get(`http://localhost:8001/api/tasks/${id}`).pipe(map(data=>data as Task));
+  getTaskByid(id: number): Observable<Task> {
+    return this.http.get(`http://localhost:8001/api/tasks/${id}`).pipe(map(data => data as Task));
   }
-  postTask(task: Task): Observable<Task>{
-    const headers = new HttpHeaders().set('content-type','application/json');
-    return this.http.post(`http://localhost:8001/api/tasks`,task,{headers});
+  postTask(task: Task): Observable<Task> {
+    const headers = new HttpHeaders().set('content-type', 'application/json');
+    return this.http.post(`http://localhost:8001/api/tasks`, task, { headers });
   }
-  deleteTask(id: number): Observable<Task>{
-    const headers = new HttpHeaders().set('content-type','application/json');
-    return this.http.delete(`http://localhost:8001/api/tasks/${id}`,{headers});
+  deleteTask(id: number): Observable<Task> {
+    const headers = new HttpHeaders().set('content-type', 'application/json');
+    return this.http.delete(`http://localhost:8001/api/tasks/${id}`, { headers });
   }
-  updateTask(task: Task): Observable<Task>{
-    const headers = new HttpHeaders().set('content-type','application/json');
+  updateTask(task: Task): Observable<Task> {
+    const headers = new HttpHeaders().set('content-type', 'application/json');
     console.log("id : " + task._id);
-    return this.http.patch(`http://localhost:8001/api/tasks/${task._id}`,task,{headers});
+    return this.http.patch(`http://localhost:8001/api/tasks/${task._id}`, task, { headers });
   }
 
 

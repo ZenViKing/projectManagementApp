@@ -32,6 +32,22 @@ export class CreateProjectComponent implements OnInit {
     })
   }
 
+  getErrorMessage(field: string): string {
+    const error = {
+      required: 'This field is required',
+      // time: ['', [Validators.pattern('^[0-9]+')]]
+      // staff: 'Assign at least one user'
+    }
+
+    let returnValue = '';
+
+    Object.keys(this.form.controls[field].errors).map(key => {
+      returnValue += `${error[key]}`
+    })
+
+    return returnValue;
+  }
+
   ngOnInit() {
     this.form = new FormGroup({
       name: new FormControl(null, [Validators.required]),
@@ -39,7 +55,6 @@ export class CreateProjectComponent implements OnInit {
       deadline: new FormControl(null, [Validators.required]),
       time: new FormControl(null, [Validators.required]),
       staff: new FormControl(null, [Validators.required]),
-      // desc: new FormControl(null, [Validators.required]),
       desc: new FormControl(null),
       // pour avoir valeur false si on ne clique pas la checkbox inProgress
       // false à la place de null

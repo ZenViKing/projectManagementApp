@@ -28,7 +28,7 @@
 <div class="main">
     <section class="left">
         <div class="flex-button-l">
-            <div class="click"><a href="">PROJECT LIST</a></div>
+            <div class="click"><a routerLink="./projects">PROJECT LIST</a></div>
         </div>
         <mat-list *ngFor='let project of projects' class="list">
             <mat-list-item>
@@ -57,8 +57,8 @@
            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium consequatur quasi nulla asperiores soluta rem, sequi voluptas deleniti rerum iusto libero explicabo doloribus dolores in non, commodi distinctio totam odio aperiam. Suscipit neque quam a quod fuga ex earum officia?</p>
         </div>
         <div class="flex-button">
-            <div class="click"><a href="">CREATE PROJECT</a></div>
-            <div class="click"><a href="">CREATE USER</a></div>
+            <div class="click"><a routerLink="./project/add" title="Project list">CREATE PROJECT</a></div>
+            <div class="click"><a routerLink="./user/add">CREATE USER</a></div>
         </div>
     </section>
 </div>
