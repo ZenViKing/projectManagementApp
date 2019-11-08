@@ -22,6 +22,7 @@ import { EditTaskComponent } from './pages/tasks/edit-task/edit-task.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { LoginComponent } from './pages/login/login.component';
+import { IdProjectComponent } from './pages/projects/id-project/id-project.component';
 
 
 
@@ -82,6 +83,11 @@ const routes: Routes = [
     path: 'projects/:id',
     component: EditProjectComponent,
     resolve: { project: ProjectResolver }
+  },
+  {
+    path: 'project/:id/tasks',
+    component: IdProjectComponent,
+    resolve: {project: ProjectResolver}
   },
   {
     path: 'projects',

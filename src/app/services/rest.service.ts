@@ -18,7 +18,7 @@ export class RestService {
   listProjects(): Observable<Project[]> {
     return this.http.get('http://localhost:8001/api/projects/').pipe(map(data => data as Project[]));
   }
-  getProjectByid(id: number): Observable<Project> {
+  getProjectByid(id: any): Observable<Project> {
     // return this.http.get(`http://localhost:8001/api/projects/${id}`).pipe(map(data => data as Task));
     return this.http.get(`http://localhost:8001/api/projects/${id}`).pipe(map(data => data as Project));
   }
