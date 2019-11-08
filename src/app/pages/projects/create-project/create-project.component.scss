@@ -10,6 +10,14 @@
   
 }
 
+
+
+form{
+  text-align: center;
+  width: 100%;
+  margin : 0 auto;
+}
+
 ::ng-deep .mat-focused .mat-form-field-label {
   /*change color of label*/
   color: $vibrant-greenblue !important;
@@ -26,10 +34,89 @@
  }
 
 
+ .mat-card-content{
+  width: 50vw;
+  height: 50vh;
+  overflow: scroll;
+}
 
- .content{
 
-  justify-content:center;
+ .click {
+   
+    
+  button{
+    box-shadow:none;
+    border:0 none;
+    outline:0;
+    font-family:$titles-font;
+    }
+  
+      a{  
+          color:$titles;
+          text-decoration:none;
+          padding: 1em 1.5em;
+          background-color:$lightergrey;
+          border-radius:15px;
+          transition: all .3s;
+          
+          
+      }
+  
+     
+   &:hover{
+  
+         
+    a, button{
+              color:$pastelyellow;
+              background-color:$vibrant-greenblue;
+              transition: all .3s;
+          }
+  
+  
+      }
+  }    
+
+  .containerbtns{
+
+    width:20vw;
+    margin: 0 auto;
+
+
+}
+
+
+.btns{
+  display:flex;
+  justify-content: space-around;
+  padding-top: 45px;
+  padding-bottom:25px;
+}
+
+textarea {
+  width: 60%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+  margin-bottom:40px;
+  margin-top:40px;
+}
+
+
+
+
+.desc{
+  display:inline-block;
+  vertical-align: top;
+  width:50vw;
   text-align:center;
- }
+  
+ 
+  
+}
+
+  
 

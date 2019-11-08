@@ -24,6 +24,22 @@ export class EditProjectComponent implements OnInit {
     })
   }
 
+  getErrorMessage(field: string): string {
+    const error = {
+      required: 'This field is required',
+      // time: ['', [Validators.pattern('^[0-9]+')]]
+      // staff: 'Assign at least one user'
+    }
+
+    let returnValue = '';
+
+    Object.keys(this.form.controls[field].errors).map(key => {
+      returnValue += `${error[key]}`
+    })
+
+    return returnValue;
+  }
+
   ngOnInit() {
     this.form = new FormGroup({
       _id: new FormControl(Validators.required),

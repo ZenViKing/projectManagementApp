@@ -1,0 +1,22 @@
+<div class="main-div">
+    <mat-card>
+        <mat-card-content>
+            <section><h2>LOGIN</h2></section>
+            <form [formGroup]="form">
+                <section>
+                    <mat-form-field>
+                        <mat-label>Email</mat-label>
+                        <input type="email" name="email" id="email" matInput placeholder="email" formControlName="email" />
+                    </mat-form-field>
+                </section>
+                <section>
+                    <mat-form-field>
+                        <mat-label>Password</mat-label>
+                        <input type="password" name="password" id="password" matInput placeholder="password" formControlName="password" />
+                    </mat-form-field>
+                </section>
+                <button>Sign up</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

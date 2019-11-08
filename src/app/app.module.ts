@@ -22,6 +22,7 @@ import { NavComponent } from './globals/nav/nav.component';
 import { CreateProjectComponent } from './pages/projects/create-project/create-project.component';
 import { EditProjectComponent } from './pages/projects/edit-project/edit-project.component';
 import { ListProjectComponent } from './pages/projects/list-project/list-project.component';
+import { IdProjectComponent } from './pages/projects/id-project/id-project.component';
 
 import { CreateTaskComponent } from './pages/tasks/create-task/create-task.component';
 import { EditTaskComponent } from './pages/tasks/edit-task/edit-task.component';
@@ -35,7 +36,10 @@ import { DateDisplayPipe } from './pipes/date-display.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './pages/home/home.component'
 import { DeleteUserComponent } from './pages/users/delete-user/delete-user.component';
-import { IdProjectComponent } from './pages/projects/id-project/id-project.component'
+
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { LoginComponent } from './pages/login/login.component';
+import { KanbanComponent } from './globals/kanban/kanban.component'
 
 
 
@@ -56,7 +60,10 @@ import { IdProjectComponent } from './pages/projects/id-project/id-project.compo
     DateDisplayPipe,
     HomeComponent,
     DeleteUserComponent,
-    IdProjectComponent
+    IdProjectComponent,
+    NotFoundComponent,
+    LoginComponent,
+    KanbanComponent
   ],
   imports: [
     BrowserModule,

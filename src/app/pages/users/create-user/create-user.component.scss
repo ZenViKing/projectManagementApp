@@ -10,7 +10,7 @@ form{
 .btns{
     display:flex;
     justify-content: space-around;
-    padding-top: 25px;
+    padding-top: 45px;
     padding-bottom:25px;
 }
 
@@ -43,7 +43,7 @@ font-family:$titles-font;
         text-decoration:none;
         padding: 1em 1.5em;
         background-color:$lightergrey;
-        border-radius:25px;
+        border-radius:15px;
         transition: all .3s;
         
         
@@ -62,5 +62,17 @@ font-family:$titles-font;
 
     }
 }    
+
+
+.selectBox{
+    border: 1px solid;
+    margin : 0 auto;
+    width:180px;
+    padding:8px 0px;
+    background-color:$vibrant-greenblue;
+    color: white;
+    border-radius:0px 0px 5px 5px;
+    font-weight: 500;
+}
 
 

@@ -20,6 +20,8 @@ import { ListTaskComponent } from './pages/tasks/list-task/list-task.component';
 import { EditTaskComponent } from './pages/tasks/edit-task/edit-task.component';
 
 import { HomeComponent } from './pages/home/home.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 
@@ -31,6 +33,12 @@ const routes: Routes = [
     path: '',
     component: HomeComponent
   },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+
+
 
   //Routes User component 
   {
@@ -89,13 +97,20 @@ const routes: Routes = [
   {
     path: 'tasks/edit/:id',
     component: EditTaskComponent,
-    resolve:{
+    resolve: {
       task: TaskResolver
     }
   },
   {
     path: 'tasks',
     component: ListTaskComponent
+  },
+
+
+  
+  {
+    path: '**', 
+    component: NotFoundComponent
   }
   // {
   //   path: 'task/:id',
@@ -104,7 +119,7 @@ const routes: Routes = [
   //     task: TaskResolver
   //   }
   // }
-  
+
 
 ];
 

@@ -92,4 +92,12 @@ export class RestService {
   // }
 
 
+  // FILTER
+  filter(tab, status) {
+    return tab.filter(task =>{
+      return task.status === status;
+    })
+  }
+
+
 }
