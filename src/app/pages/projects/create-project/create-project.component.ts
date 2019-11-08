@@ -35,7 +35,7 @@ export class CreateProjectComponent implements OnInit {
   getErrorMessage(field: string): string {
     const error = {
       required: 'This field is required',
-      // time: ['', [Validators.pattern('^[0-9]+')]]
+      time: ['', [Validators.pattern('^[0-9]+')]]
       // staff: 'Assign at least one user'
     }
 
@@ -54,6 +54,7 @@ export class CreateProjectComponent implements OnInit {
       date: new FormControl(null, [Validators.required]),
       deadline: new FormControl(null, [Validators.required]),
       time: new FormControl(null, [Validators.required]),
+      // time: new FormControl(null, [Validators.required,Validators.pattern]),
       staff: new FormControl(null, [Validators.required]),
       desc: new FormControl(null),
       // pour avoir valeur false si on ne clique pas la checkbox inProgress
