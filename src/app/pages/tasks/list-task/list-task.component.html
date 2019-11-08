@@ -1,12 +1,11 @@
 <h2>Task</h2>
 <ul *ngFor="let task of tasks">
     <li>
-        {{task.name}}
-        {{task.desc}}
-        {{task.assignedUsers}}
-        {{task.status}}
+        {{task.name}} <br>
+        {{task.desc}} <br>
+        {{task.assignedUsers}} <br>
+        {{task.status}} <br>
         <button routerLink="/tasks/edit/{{task._id}}">Edit</button>
         <button (click)="deleteTask(task._id)">delete</button>
-        {{task._id}}
     </li>
 </ul>

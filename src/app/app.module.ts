@@ -34,7 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { DateDisplayPipe } from './pipes/date-display.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './pages/home/home.component'
-import { DeleteUserComponent } from './pages/users/delete-user/delete-user.component'
+import { DeleteUserComponent } from './pages/users/delete-user/delete-user.component';
+import { IdProjectComponent } from './pages/projects/id-project/id-project.component'
 
 
 
@@ -54,7 +55,8 @@ import { DeleteUserComponent } from './pages/users/delete-user/delete-user.compo
     ListUserComponent,
     DateDisplayPipe,
     HomeComponent,
-    DeleteUserComponent
+    DeleteUserComponent,
+    IdProjectComponent
   ],
   imports: [
     BrowserModule,
