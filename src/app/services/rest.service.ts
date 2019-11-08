@@ -85,6 +85,11 @@ export class RestService {
     return this.http.delete(`http://localhost:8001/api/users/${id}`, { headers })
   }
 
+  loginUser(user: User): Observable<User> {
+    const headers = new HttpHeaders().set('content-type', 'application/json');
+    return this.http.post('http://localhost:8001/api/users/login', user, { headers });
+  }
+
   // updateUser(user: User): Observable<User>{
   //   const headers = new HttpHeaders().set('content-type','application/json');
   //   return this.http.patch(`http://localhost:8001/api/users/${user._id}`,{headers});
