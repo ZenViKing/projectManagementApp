@@ -41,7 +41,6 @@ export class RestService {
 
 
   getTasks(): Observable<Task[]> {
-    console.log('test')
     return this.http.get(`http://localhost:8001/api/tasks`).pipe(map(data => data as Task[]));
   }
   getTaskByid(id: number): Observable<Task> {
@@ -84,6 +83,11 @@ export class RestService {
   deleteUser(id: User): Observable<User> {
     const headers = new HttpHeaders().set('content-type', 'application/json');
     return this.http.delete(`http://localhost:8001/api/users/${id}`, { headers })
+  }
+
+  loginUser(user: User): Observable<User> {
+    const headers = new HttpHeaders().set('content-type', 'application/json');
+    return this.http.post('http://localhost:8001/api/users/login', user, { headers });
   }
 
   // updateUser(user: User): Observable<User>{
