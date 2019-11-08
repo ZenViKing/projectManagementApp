@@ -28,7 +28,10 @@
               "src/assets"
             ],
             "styles": [
+<<<<<<< HEAD
               
+=======
+>>>>>>> 46f9e9fdda3bd710d9eb01e12b12d41b65f21671
               "src/styles.scss"
             ],
             "scripts": []
