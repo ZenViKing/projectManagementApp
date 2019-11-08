@@ -8,107 +8,109 @@
       <section>
         <form [formGroup]="form" (submit)="submitForm()">
 
-          
 
-            <div>
-              <mat-form-field>
-                <!-- https://angular.io/guide/form-validation -->
-                <mat-label for="name">Name</mat-label>
-                <input matInput type="text" name="project-name" id="name" placeholder="Name your project"
-                  formControlName="name">
-                <!-- <mat-error *ngIf="form.controls['name'].invalid">Choose a name for your project</mat-error> -->
-                <mat-error *ngIf="form.controls['name'].invalid">{{getErrorMessage('name')}}</mat-error>
-              </mat-form-field>
-            </div>
 
-            <div>
-              <mat-form-field>
-                <!-- datePicker -->
-                <!-- https://material.angular.io/components/datepicker/overview -->
-                <mat-label for="date">Starting date</mat-label>
-                <input matInput [matDatepicker]="date" placeholder="Choose a starting date" formControlName="date">
-                <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
-                <mat-datepicker #date></mat-datepicker>
-                <!-- <mat-error *ngIf="form.controls['date'].invalid">Choose a starting date</mat-error> -->
-                <mat-error *ngIf="form.controls['date'].invalid">{{getErrorMessage('date')}}</mat-error>
-              </mat-form-field>
-            </div>
+          <div>
+            <mat-form-field>
+              <!-- https://angular.io/guide/form-validation -->
+              <mat-label for="name">Name</mat-label>
+              <input matInput type="text" name="project-name" id="name" placeholder="Name your project"
+                formControlName="name">
+              <!-- <mat-error *ngIf="form.controls['name'].invalid">Choose a name for your project</mat-error> -->
+              <mat-error *ngIf="form.controls['name'].invalid">{{getErrorMessage('name')}}</mat-error>
+            </mat-form-field>
+          </div>
 
-            <div>
-              <mat-form-field>
-                <mat-label for="deadline">Deadline</mat-label>
-                <input matInput [matDatepicker]="deadline" placeholder="Choose a deadline" formControlName="deadline">
-                <mat-datepicker-toggle matSuffix [for]="deadline"></mat-datepicker-toggle>
-                <mat-datepicker #deadline></mat-datepicker>
-                <!-- <mat-error *ngIf="form.controls['deadline'].invalid">Choose a deadline for your project</mat-error> -->
-                <mat-error *ngIf="form.controls['deadline'].invalid">{{getErrorMessage('deadline')}}</mat-error>
-              </mat-form-field>
-            </div>
+          <div>
+            <mat-form-field>
+              <!-- datePicker -->
+              <!-- https://material.angular.io/components/datepicker/overview -->
+              <mat-label for="date">Starting date</mat-label>
+              <input matInput [matDatepicker]="date" placeholder="Choose a starting date" formControlName="date">
+              <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
+              <mat-datepicker #date></mat-datepicker>
+              <!-- <mat-error *ngIf="form.controls['date'].invalid">Choose a starting date</mat-error> -->
+              <mat-error *ngIf="form.controls['date'].invalid">{{getErrorMessage('date')}}</mat-error>
+            </mat-form-field>
+          </div>
 
-            <div>
-              <mat-form-field>
-                <mat-label for="time">Estimated time</mat-label>
-                <input matInput type="number" name="time-estimation" id="time" placeholder="42" formControlName="time">
-                <!-- pattern juste pour des chiffres -->
-                <!-- https://www.npmjs.com/package/ng-pattern-restrict -->
-                <!-- <input matInput type="number" name="time-estimation" id="time" placeholder="42" formControlName="time"
+          <div>
+            <mat-form-field>
+              <mat-label for="deadline">Deadline</mat-label>
+              <input matInput [matDatepicker]="deadline" placeholder="Choose a deadline" formControlName="deadline">
+              <mat-datepicker-toggle matSuffix [for]="deadline"></mat-datepicker-toggle>
+              <mat-datepicker #deadline></mat-datepicker>
+              <!-- <mat-error *ngIf="form.controls['deadline'].invalid">Choose a deadline for your project</mat-error> -->
+              <mat-error *ngIf="form.controls['deadline'].invalid">{{getErrorMessage('deadline')}}</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div>
+            <mat-form-field>
+              <mat-label for="time">Estimated time</mat-label>
+              <input matInput type="number" name="time-estimation" id="time" placeholder="42" formControlName="time">
+              <!-- pattern juste pour des chiffres -->
+              <!-- https://www.npmjs.com/package/ng-pattern-restrict -->
+              <!-- <input matInput type="number" name="time-estimation" id="time" placeholder="42" formControlName="time"
                   pattern="[0-9]+" ng-pattern-restrict> -->
-                <!-- https://angular.io/api/forms/PatternValidator -->
-                <!-- https://angular-templates.io/tutorials/about/angular-forms-and-validations -->
-                <!-- <mat-error *ngIf="form.controls['time'].invalid">Choose the estimated time for your project</mat-error> -->
-                <mat-error *ngIf="form.controls['time'].invalid">{{getErrorMessage('time')}}</mat-error>
-                <!-- <mat-error *ngIf="form.controls['time'].invalid">{{getErrorMessage('time')}}</mat-error> -->
-              </mat-form-field>
-            </div>
+              <!-- https://angular.io/api/forms/PatternValidator -->
+              <!-- https://angular-templates.io/tutorials/about/angular-forms-and-validations -->
+              <!-- <mat-error *ngIf="form.controls['time'].invalid">Choose the estimated time for your project</mat-error> -->
+              <mat-error *ngIf="form.controls['time'].invalid">{{getErrorMessage('time')}}</mat-error>
+              <!-- <mat-error *ngIf="form.controls['time'].invalid">{{getErrorMessage('time')}}</mat-error> -->
+            </mat-form-field>
+          </div>
 
 
 
-            <div>
-              <mat-form-field>
-                <mat-label for="staff">Crew members</mat-label>
-                <mat-select multiple name="crew-members" id="staff" formControlName="staff">
-                  <mat-option *ngFor="let user of staff" value="{{user.firstname}} {{user.lastname}}">{{user.firstname}}
-                    {{user.lastname}}</mat-option>
-                </mat-select>
-                <!-- <mat-error *ngIf="form.controls['staff'].invalid">Choose at least one crew member</mat-error> -->
-                <mat-error *ngIf="form.controls['staff'].invalid">{{getErrorMessage('staff')}}</mat-error>
-              </mat-form-field>
-            </div>
+          <div>
+            <mat-form-field>
+              <mat-label for="staff">Crew members</mat-label>
+              <mat-select multiple name="crew-members" id="staff" formControlName="staff">
+                <mat-option *ngFor="let user of staff" value="{{user.firstname}} {{user.lastname}}">{{user.firstname}}
+                  {{user.lastname}}</mat-option>
+              </mat-select>
+              <!-- <mat-error *ngIf="form.controls['staff'].invalid">Choose at least one crew member</mat-error> -->
+              <mat-error *ngIf="form.controls['staff'].invalid">{{getErrorMessage('staff')}}</mat-error>
+            </mat-form-field>
+          </div>
 
 
-            <!-- TODO: ? afficher le(s) user(s) ajouté(s) ? -->
+          <!-- TODO: ? afficher le(s) user(s) ajouté(s) ? -->
 
 
-            <div>
-              <mat-label for="desc" class="desc">Description</mat-label>
-              <textarea name="description-project" id="desc" cols="20" rows="3" placeholder="Describe your project"
-                formControlName="desc"></textarea>
-            </div>
+          <div>
+            <mat-label for="desc" class="desc">Description</mat-label>
+            <textarea name="description-project" id="desc" cols="20" rows="3" placeholder="Describe your project"
+              formControlName="desc"></textarea>
+          </div>
 
-            <div>
-              <label for="inProgress">Is your project already in progress ?</label>
-              <!-- <input type="checkbox" name="inProgress" value="0" formControlName="inProgress"> -->
-              <!-- pour avoir false par default et pas null -->
-              <input type="checkbox" name="in-progress" id="inProgress" formControlName="inProgress"
-                [class]="isInProgress" (click)="setInProgress()"> YES
+          <div>
+            <label for="inProgress">Is your project already in progress ?</label>
+            <!-- <input type="checkbox" name="inProgress" value="0" formControlName="inProgress"> -->
+            <!-- pour avoir false par default et pas null -->
+            <input type="checkbox" name="in-progress" id="inProgress" formControlName="inProgress"
+              [class]="isInProgress" (click)="setInProgress()"> YES
 
-            </div>
+          </div>
 
-            <div>
-              <!-- https://stackoverflow.com/questions/18407832/how-to-create-a-html-cancel-button-that-redirects-to-a-url -->
-              <!--<a href="http://localhost:4200/">Cancel</a>-->
-              <!-- routerLink au lieu de href car angular -->
-             <!--<a routerLink="/">Cancel</a>--> 
-              <!-- <button type="submit">Create</button> -->
-             <!-- <button mat-raised-button type="submit" [disabled]="form.invalid">Create project</button>-->
-            </div>
 
-          
+          <!-- https://stackoverflow.com/questions/18407832/how-to-create-a-html-cancel-button-that-redirects-to-a-url -->
+          <!--<a href="http://localhost:4200/">Cancel</a>-->
+          <!-- routerLink au lieu de href car angular -->
+          <!--<a routerLink="/">Cancel</a>-->
+          <!-- <button type="submit">Create</button> -->
+          <!-- <button mat-raised-button type="submit" [disabled]="form.invalid">Create project</button>-->
 
-          <div class="containerbtns"><section class="btns">
-            <div class="click"> <a routerLink="/">Cancel</a> </div> 
-            <div class="click"> <button type="submit" [disabled]="form.invalid">Create project</button></div>
-           </section></div>
+
+
+
+          <div class="containerbtns">
+            <section class="btns">
+              <div class="click"> <a routerLink="/">Cancel</a> </div>
+              <div class="click"> <button type="submit" [disabled]="form.invalid">Create project</button></div>
+            </section>
+          </div>
         </form>
       </section>
     </mat-card-content>
