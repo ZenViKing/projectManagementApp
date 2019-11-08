@@ -7,11 +7,17 @@
     <!-- <li>{{project.deadline | date : 'longDate'}}</li> -->
     <p>Deadline : {{project.deadline | date : 'longDate'}}</p>
     <p>User(s) : {{project.staff}}</p>
-
+    
+      <!-- <app-list-task></app-list-task> -->
+    
 
     <div>
       <button routerLink="/projects/{{project._id}}">Edit</button>
       <button (click)="deleteProject(project._id)">Delete</button>
     </div>
+
+    
   </mat-list-item>
 </mat-list>
+
+
