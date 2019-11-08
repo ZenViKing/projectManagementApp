@@ -36,7 +36,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './pages/home/home.component'
 import { DeleteUserComponent } from './pages/users/delete-user/delete-user.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { LoginComponent } from './pages/login/login.component'
+import { LoginComponent } from './pages/login/login.component';
+import { KanbanComponent } from './globals/kanban/kanban.component'
 
 
 
@@ -58,7 +59,8 @@ import { LoginComponent } from './pages/login/login.component'
     HomeComponent,
     DeleteUserComponent,
     NotFoundComponent,
-    LoginComponent
+    LoginComponent,
+    KanbanComponent
   ],
   imports: [
     BrowserModule,
