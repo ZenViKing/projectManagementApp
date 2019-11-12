@@ -1,0 +1,83 @@
+<div>
+  <!-- BACKLOG LIST -->
+  <div class="example-container">
+    <h2>Backlogs</h2>
+    <div 
+      id="backlog"
+      cdkDropList
+      #backlogList="cdkDropList"
+      [cdkDropListData]="backlog"
+      [cdkDropListConnectedTo]="[todoList,inprogressList,doneList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div 
+        class="example-box"
+        *ngFor="let task of backlog"
+        [cdkDragData]="task"
+        cdkDrag>
+        {{task.name}}
+      </div>
+    </div>
+  </div> 
+  <!-- TODO LIST -->
+  <div class="example-container">
+    <h2>Todo</h2>
+    <div 
+      id="todo"
+      cdkDropList
+      #todoList="cdkDropList"
+      [cdkDropListData]="todos"
+      [cdkDropListConnectedTo]="[inprogressList,doneList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+
+      <div 
+        class="example-box"
+        *ngFor="let task of todos"
+        [cdkDragData]="task"
+        cdkDrag>
+        {{task.name}}
+      </div>
+    </div>
+  </div>
+  <!-- IN PROGRESS LIST -->
+  <div class="example-container">
+    <h2>In Progress</h2>
+    <div 
+      id="inprogress"
+      cdkDropList
+      #inprogressList="cdkDropList"
+      [cdkDropListData]="inprogress"
+      [cdkDropListConnectedTo]="[todoList,doneList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div 
+        class="example-box"
+        *ngFor="let task of inprogress"
+        [cdkDragData]="task"
+        cdkDrag>
+        {{task.name}}
+      </div>
+    </div>
+  </div>
+  <!-- DONE LIST -->
+  <div class="example-container">
+    <h2>Done</h2>
+    <div 
+      id="done"
+      cdkDropList
+      #doneList="cdkDropList"
+      [cdkDropListData]="done"
+      [cdkDropListConnectedTo]="[todoList,inprogressList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div
+        class="example-box"
+        *ngFor="let task of done"
+        [cdkDragData]="task"
+        cdkDrag>
+        {{task.name}}
+      </div>
+    </div>
+  </div>
+</div>

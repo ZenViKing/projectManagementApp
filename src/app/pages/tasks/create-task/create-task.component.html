@@ -26,11 +26,11 @@
         <mat-label for="status">Priority status : </mat-label>
         <mat-radio-group formControlName="status">
             <mat-label for="lowPriority">low </mat-label>
-            <mat-radio-button id="lowPiority"  name="lol" value="1" ></mat-radio-button>
+            <mat-radio-button id="lowPiority"  name="lol" value="low priority"></mat-radio-button>
             <mat-label for="mediumPiority">medium </mat-label>
-            <mat-radio-button id="mediumPiority"  name="lol" value="2"></mat-radio-button>
+            <mat-radio-button id="mediumPiority"  name="lol" value="medium priority"></mat-radio-button>
             <mat-label for="hightPiority">hight </mat-label>
-            <mat-radio-button id="hightPiority"  name="lol" value="3"></mat-radio-button>
+            <mat-radio-button id="hightPiority"  name="lol" value="high priority"></mat-radio-button>
             <mat-error *ngIf="form.controls['status'].invalid && ['status'].touched">{{getErrorMessage('status')}}</mat-error>
         </mat-radio-group>
         </div>
