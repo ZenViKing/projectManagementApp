@@ -50,7 +50,7 @@
         
         <section>
         <label  class="desc" for="desc">Task description: </label>
-        <textarea>
+        <textarea
                     name="desc"
                     id="description"
                     placeholder="Description :"
@@ -58,7 +58,7 @@
                     rows="10"
                     formControlName="desc"
                     value="{{desc}}"
-                    (click)="clear()"
+                    (click)="clear()">
                     
         </textarea>
         </section>
