@@ -14,7 +14,8 @@
     <!-- changer l'affichage de la date avec le pipe dateDisplay -->
     <!-- <li>{{project.deadline | date : 'longDate'}}</li> -->
     <p matLine>Deadline : {{project.deadline | date : 'longDate'}}</p>
-    <p matLine>User(s) : {{project.staff}}</p>
+    <p matLine>User(s) : {{project.staff}} </p>
+    <!-- <p matLine *ngFor="let staff of project.staff">User(s) : {{staff}} </p> -->
     
       <!-- <app-list-task></app-list-task> -->
     
