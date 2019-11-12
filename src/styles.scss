@@ -145,38 +145,45 @@ p{
 // BUTTONS
 
 .click {
-
     
-    
-   
-
-    a{  
-        color:$titles;
-        text-decoration:none;
-        padding: 0.5em 1.2em;
-        background-color:$lightergrey;
-        border-radius:25px;
-        transition: all .3s;
-        
-        
+    button{
+    box-shadow:none;
+    border:0 none;
+    outline:0;
+    font-family:$titles-font;
     }
-
-   
- &:hover{
-
-       
-  a{
-            color:$pastelyellow;
-            background-color:$vibrant-greenblue;
+    
+    
+        a, button{  
+            color:$titles;
+            text-decoration:none;
+            padding: 1em 1.5em;
+            background-color:$lightergrey;
+            border-radius:15px;
             transition: all .3s;
+            
+            
         }
-
-
-    }
     
-}
-
+       
+     &:hover{
+    
+           
+      a, button{
+                color:$pastelyellow;
+                background-color:$vibrant-greenblue;
+                transition: all .3s;
+            }
+    
+    
+        }
+    }    
 //FORMS
+
+form{
+    text-align: center;
+    // width: 80%;
+}
 
 .main-div{
 
@@ -186,6 +193,8 @@ p{
     align-items: center;
     
   }
+
+  
 
 
 //FOOTER
@@ -206,5 +215,5 @@ footer{
     }
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+//html, body { height: 100%; }
+//body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -48,16 +48,23 @@
           <div>
             <mat-form-field>
               <mat-label for="time">Estimated time</mat-label>
-              <input matInput type="number" name="time-estimation" id="time" placeholder="42" formControlName="time">
+              <!-- <input matInput type="number" name="time-estimation" id="time" placeholder="42" formControlName="time"> -->
               <!-- pattern juste pour des chiffres -->
               <!-- https://www.npmjs.com/package/ng-pattern-restrict -->
               <!-- <input matInput type="number" name="time-estimation" id="time" placeholder="42" formControlName="time"
                   pattern="[0-9]+" ng-pattern-restrict> -->
+              <!-- https://stackblitz.com/edit/angular-input-pattern-digits-only?file=src%2Fapp%2Fapp.component.html -->
+              <input matInput type="text" name="time-estimation" id="time" placeholder="42" formControlName="time"
+                pattern="\d+">
+              <!-- <input matInput type="number" name="time-estimation" id="time" placeholder="42" formControlName="time"
+                pattern="/^[a-zA-Z]+$/"> -->
               <!-- https://angular.io/api/forms/PatternValidator -->
               <!-- https://angular-templates.io/tutorials/about/angular-forms-and-validations -->
               <!-- <mat-error *ngIf="form.controls['time'].invalid">Choose the estimated time for your project</mat-error> -->
               <mat-error *ngIf="form.controls['time'].invalid">{{getErrorMessage('time')}}</mat-error>
-              <!-- <mat-error *ngIf="form.controls['time'].invalid">{{getErrorMessage('time')}}</mat-error> -->
+              <!-- https://medium.com/swlh/angular-validation-errors-made-easy-3bc1a837c6e7 -->
+              <!-- <mat-error *ngIf="form.controls['time'].invalid || form.controls['time'].dirty">
+              {{getErrorMessage('time')}}</mat-error> -->
             </mat-form-field>
           </div>
 
@@ -105,12 +112,10 @@
 
 
 
-          <div class="containerbtns">
-            <section class="btns">
-              <div class="click"> <a routerLink="/">Cancel</a> </div>
-              <div class="click"> <button type="submit" [disabled]="form.invalid">Create project</button></div>
-            </section>
-          </div>
+          <div class="containerbtns"><section class="btns">
+            <div class="click"> <a routerLink="/">Cancel</a></div>    
+             <div class="click"> <button class="click" type="submit" [disabled]="form.invalid">Submit</button></div>
+           </section></div>
         </form>
       </section>
     </mat-card-content>
