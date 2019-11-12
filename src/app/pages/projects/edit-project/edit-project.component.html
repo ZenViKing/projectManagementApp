@@ -88,11 +88,10 @@
 
             </div>
 
-            <div>
-              <!-- <a routerLink="/">Cancel</a> -->
-              <a routerLink="/projects">Cancel</a>
-              <button mat-raised-button type="submit" [disabled]="form.invalid" class="click">Edit</button>
-            </div>
+            <div class="containerbtns"><section class="btns">
+              <div class="click"> <a routerLink="/">Cancel</a></div>    
+               <div class="click"> <button class="click" type="submit" [disabled]="form.invalid">Submit</button></div>
+             </section></div>
 
           </div>
         </form>
