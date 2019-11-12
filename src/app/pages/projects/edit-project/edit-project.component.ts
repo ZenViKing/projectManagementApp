@@ -28,6 +28,7 @@ export class EditProjectComponent implements OnInit {
     const error = {
       required: 'This field is required',
       // time: ['', [Validators.pattern('^[0-9]+')]]
+      pattern: 'Only numbers'
       // staff: 'Assign at least one user'
     }
 
@@ -47,7 +48,8 @@ export class EditProjectComponent implements OnInit {
       name: new FormControl(null, [Validators.required]),
       date: new FormControl(null, [Validators.required]),
       deadline: new FormControl(null, [Validators.required]),
-      time: new FormControl(null, [Validators.required]),
+      // time: new FormControl(null, [Validators.required]),
+      time: new FormControl(null, Validators.compose([Validators.required, Validators.pattern(/\d+/)])),
       staff: new FormControl(null, [Validators.required]),
       desc: new FormControl(null),
       // pour avoir valeur false si on ne clique pas la checkbox inProgress
