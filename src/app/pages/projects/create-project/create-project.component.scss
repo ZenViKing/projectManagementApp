@@ -41,44 +41,7 @@ form{
 }
 
 
- .click {
 
-  a{
-    padding: 1em 1.5em;
-    
-  }
-   
-    
-  
-  
-      a,button{  
-          color:$titles;
-          text-decoration:none;
-          padding: 1em 1.5em;
-          background-color:$lightergrey;
-          border-radius:15px;
-          transition: all .3s;
-          box-shadow:none;
-          border:0 none;
-          outline:0;
-          font-family:$titles-font;
-          
-          
-      }
-  
-     
-   &:hover{
-  
-         
-    a, button{
-              color:$pastelyellow;
-              background-color:$vibrant-greenblue;
-              transition: all .3s;
-          }
-  
-  
-      }
-  }    
 
   .containerbtns{
 
@@ -117,8 +80,6 @@ textarea {
   vertical-align: top;
   width:50vw;
   text-align:center;
-  
- 
   
 }
 
