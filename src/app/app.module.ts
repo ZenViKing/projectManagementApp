@@ -42,6 +42,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { KanbanComponent } from './globals/kanban/kanban.component'
 
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { FooterComponent } from './globals/footer/footer.component';
 
 
 
@@ -65,7 +66,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     IdProjectComponent,
     NotFoundComponent,
     LoginComponent,
-    KanbanComponent
+    KanbanComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
