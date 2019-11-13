@@ -75,10 +75,10 @@ const routes: Routes = [
     path: 'project/add',
     component: CreateProjectComponent
   },
-  {
-    path: 'project/:id',
-    component: EditProjectComponent
-  },
+  // {
+  //   path: 'project/:id',
+  //   component: EditProjectComponent
+  // },
   {
     path: 'projects/:id',
     component: EditProjectComponent,

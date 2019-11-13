@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Task } from '../../models/task.model';
 import { RestService } from '../../services/rest.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-kanban',
@@ -15,7 +16,7 @@ export class KanbanComponent implements OnInit {
   inprogress: Task[] = [];
   done: Task[] = [];
 
-  constructor(private _restService: RestService) { }
+  constructor(private _restService: RestService, private route: Router) { }
 
   drop(event: CdkDragDrop<string[]>){
     if(event.previousContainer === event.container){
@@ -36,6 +37,7 @@ export class KanbanComponent implements OnInit {
   }
 
   ngOnInit() {
+
     this._restService.getTasks().subscribe(data => {
       this.backlog = this._restService.filter(data, 'backlogs');
       this.todos = this._restService.filter(data, 'todo');

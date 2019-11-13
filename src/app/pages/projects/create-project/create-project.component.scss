@@ -1,14 +1,5 @@
 @import '../../../../variables.scss';
 
-.main-div{
-
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width:1024px;
-  
-}
 
 
 
@@ -41,41 +32,6 @@ form{
 }
 
 
- .click {
-   
-    
-  button{
-    box-shadow:none;
-    border:0 none;
-    outline:0;
-    font-family:$titles-font;
-    }
-  
-      a{  
-          color:$titles;
-          text-decoration:none;
-          padding: 1em 1.5em;
-          background-color:$lightergrey;
-          border-radius:15px;
-          transition: all .3s;
-          
-          
-      }
-  
-     
-   &:hover{
-  
-         
-    a, button{
-              color:$pastelyellow;
-              background-color:$vibrant-greenblue;
-              transition: all .3s;
-          }
-  
-  
-      }
-  }    
-
   .containerbtns{
 
     width:20vw;
@@ -84,13 +40,6 @@ form{
 
 }
 
-
-.btns{
-  display:flex;
-  justify-content: space-around;
-  padding-top: 45px;
-  padding-bottom:25px;
-}
 
 textarea {
   width: 60%;
@@ -114,8 +63,11 @@ textarea {
   width:50vw;
   text-align:center;
   
- 
-  
+}
+
+.btns button{
+  margin-top:-15px;
+
 }
 
   

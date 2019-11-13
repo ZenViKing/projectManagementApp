@@ -1,21 +1,20 @@
+<div class="main-div">
 <mat-card>
   <mat-card-content>
-    <section>
-      <h2>Edit task</h2>
-    </section>
+        <section> <h1>Let's edit a task!</h1></section>
     <section>
       <form (submit)="submitForm()" [formGroup]="form">
 
-        <div>
+        <section>
           <mat-form-field>
             <mat-label for="name">Task name : </mat-label>
             <input matInput type="text" name="task-name" id="name" placeholder="task name" formControlName="name">
             <mat-error *ngIf="form.controls['name'].invalid">{{getErrorMessage('name')}}</mat-error>
 
           </mat-form-field>
-        </div>
+        </section>
         <!-- ---------------------------- mat radio ---------------------------- -->
-        <div>
+        <section>
           <mat-label for="status">Priority status : </mat-label>
           <mat-radio-group formControlName="status">
             <mat-label for="lowPriority">low </mat-label>
@@ -27,32 +26,35 @@
             <mat-error *ngIf="form.controls['status'].invalid && ['status'].touched">{{getErrorMessage('status')}}
             </mat-error>
           </mat-radio-group>
-        </div>
+        </section>
         <!-- ------------------------- mat assigned users ------------------------- -->
-        <div>
+        <section>
           <mat-form-field>
-            <mat-label for="assignedUsers">Choose users to assign : </mat-label>
+            <mat-label for="assignedUsers">Choose user(s) to assign:: </mat-label>
             <mat-select multiple name="assignedUsers" id="assignedUsers" formControlName="assignedUsers">
               <mat-option *ngFor="let user of users" value="{{user.firstname}}">{{user.firstname}}</mat-option>
             </mat-select>
           </mat-form-field>
-        </div>
+        </section>
 
-        <div>
-          <mat-form-field>
-            <mat-label for="desc">Task description : </mat-label>
-            <textarea matInput name="desc" id="description" placeholder="Description :" cols="30" rows="10"
+        <section>
+            <mat-label class="desc" for="desc">Task description: </mat-label>
+            <textarea  name="desc" id="description" placeholder="Description :" cols="30" rows="10"
               formControlName="desc" value="{{task.desc}}">
         </textarea>
-          </mat-form-field>
+        </section>
+
+        <div class="containerbtns">
+            <section class="btns">
+           <div class="click"> <a routerLink="/">Cancel</a></div>    
+            <div class="click"> <button class="click" type="submit" [disabled]="form.invalid">Create Task</button></div>
+          </section>
         </div>
 
-        <div>
-          <button mat-raised-button type="submit" [disabled]="!form.valid">Edit task</button>
-          <a routerLink="/tasks">Cancel</a>
-        </div>
 
       </form>
     </section>
   </mat-card-content>
 </mat-card>
+</div>
+

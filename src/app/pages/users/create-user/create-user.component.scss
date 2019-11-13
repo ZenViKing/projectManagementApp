@@ -28,40 +28,7 @@ form{
     margin-top:-15px;
 
 }
-.click {
-    
-button{
-box-shadow:none;
-border:0 none;
-outline:0;
-font-family:$titles-font;
-}
 
-
-    a, button{  
-        color:$titles;
-        text-decoration:none;
-        padding: 1em 1.5em;
-        background-color:$lightergrey;
-        border-radius:15px;
-        transition: all .3s;
-        
-        
-    }
-
-   
- &:hover{
-
-       
-  a, button{
-            color:$pastelyellow;
-            background-color:$vibrant-greenblue;
-            transition: all .3s;
-        }
-
-
-    }
-}    
 
 
 .selectBox{
