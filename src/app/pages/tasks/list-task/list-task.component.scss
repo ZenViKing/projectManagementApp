@@ -1,0 +1,30 @@
+@import '../../../../variables.scss';
+
+
+
+form{
+    text-align: center;
+}
+
+.btnsListUsers{
+    display:flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+p.mat-line{
+    color: black;
+}
+
+.mat-list-item{
+    border-bottom: 1px solid $lightgrey;
+}
+
+
+
+.mat-card-content{
+    width: 50vw;
+    height: 60vh;
+    overflow: scroll;
+}
+

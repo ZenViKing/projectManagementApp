@@ -1,4 +1,4 @@
-<h2>Task</h2>
+<!-- <h2>Task</h2>
 <ul *ngFor="let task of tasks">
     <li>
         {{task.name}} <br>
@@ -8,4 +8,29 @@
         <button routerLink="/tasks/edit/{{task._id}}">Edit</button>
         <button (click)="deleteTask(task._id)">delete</button>
     </li>
-</ul>
+</ul> -->
+
+
+<div class="main-div">
+
+        <mat-card>
+          <mat-card-content>
+            <section>
+              <h1>Tasks list</h1>
+            </section>
+            <mat-list>
+              <mat-list-item *ngFor="let user of users">
+                <p matLine>Task name: {{task.name}}</p>
+                <p matLine>Task description: {{task.desc}}</p>
+                <p matLine>User(s): {{task.assignedUsers}}</p>
+                <p matLine>Task status: {{task.status}}</p>
+        
+                <section class="btnsListUsers">
+                  <div class="click"><a routerLink="/tasks/edit/{{task._id}}">Edit</a></div> 
+                  <div class="click"><a (click)="deleteTask(task._id)">Delete user?</a></div>
+                </section>
+              </mat-list-item>
+            </mat-list>
+  </mat-card-content>
+        </mat-card>
+        </div>

@@ -6,29 +6,28 @@
       <section>
         <h1>Projects list</h1>
       </section>
-      
-  <mat-list *ngFor="let project of projects">
-  <mat-list-item>
-    <h2 matLine>{{project.name}}</h2>
-    <!-- <li>{{project.deadline}}</li> -->
-    <!-- changer l'affichage de la date avec le pipe dateDisplay -->
-    <!-- <li>{{project.deadline | date : 'longDate'}}</li> -->
-    <p matLine>Deadline : {{project.deadline | date : 'longDate'}}</p>
-    <p matLine>User(s) : {{project.staff}}</p>
-    
-      <!-- <app-list-task></app-list-task> -->
-    
-    <section class="btnsListUsers">
-      <div class="click"><a routerLink="/projects/{{project._id}}">Edit</a></div> 
-      <div class="click"><a (click)="deleteProject(project._id)">Delete project?</a></div>
-    </section>
+      <mat-list *ngFor="let project of projects">
+        <mat-list-item>
+          <h2 matLine>{{project.name}}</h2>
+          <!-- <li>{{project.deadline}}</li> -->
+          <!-- changer l'affichage de la date avec le pipe dateDisplay -->
+          <!-- https://angular.io/api/common/DatePipe -->
+          <!-- <li>{{project.deadline | date : 'longDate'}}</li> -->
+          <!-- <p matLine>Deadline : {{project.deadline | date : 'longDate'}}</p> -->
+          <p matLine>Deadline: {{project.deadline | date : 'mediumDate'}}</p>
+          <p matLine>User(s) : {{project.staff}}</p>
 
-    
-  </mat-list-item>
-</mat-list>
+          <!-- <app-list-task></app-list-task> -->
 
-</mat-card-content>
-</mat-card>
+          <section class="btnsListUsers">
+            <div class="click"><a routerLink="/projects/{{project._id}}">Edit</a></div>
+            <div class="click"><a (click)="deleteProject(project._id)">Delete project?</a></div>
+          </section>
+
+
+        </mat-list-item>
+      </mat-list>
+
+    </mat-card-content>
+  </mat-card>
 </div>
-
-

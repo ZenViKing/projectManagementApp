@@ -16,7 +16,7 @@ export class KanbanComponent implements OnInit {
   inprogress: Task[] = [];
   done: Task[] = [];
 
-  constructor(private _restService: RestService, private router: Router) { }
+  constructor(private _restService: RestService, private route: Router) { }
 
   drop(event: CdkDragDrop<string[]>){
     if(event.previousContainer === event.container){
@@ -37,8 +37,7 @@ export class KanbanComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.router.url);
-    
+
     this._restService.getTasks().subscribe(data => {
       this.backlog = this._restService.filter(data, 'backlogs');
       this.todos = this._restService.filter(data, 'todo');
