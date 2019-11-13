@@ -4,6 +4,7 @@ import { RestService } from 'src/app/services/rest.service';
 import { Task } from 'src/app/models/task.model';
 import { User } from 'src/app/models/user.model';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Project } from 'src/app/models/project.model';
 
 
 @Component({
@@ -15,6 +16,7 @@ export class EditTaskComponent implements OnInit {
   task: Task;
   users: User[];
   form: FormGroup;
+  project: Project;
 
   constructor(private _restService: RestService,
     private router: Router,
@@ -22,7 +24,7 @@ export class EditTaskComponent implements OnInit {
   ) { }
   submitForm() {
     this.task = this.form.value;
-    this._restService.updateTask(this.task).subscribe((data: Task) => {
+    this._restService.updateTask(this.project._id,this.task).subscribe((data: Task) => {
       this.task = data;
       this.router.navigate(['/tasks']);
       // this.router.navigate(['/tasks/']);
