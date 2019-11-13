@@ -3,84 +3,86 @@
 //MAIN (( home page à déplacer dans component plus tard ))
 
 
-.main{
+.main {
 
-    padding-top: 40px;
-    margin:0 auto;
-    width:$larger-width;
-    display:flex;
-    justify-content:center;
-    
-    
+  padding-top: 40px;
+  margin: 0 auto;
+  width: $larger-width;
+  display: flex;
+  justify-content: center;
 
-    .right{
+  .list p{
+    vertical-align:middle}
 
-        max-width:800px;
-        background-color:$pastelyellow;
-        padding:75px;
 
-        .flex-button{
-            display:flex;
-            justify-content:space-evenly;
+  .right {
 
-            .click{
-                margin-top: 10%;
-            }
-        }
- }
+    max-width: 800px;
+    background-color: $pastelyellow;
+    padding: 75px;
 
- .left{
+    .flex-button {
+      display: flex;
+      justify-content: space-evenly;
 
-    width:700px;
-    background-color:$pastel-greenblue;
-    padding:70px;
+      .click {
+        margin-top: 10%;
+      }
+    }
+  }
+
+  .left {
+
+    width: 700px;
+    background-color: $pastel-greenblue;
+    padding: 70px;
     overflow: scroll;
     height: 50vh;
 
-    .flex-button-l{
-        padding-bottom:20px;
+    .flex-button-l {
+      padding-bottom: 20px;
     }
 
-    .list{
+    .list {
 
-        background-color:$pastelyellow;
-        width:200px;
-        height:65px;
-        margin-top:10px;
-        margin-bottom:10px;
-        border-radius:5px;
+      background-color: $pastelyellow;
+      width: 200px;
+      min-height: 85px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      transition: all .3s;
+
+
+      &:hover {
+        background-color: $vibrant-greenblue;
         transition: all .3s;
-    
+        cursor: pointer;
 
-        &:hover{
-            background-color:$vibrant-greenblue;
-            transition: all .3s;
-            cursor:pointer;
-
-            p{
-                color:$pastelyellow;
-                transition: all .3s;
-            }
+        p {
+          color: $pastelyellow;
+          transition: all .3s;
         }
-       
-       
-    .list-content{
+      }
 
-        display:block;
-        padding-top:15px;
 
-        h4,p{
-            padding:0px;
-            margin:0px;
-            font-size: 14px;
-            line-height: 1.5em;
+      .list-content {
+
+        display: block;
+        padding-top: 30px;
+
+        h4,
+        p {
+          padding: 0px;
+          margin: 0px;
+          font-size: 14px;
+        //   line-height: 1.5em;
+
         }
+      }
 
-        
     }
-        
-    }
- }
+  }
 
 
 
