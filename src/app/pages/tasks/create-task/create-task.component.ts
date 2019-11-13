@@ -18,6 +18,7 @@ export class CreateTaskComponent implements OnInit {
   users: User[];
   task: Task;
   form: FormGroup;
+  project: Project;
 
   constructor(private _restService: RestService, private router: Router) { }
 
@@ -38,7 +39,7 @@ export class CreateTaskComponent implements OnInit {
   submitForm(){
     this.task = this.form.value;
     console.log(this.router.url);
-    this._restService.postTask(this.task).subscribe((data: Task)=>{
+    this._restService.postTask(this.project._id, this.task).subscribe((data: Task)=>{
       this.task = data;
       this.router.navigate([`/tasks`])
     })

@@ -40,24 +40,24 @@ export class RestService {
 
 
 
-  getTasks(): Observable<Task[]> {
-    return this.http.get(`http://localhost:8001/api/projects/:id/tasks`).pipe(map(data => data as Task[]));
+  getTasks(idProject: number): Observable<Task[]> {
+    return this.http.get(`http://localhost:8001/api/projects/${idProject}/tasks`).pipe(map(data => data as Task[]));
   }
-  getTaskByid(id: number): Observable<Task> {
-    return this.http.get(`http://localhost:8001/api/projects/:id/tasks/${id}`).pipe(map(data => data as Task));
+  getTaskByid(idProject: number, idTask: number): Observable<Task> {
+    return this.http.get(`http://localhost:8001/api/projects/${idProject}/tasks/${idTask}`).pipe(map(data => data as Task));
   }
-  postTask(task: Task): Observable<Task> {
+  postTask(idProject: number, task: Task): Observable<Task> {
     const headers = new HttpHeaders().set('content-type', 'application/json');
-    return this.http.post(`http://localhost:8001/api/projects/:id/tasks`, task, { headers });
+    return this.http.post(`http://localhost:8001/api/projects/${idProject}/tasks`, task, { headers });
   }
-  deleteTask(id: number): Observable<Task> {
+  deleteTask(idProject: number, idTask: number): Observable<Task> {
     const headers = new HttpHeaders().set('content-type', 'application/json');
-    return this.http.delete(`http://localhost:8001/api/projects/:id/tasks/${id}`, { headers });
+    return this.http.delete(`http://localhost:8001/api/projects/${idProject}/tasks/${idTask}`, { headers });
   }
-  updateTask(task: Task): Observable<Task> {
+  updateTask(idProject: number, task: Task): Observable<Task> {
     const headers = new HttpHeaders().set('content-type', 'application/json');
     console.log("id : " + task._id);
-    return this.http.patch(`http://localhost:8001/api/projects/:id/tasks/${task._id}`, task, { headers });
+    return this.http.patch(`http://localhost:8001/api/projects/${idProject}/tasks/${task._id}`, task, { headers });
   }
 
 

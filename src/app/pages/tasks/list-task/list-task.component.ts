@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Task} from 'src/app/models/task.model';
 import {RestService} from 'src/app/services/rest.service';
+import { Project } from 'src/app/models/project.model';
 @Component({
   selector: 'app-list-task',
   templateUrl: './list-task.component.html',
@@ -8,6 +9,7 @@ import {RestService} from 'src/app/services/rest.service';
 })
 export class ListTaskComponent implements OnInit {
   tasks: Task[];
+  project: Project;
 
   constructor(private _restService: RestService) {}
   
@@ -15,8 +17,8 @@ export class ListTaskComponent implements OnInit {
     let r = confirm('Delete task ?')
     if (r === true){
       console.log('task deleted');
-      this._restService.deleteTask(id).subscribe(res=>{
-        this._restService.getTasks().subscribe((data: Task[])=>{
+      this._restService.deleteTask(this.project._id, id).subscribe(res=>{
+        this._restService.getTasks(this.project._id).subscribe((data: Task[])=>{
           this.tasks = data;
         });
       })
@@ -27,7 +29,7 @@ export class ListTaskComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._restService.getTasks().subscribe((data: Task[])=>{
+    this._restService.getTasks(this.project._id).subscribe((data: Task[])=>{
       this.tasks = data;
     });
   }
