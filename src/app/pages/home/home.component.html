@@ -42,8 +42,9 @@
           <p *ngIf="!project.inProgress">
             To do
           </p>
-          <p >
-            Deadline : {{project.deadline | date : 'longDate'}}
+          <p>
+            <!-- Deadline : {{project.deadline | date : 'longDate'}} -->
+            Deadline: {{project.deadline | date : 'mediumDate'}}
           </p>
         </div>
       </mat-list-item>
