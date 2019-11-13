@@ -39,7 +39,7 @@ import { DeleteUserComponent } from './pages/users/delete-user/delete-user.compo
 
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { LoginComponent } from './pages/login/login.component';
-import { KanbanComponent } from './globals/kanban/kanban.component'
+// import { KanbanComponent } from './globals/kanban/kanban.component'
 
 import {DragDropModule} from '@angular/cdk/drag-drop';
 
@@ -65,7 +65,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     IdProjectComponent,
     NotFoundComponent,
     LoginComponent,
-    KanbanComponent
+    // KanbanComponent
   ],
   imports: [
     BrowserModule,
