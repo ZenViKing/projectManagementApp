@@ -34,7 +34,6 @@ export class CreateProjectComponent implements OnInit {
 
   getErrorMessage(field: string): string {
     // let time = ['', [Validators.pattern(/\d/)]];
-    console.log(field);
     const error = {
       required: 'This field is required',
       // time: ['', [Validators.pattern(/\d/)]]

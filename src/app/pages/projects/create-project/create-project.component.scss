@@ -1,14 +1,5 @@
 @import '../../../../variables.scss';
 
-.main-div{
-
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width:1024px;
-  
-}
 
 
 
@@ -41,8 +32,6 @@ form{
 }
 
 
-
-
   .containerbtns{
 
     width:20vw;
@@ -51,13 +40,6 @@ form{
 
 }
 
-
-.btns{
-  display:flex;
-  justify-content: space-around;
-  padding-top: 45px;
-  padding-bottom:25px;
-}
 
 textarea {
   width: 60%;
