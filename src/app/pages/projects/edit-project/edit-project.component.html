@@ -3,8 +3,8 @@
 <div class="main-div">
   <mat-card>
     <section>
-    <h1>Edit a project</h1>
-   </section>
+      <h1>Edit a project</h1>
+    </section>
     <mat-card-content>
 
       <section>
@@ -24,9 +24,11 @@
 
             <div>
               <mat-form-field>
+                <mat-label for="date">Starting date</mat-label>
                 <!-- datePicker -->
                 <!-- https://material.angular.io/components/datepicker/overview -->
-                <input matInput [matDatepicker]="date" formControlName="date">
+                <!-- <input matInput [matDatepicker]="date" formControlName="date"> -->
+                <input matInput [matDatepicker]="date" [min]="startDate" formControlName="date">
                 <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
                 <mat-datepicker #date></mat-datepicker>
                 <!-- <mat-error *ngIf="form.controls['date'].invalid">Choose a starting date</mat-error> -->
@@ -36,7 +38,9 @@
 
             <div>
               <mat-form-field>
-                <input matInput [matDatepicker]="deadline" formControlName="deadline">
+                <mat-label for="deadline">Deadline</mat-label>
+                <!-- <input matInput [matDatepicker]="deadline" formControlName="deadline"> -->
+                <input matInput [matDatepicker]="deadline" [min]="startDate" formControlName="deadline">
                 <mat-datepicker-toggle matSuffix [for]="deadline"></mat-datepicker-toggle>
                 <mat-datepicker #deadline></mat-datepicker>
                 <!-- <mat-error *ngIf="form.controls['deadline'].invalid">Choose a name for your project</mat-error> -->
@@ -90,10 +94,12 @@
 
             </div>
 
-            <div class="containerbtns"><section class="btns">
-              <div class="click"> <a routerLink="/">Cancel</a></div>    
-               <div class="click"> <button class="click" type="submit" [disabled]="form.invalid">Submit</button></div>
-             </section></div>
+            <div class="containerbtns">
+              <section class="btns">
+                <div class="click"> <a routerLink="/">Cancel</a></div>
+                <div class="click"> <button class="click" type="submit" [disabled]="form.invalid">Submit</button></div>
+              </section>
+            </div>
 
           </div>
         </form>

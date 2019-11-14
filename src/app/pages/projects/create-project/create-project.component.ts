@@ -14,7 +14,9 @@ import { User } from 'src/app/models/user.model';
 export class CreateProjectComponent implements OnInit {
   project: Project;
   form: FormGroup;
-  staff: User[]
+  staff: User[];
+  // pour avoir la date du jour de création du projet
+  startDate = new Date();
 
   constructor(private _restService: RestService, private router: Router) { }
 
@@ -23,6 +25,7 @@ export class CreateProjectComponent implements OnInit {
   setInProgress() {
     this.isInProgress = !this.isInProgress;
   }
+
 
   submitForm() {
     this.project = this.form.value;
