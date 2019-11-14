@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { RestService } from 'src/app/services/rest.service';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { User } from 'src/app/models/user.model';
@@ -14,6 +14,12 @@ export class EditProjectComponent implements OnInit {
   form: FormGroup;
   staff: User[];
   constructor(private _restService: RestService, private router: Router, private route: ActivatedRoute) { }
+
+  // pour avoir valeur de la checkbox inProgress de createProject
+  @Input('isInProgress') isInProgress: boolean;
+  setInProgress() {
+    this.isInProgress = !this.isInProgress;
+  }
 
   submitForm() {
     console.log(this.project)
