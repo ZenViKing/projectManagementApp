@@ -172,16 +172,18 @@ body{
     width: $larger-width;
     font-size: 16px;
     margin:0 auto;
+    max-width:100vw;
   
 }
 
 .main-div{
 
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width:1024px;
+  height: 100vh;
+   display: flex;
+  justify-content: center;
+   align-items: center;
+  width:1024px;
+  max-width:100vw;
 
   }
 
@@ -292,6 +294,9 @@ footer{
     padding:0;
     background-color: $pastelyellow;
     width: 100%;
+
+
+    
 
     p{
     text-align: center;

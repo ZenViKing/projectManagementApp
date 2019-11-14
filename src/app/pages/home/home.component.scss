@@ -10,6 +10,8 @@
   width: $larger-width;
   display: flex;
   justify-content: center;
+  max-width:100vw;
+  
 
   .list p{
     vertical-align:middle}
@@ -17,9 +19,10 @@
 
   .right {
 
-    max-width: 800px;
+    max-width:800px;
     background-color: $pastelyellow;
     padding: 75px;
+  
 
     .flex-button {
       display: flex;
@@ -38,6 +41,7 @@
     padding: 70px;
     overflow: scroll;
     height: 50vh;
+    
 
     .flex-button-l {
       padding-bottom: 20px;
@@ -83,6 +87,37 @@
 
     }
   }
+
+
+
+}
+
+
+
+@media screen and (max-width: 768px) {
+ 
+
+.right{width: 400px;
+}
+
+
+.left{display:none;
+  
+}
+
+.main{
+  
+  margin: 0 auto;
+  display:flex;
+  flex-direction:column;
+  width: 768px;
+  
+  
+  
+}
+
+
+
 
 
 
