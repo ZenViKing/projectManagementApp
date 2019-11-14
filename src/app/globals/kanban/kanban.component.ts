@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Task } from '../../models/task.model';
+import { Project } from '../../models/project.model';
 import { RestService } from '../../services/rest.service';
 import { Router } from '@angular/router';
 
@@ -10,6 +11,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./kanban.component.scss']
 })
 export class KanbanComponent implements OnInit {
+
+    tasks: Task[];
+    project: Project;
+    
   
   backlog: Task[] = [];
   todos: Task[] = [];
@@ -36,9 +41,27 @@ export class KanbanComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
+ 
+    
 
-    this._restService.getTasks().subscribe(data => {
+    // console.log(object);
+  
+
+
+  ngOnInit() {
+    
+/* ---------------------------- get the id in url --------------------------- */
+    let a = this.route.url.split('/');
+    // let b = '5dadc5edc04b2647bbb448cf';
+    // let [,,c] = a;
+    // console.log(a);
+    // console.log(c);
+    // console.log(typeof(a[2]));
+    // console.log(typeof(b));
+    //------------------------
+    
+    this._restService.getTasks(a[2]).subscribe(data => {
+        console.log(data);
       this.backlog = this._restService.filter(data, 'backlogs');
       this.todos = this._restService.filter(data, 'todo');
       this.inprogress = this._restService.filter(data, 'inprogress');

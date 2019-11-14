@@ -40,16 +40,20 @@ export class RestService {
 
 
 
-  getTasks(project:Project): Observable<Task[]> {
-    console.log('test')
-    return this.http.get(`http://localhost:8001/api/projects/${project._id}/tasks`).pipe(map(data => data as Task[]));
+  // getTasks(project:Project): Observable<Task[]> {
+  //   // console.log('test')
+  //   return this.http.get(`http://localhost:8001/api/projects/${project._id}/tasks`).pipe(map(data => data as Task[]));
+  // }
+  getTasks(id:string): Observable<Task[]> {
+    // console.log('test')
+    return this.http.get(`http://localhost:8001/api/projects/${id}/tasks`).pipe(map(data => data as Task[]));
   }
   getTaskByid(id: number): Observable<Task> {
     return this.http.get(`http://localhost:8001/api/tasks/${id}`).pipe(map(data => data as Task));
   }
   postTask(task: Task): Observable<Task> {
     const headers = new HttpHeaders().set('content-type', 'application/json');
-    return this.http.post(`http://localhost:8001/api/tasks`, task, { headers });
+    return this.http.post(`http://localhost:8001/api/projects/${task._id}/tasks`, task, { headers });
   }
   deleteTask(id: number): Observable<Task> {
     const headers = new HttpHeaders().set('content-type', 'application/json');

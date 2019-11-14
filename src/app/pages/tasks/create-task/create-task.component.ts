@@ -26,13 +26,13 @@ export class CreateTaskComponent implements OnInit {
     console.warn(this.form.value);
   }
 
-  // //Description clear
-  // desc = "description here ...";
-  // clear(){
-  //   console.log('hello');
-  //   this.desc = '';
+  //Description clear
+  desc = "description here ...";
+  clear(){
+    console.log('hello');
+    this.desc = '';
 
-  // }
+  }
 
   //Submit
   submitForm(){
