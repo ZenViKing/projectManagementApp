@@ -24,15 +24,18 @@
         <button class="click"><a href=""><p>CREATE USER</p></a></button>
         </section>
 </div>-->
-
+<div class="main-div">
 <div class="main">
   <div class="left">
     <div class="flex-button-l">
       <div class="click"><a routerLink="./projects">PROJECT LIST</a></div>
     </div>
     <mat-list *ngFor='let project of projects' class="list">
+      <a routerLink="./idproject/{{project._id}}">
       <mat-list-item>
         <div class="list-content">
+            <a [routerLink]="['./idproject',project._id]">
+            
           <h4>
             {{project.name}}
           </h4>
@@ -46,8 +49,10 @@
             <!-- Deadline : {{project.deadline | date : 'longDate'}} -->
             Deadline: {{project.deadline | date : 'mediumDate'}}
           </p>
+          </a>
         </div>
       </mat-list-item>
+      </a>
     </mat-list>
   </div>
 
@@ -67,4 +72,5 @@
       <div class="click"><a routerLink="./user/add">CREATE USER</a></div>
     </div>
   </div>
+</div>
 </div>

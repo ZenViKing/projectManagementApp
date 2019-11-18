@@ -31,10 +31,11 @@ ul{
     display:flex;
     justify-content:flex-end;
     background-color: $pastelyellow;
-    position: absolute;
     width:100%;
-    top: 0; left: 0;
+    
+    
 }
+
 
 .addBtn img{ 
     padding-top:25px;
@@ -48,9 +49,16 @@ ul{
 .navflex{
     line-height:80px;  
     margin:0 auto;
+    width:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    
     
 
 }
+
+
 
 li{
     padding-right: 20px;
@@ -78,3 +86,17 @@ li{
         }
         
 }
+
+
+.main-div{
+
+    height: 100vh;
+     display: flex;
+    justify-content: center;
+     align-items: center;
+    width:100vw;
+    max-width:100%;
+    
+  
+    }
+

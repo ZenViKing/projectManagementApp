@@ -11,25 +11,24 @@ export class ListTaskComponent implements OnInit {
   tasks: Task[];
   project: Project;
 
-  constructor(private _restService: RestService) {}
-  
-  deleteTask(id){
-    let r = confirm('Delete task ?')
-    if (r === true){
-      console.log('task deleted');
-      this._restService.deleteTask(this.project._id, id).subscribe(res=>{
-        this._restService.getTasks(this.project._id).subscribe((data: Task[])=>{
-          this.tasks = data;
-        });
-      })
-    } else {
-      console.log('action aborded');
-    }
-    
-  }
+  constructor(private _restService: RestService) { }
+
+  // deleteTask(id) {
+  //   let r = confirm('Delete task ?')
+  //   if (r === true) {
+  //     console.log('task deleted');
+  //     this._restService.deleteTask(this.project._id, id).subscribe(res=>{
+  //       this._restService.getTasks(this.project._id.toString()).subscribe((data: Task[])=>{
+  //         this.tasks = data;
+  //       });
+  //     })
+  //   } else {
+  //     console.log('action aborded');
+  //   }
+  // }
 
   ngOnInit() {
-    this._restService.getTasks(this.project._id).subscribe((data: Task[])=>{
+    this._restService.getTasks(this.project._id.toString()).subscribe((data: Task[])=>{
       this.tasks = data;
     });
   }

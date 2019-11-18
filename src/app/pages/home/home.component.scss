@@ -5,14 +5,18 @@
 
 .main {
 
-  padding-top: 40px;
+  padding-top: 3%;
   margin: 0 auto;
   width: $larger-width;
   display: flex;
   justify-content: center;
   max-width:100vw;
+  max-height: 65vh;
+  height: 600px;
   
-
+  a {
+    text-decoration: none;
+  }
   .list p{
     vertical-align:middle}
 
@@ -22,6 +26,9 @@
     max-width:800px;
     background-color: $pastelyellow;
     padding: 75px;
+    overflow-wrap: normal;
+    
+   
   
 
     .flex-button {

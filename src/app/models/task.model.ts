@@ -5,7 +5,8 @@ export class Task {
         public name?: string,
         public desc?: string,
         public assignedUsers?: Array<User[]>,
-        public status?: string,
+        public status?: {type: String, default: 'backlogs'},
+        public priority?: string,
         public project?: string
     ){}
 }
