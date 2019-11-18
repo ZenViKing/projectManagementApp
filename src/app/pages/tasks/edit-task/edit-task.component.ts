@@ -24,7 +24,7 @@ export class EditTaskComponent implements OnInit {
   ) { }
   submitForm() {
     let a = this.router.url.split('/');
-    console.log(a);
+    // console.log(a);
     this.task = this.form.value;
     this._restService.updateTask(a[3],this.task).subscribe((data: Task) => {
       this.task = data;
@@ -47,7 +47,7 @@ export class EditTaskComponent implements OnInit {
     return returnValue;
   }
   ngOnInit() {
-    console.log(this.route.data);
+    // console.log(this.route.data);
     this.form = new FormGroup({
       _id: new FormControl(Validators.required),
       __v: new FormControl(Validators.required),
@@ -64,10 +64,9 @@ export class EditTaskComponent implements OnInit {
     })
 
     this.route.data.subscribe(data => {
-      // console.log(data);
+      console.log(this.task);
       this.form.setValue(data.task);
       this.task = data.task;
-      // console.log(this.task._id);
     });
   }
 

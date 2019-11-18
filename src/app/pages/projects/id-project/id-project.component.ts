@@ -10,11 +10,12 @@ import { Project } from 'src/app/models/project.model';
   styleUrls: ['./id-project.component.scss']
 })
 export class IdProjectComponent implements OnInit {
-  tasks: Task[];
-  project: Project;
+  // tasks: Task[];
+  // project: Project;
 
-  constructor(private _restService: RestService,
-    private route: ActivatedRoute
+  constructor(
+    // private _restService: RestService,
+    // private route: ActivatedRoute
   ) { }
 
   ngOnInit() {

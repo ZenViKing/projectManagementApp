@@ -72,12 +72,11 @@ export class KanbanComponent implements OnInit {
     let a = this.router.url.split('/');
 /* ------------------------------------ x ----------------------------------- */
 
-
-this.route.data.subscribe(data => {
-  console.log(data);
-  this.project = data.project.project
-  // console.log(this.project);
-})
+    this.route.data.subscribe(data => {
+      console.log(this.route);
+      this.project = data.project.project
+      // console.log(this.project);
+    })
     this._restService.getTasks(a[2]).subscribe(data => {
       
       this.task= this._restService.filter(data,'project')
