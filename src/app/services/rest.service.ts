@@ -18,7 +18,7 @@ export class RestService {
   listProjects(): Observable<Project[]> {
     return this.http.get('http://localhost:8001/api/projects/').pipe(map(data => data as Project[]));
   }
-  getProjectByid(id: number): Observable<Project> {
+  getProjectByid(id: any): Observable<Project> {
     // return this.http.get(`http://localhost:8001/api/projects/${id}`).pipe(map(data => data as Task));
     return this.http.get(`http://localhost:8001/api/projects/${id}`).pipe(map(data => data as Project));
   }
@@ -40,23 +40,23 @@ export class RestService {
 
 
 
-  getTasks(idProject: number): Observable<Task[]> {
+  getTasks(idProject: string): Observable<Task[]> {
     return this.http.get(`http://localhost:8001/api/projects/${idProject}/tasks`).pipe(map(data => data as Task[]));
   }
-  getTaskByid(idProject: number, idTask: number): Observable<Task> {
+  getTaskByid(idProject: string, idTask: number): Observable<Task> {
     return this.http.get(`http://localhost:8001/api/projects/${idProject}/tasks/${idTask}`).pipe(map(data => data as Task));
   }
-  postTask(idProject: number, task: Task): Observable<Task> {
+  postTask(idProject: string, task: Task): Observable<Task> {
     const headers = new HttpHeaders().set('content-type', 'application/json');
     return this.http.post(`http://localhost:8001/api/projects/${idProject}/tasks`, task, { headers });
   }
-  deleteTask(idProject: number, idTask: number): Observable<Task> {
+  deleteTask(idProject: string, idTask: number): Observable<Task> {
     const headers = new HttpHeaders().set('content-type', 'application/json');
     return this.http.delete(`http://localhost:8001/api/projects/${idProject}/tasks/${idTask}`, { headers });
   }
-  updateTask(idProject: number, task: Task): Observable<Task> {
+  updateTask(idProject: string, task: Task): Observable<Task> {
     const headers = new HttpHeaders().set('content-type', 'application/json');
-    console.log("id : " + task._id);
+    // console.log("id : " + task._id);
     return this.http.patch(`http://localhost:8001/api/projects/${idProject}/tasks/${task._id}`, task, { headers });
   }
 

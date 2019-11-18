@@ -34,6 +34,8 @@
       <a routerLink="./idproject/{{project._id}}">
       <mat-list-item>
         <div class="list-content">
+            <a [routerLink]="['./idproject',project._id]">
+            
           <h4>
             {{project.name}}
           </h4>
@@ -47,6 +49,7 @@
             <!-- Deadline : {{project.deadline | date : 'longDate'}} -->
             Deadline: {{project.deadline | date : 'mediumDate'}}
           </p>
+          </a>
         </div>
       </mat-list-item>
       </a>

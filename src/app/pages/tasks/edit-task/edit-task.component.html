@@ -15,18 +15,17 @@
         </section>
         <!-- ---------------------------- mat radio ---------------------------- -->
         <section>
-          <mat-label for="status">Priority status : </mat-label>
-          <mat-radio-group formControlName="status">
-            <mat-label for="lowPriority">low </mat-label>
-            <mat-radio-button id="lowPiority" name="lol" value="1"></mat-radio-button>
-            <mat-label for="mediumPiority">medium </mat-label>
-            <mat-radio-button id="mediumPiority" name="lol" value="2"></mat-radio-button>
-            <mat-label for="hightPiority">hight </mat-label>
-            <mat-radio-button id="hightPiority" name="lol" value="3"></mat-radio-button>
-            <mat-error *ngIf="form.controls['status'].invalid && ['status'].touched">{{getErrorMessage('status')}}
-            </mat-error>
-          </mat-radio-group>
-        </section>
+            <mat-label for="priority">Priority status : </mat-label>
+            <mat-radio-group formControlName="priority">
+                <mat-label for="lowPriority">low </mat-label>
+                <mat-radio-button id="lowPiority"  name="lol" value="low priority"></mat-radio-button>
+                <mat-label for="mediumPiority">medium </mat-label>
+                <mat-radio-button id="mediumPiority"  name="lol" value="medium priority"></mat-radio-button>
+                <mat-label for="highPriority">high </mat-label>
+                <mat-radio-button id="highPriority"  name="lol" value="high priority"></mat-radio-button>
+                <mat-error *ngIf="form.controls['priority'].invalid && ['priority'].touched">{{getErrorMessage('priority')}}</mat-error>
+            </mat-radio-group>
+            </section>
         <!-- ------------------------- mat assigned users ------------------------- -->
         <section>
           <mat-form-field>
@@ -47,7 +46,7 @@
         <div class="containerbtns">
             <section class="btns">
            <div class="click"> <a routerLink="/">Cancel</a></div>    
-            <div class="click"> <button class="click" type="submit" [disabled]="form.invalid">Create Task</button></div>
+            <div class="click"> <button class="click" type="submit" [disabled]="form.invalid">Edit Task</button></div>
           </section>
         </div>
 
