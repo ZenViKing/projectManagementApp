@@ -87,12 +87,25 @@ p.mat-line {
 
 .mat-list-base .mat-list-item .mat-line {
     white-space: normal;
-text-align:left;    // overflow: hidden;
+text-align:left;    
+
+// overflow: hidden;
 // text-overflow: ellipsis;
 // display: block;
 // box-sizing: border-box;
 
 }
 }
+
+.todo{
+
+  background-color:$pastel-greenblue;
+  
+}
+
+.inProgress {
+  background-color: $pastelyellow;
+}
+
 
 
