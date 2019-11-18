@@ -15,7 +15,7 @@ export class IdProjectComponent implements OnInit {
 
   constructor(private _restService: RestService,
     private route: ActivatedRoute
-    ) { }
+  ) { }
 
   ngOnInit() {
     this.route.data.subscribe(data => {
