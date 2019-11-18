@@ -31,6 +31,7 @@
       <div class="click"><a routerLink="./projects">PROJECT LIST</a></div>
     </div>
     <mat-list *ngFor='let project of projects' class="list">
+      <a routerLink="./idproject/{{project._id}}">
       <mat-list-item>
         <div class="list-content">
           <h4>
@@ -48,6 +49,7 @@
           </p>
         </div>
       </mat-list-item>
+      </a>
     </mat-list>
   </div>
 
