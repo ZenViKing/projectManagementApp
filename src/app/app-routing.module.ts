@@ -86,7 +86,8 @@ const routes: Routes = [
   },
   {
     path: 'idproject/:id',
-    component: IdProjectComponent
+    component: IdProjectComponent,
+    resolve: {project: ProjectResolver}
   },
   {
     path: 'projects',
@@ -95,12 +96,12 @@ const routes: Routes = [
 
   //Routes Task Component
   {
-    path: 'task/add',
+    path: 'idproject/:id/task/add',
     component: CreateTaskComponent
   },
 
   {
-    path: 'tasks/edit/:id',
+    path: 'idproject/:id/task/edit/:id',
     component: EditTaskComponent,
     resolve: {
       task: TaskResolver
