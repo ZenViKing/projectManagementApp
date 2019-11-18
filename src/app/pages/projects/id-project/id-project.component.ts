@@ -18,17 +18,14 @@ export class IdProjectComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-<<<<<<< HEAD
-    // console.log(this.task);
-    // this._restService.getTasks().subscribe(data => {
-    //   console.log(data);
-    // })
-=======
-    this.route.data.subscribe(data => {
-      this.project = data.project.project
-      // console.log(this.project);
+    this.route.data.subscribe((data : Project) => {
+      console.log(data);
+      this.project = data;
+
+      console.log(this.project);
+      
+      // console.log('this.project : ' + this.project);
     })
->>>>>>> b3618b7ddd9d96f6ea90b22565388ab2b5ce3db3
   }
 
 }
