@@ -17,10 +17,9 @@ export class IdProjectComponent implements OnInit {
     private route: ActivatedRoute
     ) { }
 
-  ngOnInit() {
+  ngOnInit() {    
     this.route.data.subscribe(data => {
-      this.project = data.project.project
-      // console.log(this.project);
+      this.project = data.project.project;
     })
   }
 
