@@ -26,9 +26,13 @@
               <!-- datePicker -->
               <!-- https://material.angular.io/components/datepicker/overview -->
               <mat-label for="date">Starting date</mat-label>
-              <input matInput [matDatepicker]="date" placeholder="Choose a starting date" formControlName="date">
+              <!-- <input matInput [matDatepicker]="date" placeholder="Choose a starting date" formControlName="date"> -->
+              <!-- pour avoir la date du jour de création du projet -->
+              <input matInput [matDatepicker]="date" [min]="startDate" placeholder="Choose a starting date"
+                formControlName="date">
               <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
               <mat-datepicker #date></mat-datepicker>
+              <!-- <mat-datepicker #date [startAt]="startDate"></mat-datepicker> -->
               <!-- <mat-error *ngIf="form.controls['date'].invalid">Choose a starting date</mat-error> -->
               <mat-error *ngIf="form.controls['date'].invalid">{{getErrorMessage('date')}}</mat-error>
             </mat-form-field>
@@ -37,7 +41,10 @@
           <div>
             <mat-form-field>
               <mat-label for="deadline">Deadline</mat-label>
-              <input matInput [matDatepicker]="deadline" placeholder="Choose a deadline" formControlName="deadline">
+              <!-- <input matInput [matDatepicker]="deadline" placeholder="Choose a deadline" formControlName="deadline"> -->
+              <!-- pour avoir la date du jour de création du projet -->
+              <input matInput [matDatepicker]="deadline" [min]="startDate" placeholder="Choose a deadline"
+                formControlName="deadline">
               <mat-datepicker-toggle matSuffix [for]="deadline"></mat-datepicker-toggle>
               <mat-datepicker #deadline></mat-datepicker>
               <!-- <mat-error *ngIf="form.controls['deadline'].invalid">Choose a deadline for your project</mat-error> -->
@@ -112,10 +119,12 @@
 
 
 
-          <div class="containerbtns"><section class="btns">
-            <div class="click"> <a routerLink="/">Cancel</a></div>    
-             <div class="click"> <button class="click" type="submit" [disabled]="form.invalid">Submit</button></div>
-           </section></div>
+          <div class="containerbtns">
+            <section class="btns">
+              <div class="click"> <a routerLink="/">Cancel</a></div>
+              <div class="click"> <button class="click" type="submit" [disabled]="form.invalid">Submit</button></div>
+            </section>
+          </div>
         </form>
       </section>
     </mat-card-content>
