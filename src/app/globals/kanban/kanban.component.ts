@@ -39,7 +39,8 @@ export class KanbanComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    console.log(this.project._id);
+    
     this._restService.getTasks(this.project._id).subscribe(data => {
       this.backlog = this._restService.filter(data, 'backlogs');
       this.todos = this._restService.filter(data, 'todo');

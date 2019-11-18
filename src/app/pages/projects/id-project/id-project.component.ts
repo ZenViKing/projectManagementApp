@@ -12,7 +12,7 @@ export class IdProjectComponent implements OnInit {
   constructor(private _restService : RestService) { }
 
   ngOnInit() {
-    console.log(this.task);
+    // console.log(this.task);
     // this._restService.getTasks().subscribe(data => {
     //   console.log(data);
     // })
