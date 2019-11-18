@@ -1,9 +1,9 @@
-<div>
+<div id="kanban">
   <!-- BACKLOG LIST -->
   <div class="example-container">
     <h2>Backlogs</h2>
     <div class="containerbtns"><section class="btns">   
-       <div class="click"> <button class="click" type="submit">NEW TASK</button></div>
+        <a [routerLink]="['/idproject',project._id,'task','add']">Create a task</a>
      </section></div>
     <div 
       id="backlog"

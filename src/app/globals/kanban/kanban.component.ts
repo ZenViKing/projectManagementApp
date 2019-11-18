@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { ActivatedRoute } from '@angular/router';
 import { Task } from '../../models/task.model';
+import { Project} from '../../models/project.model';
 import { RestService } from '../../services/rest.service';
 import { Router } from '@angular/router';
 
@@ -14,6 +16,7 @@ export class KanbanComponent implements OnInit {
 
   tasks: Task[];
   task: Task;
+  project : Project;
     
   backlog: Task[] = [];
   todos: Task[] = [];
@@ -21,7 +24,10 @@ export class KanbanComponent implements OnInit {
   done: Task[] = [];
   
 
-  constructor(private _restService: RestService, private router: Router) { }
+  constructor(private _restService: RestService, 
+    private router: Router,
+    private route: ActivatedRoute
+    ) { }
 
   drop(event: CdkDragDrop<string[]>){
     if(event.previousContainer === event.container){
@@ -66,6 +72,12 @@ export class KanbanComponent implements OnInit {
     let a = this.router.url.split('/');
 /* ------------------------------------ x ----------------------------------- */
 
+
+this.route.data.subscribe(data => {
+  console.log(data);
+  this.project = data.project.project
+  // console.log(this.project);
+})
     this._restService.getTasks(a[2]).subscribe(data => {
       
       this.task= this._restService.filter(data,'project')
