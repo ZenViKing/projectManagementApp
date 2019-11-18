@@ -87,7 +87,8 @@ export class RestService {
 
   loginUser(user: User): Observable<User> {
     const headers = new HttpHeaders().set('content-type', 'application/json');
-    return this.http.post('http://localhost:8001/api/users/login', user, { headers });
+    const token = this.http.post('http://localhost:8001/api/users/login', user, {headers});
+    return token;
   }
 
   // updateUser(user: User): Observable<User>{

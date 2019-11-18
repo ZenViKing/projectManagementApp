@@ -5,6 +5,8 @@ export class User {
         public firstname?: String,
         public lastname?: String,
         public email?: String,
-        public fonction?: String
+        public fonction?: String,
+        public password?: String,
+        public token?: String
     ){}
 }
