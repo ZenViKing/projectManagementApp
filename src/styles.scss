@@ -77,6 +77,25 @@ $projectPlannerApp-theme: mat-light-theme($projectPlannerApp-primary, $projectPl
 
 /*NAV*/
 
+
+
+.login{
+    border : 1px solid rgb(146, 146, 146);
+    border-radius: 4px;
+    font-weight:800;
+    color:white;
+    padding: 10px;
+    background-color: rgb(235, 235, 235);
+    background-color: $vibrant-greenblue;
+}
+
+.login:hover{
+    color:$vibrant-greenblue;
+    background-color: $pastelyellow;
+
+
+}
+
 ul{
     
     margin:0;
@@ -92,10 +111,12 @@ ul{
 
 .addBtn img{ 
     padding-top:25px;
+    opacity: 0.3;
     padding-right:10px;
     width:35px;
 }
  
+
 
 .navflex{
     line-height:80px;  
@@ -201,6 +222,7 @@ p{
     text-align:justify;
     line-height:1.3em;
     font-family: 'open_sansregular';
+
     
 }
 
@@ -257,10 +279,6 @@ form{
 }
 
 
-  
-
-  
-
 
 //FOOTER
 
@@ -282,3 +300,4 @@ footer{
 
 //html, body { height: 100%; }
 //body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+

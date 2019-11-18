@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Task } from '../../models/task.model';
-import { Project } from '../../models/project.model';
 import { RestService } from '../../services/rest.service';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-kanban',
@@ -12,16 +12,16 @@ import { Router } from '@angular/router';
 })
 export class KanbanComponent implements OnInit {
 
-    tasks: Task[];
-    project: Project;
+  tasks: Task[];
+  task: Task;
     
-  
   backlog: Task[] = [];
   todos: Task[] = [];
   inprogress: Task[] = [];
   done: Task[] = [];
+  
 
-  constructor(private _restService: RestService, private route: Router) { }
+  constructor(private _restService: RestService, private router: Router) { }
 
   drop(event: CdkDragDrop<string[]>){
     if(event.previousContainer === event.container){
@@ -35,33 +35,40 @@ export class KanbanComponent implements OnInit {
                           event.currentIndex  );
       let task = event.item.data;
       task.status = event.container.element.nativeElement.id;
-      this._restService.updateTask(task).subscribe(data => {
+      let a = this.router.url.split('/');
+      this._restService.updateTask(a[2], task).subscribe(data => {
         console.log(data);
       })
     }
   }
 
- 
-    
 
-    // console.log(object);
-  
+  deleteTask(id) {
+    let a = this.router.url.split('/');
+    console.log(a[2]);
 
+    let r = confirm('Delete task ?')
+    if (r === true) {
+      console.log('task deleted');
+      this._restService.deleteTask(a[2], id).subscribe(res=>{
+        this._restService.getTasks(a[2]).subscribe((data: Task[])=>{
+          this.tasks = data;
+          window.location.reload();
+        });
+      })
+    } else {
+      console.log('action aborded');
+    }
+  }
 
   ngOnInit() {
-    
 /* ---------------------------- get the id in url --------------------------- */
-    let a = this.route.url.split('/');
-    // let b = '5dadc5edc04b2647bbb448cf';
-    // let [,,c] = a;
-    // console.log(a);
-    // console.log(c);
-    // console.log(typeof(a[2]));
-    // console.log(typeof(b));
-    //------------------------
-    
+    let a = this.router.url.split('/');
+/* ------------------------------------ x ----------------------------------- */
+
     this._restService.getTasks(a[2]).subscribe(data => {
-        console.log(data);
+      
+      this.task= this._restService.filter(data,'project')
       this.backlog = this._restService.filter(data, 'backlogs');
       this.todos = this._restService.filter(data, 'todo');
       this.inprogress = this._restService.filter(data, 'inprogress');

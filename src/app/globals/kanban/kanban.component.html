@@ -16,6 +16,9 @@
         [cdkDragData]="task"
         cdkDrag>
         {{task.name}}
+        
+        <a [routerLink]="['/idproject',task.project,'task','edit',task._id]">Edit</a>
+        <a (click)="deleteTask(task._id)">Delete task?</a>
       </div>
     </div>
   </div> 
@@ -37,6 +40,8 @@
         [cdkDragData]="task"
         cdkDrag>
         {{task.name}}
+        <a [routerLink]="['/idproject',task.project,'task','edit',task._id]">Edit</a>
+        <a (click)="deleteTask(task._id)">Delete task?</a>
       </div>
     </div>
   </div>
@@ -57,6 +62,8 @@
         [cdkDragData]="task"
         cdkDrag>
         {{task.name}}
+        <a [routerLink]="['/idproject',task.project,'task','edit',task._id]">Edit</a>
+        <a (click)="deleteTask(task._id)">Delete task?</a>
       </div>
     </div>
   </div>
@@ -77,6 +84,8 @@
         [cdkDragData]="task"
         cdkDrag>
         {{task.name}}
+        <a [routerLink]="['/idproject',task.project,'task','edit',task._id]">Edit</a>
+        <a (click)="deleteTask(task._id)" >Delete task?</a>
       </div>
     </div>
   </div>

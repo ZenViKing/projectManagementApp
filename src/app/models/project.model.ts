@@ -2,7 +2,7 @@ import { User } from './user.model';
 
 export class Project {
     constructor(
-        public _id?: any,
+        public _id?: number,
         public name?: String,
         public date?: Date,
         public deadline?: Date,
