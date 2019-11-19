@@ -22,7 +22,7 @@ export class IdProjectComponent implements OnInit {
     this.route.data.subscribe(data => {
       console.log(data);
       this.project = data.project.project;
-      // console.log(this.project);
+      console.log(this.project);
     })
   }
 
