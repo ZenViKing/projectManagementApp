@@ -1,5 +1,5 @@
-<div class="main-div">
-  <h2>{{project.name}}</h2>
+<div class="main-div"><div class="project-infos">
+  <h1>{{project.name}}</h1>
   <a [routerLink]="['/idproject',project._id,'task','add']">Create a task</a>
-  <app-kanban></app-kanban>
+  <app-kanban></app-kanban></div>
 </div>
