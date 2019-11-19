@@ -75,7 +75,9 @@ export class KanbanComponent implements OnInit {
 
     this.route.data.subscribe(data => {
       // console.log(data);
-      this.project = data.project.projects;
+      console.log(data.project.project);
+
+      this.project = data.project.project;
       // console.log(this.project);
     })
     this._restService.getTasks(a[2]).subscribe(data => {
