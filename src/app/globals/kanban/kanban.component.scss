@@ -17,9 +17,15 @@
   border-radius: 4px;
   overflow: scroll;
   display: block;
+  scrollbar-color: $vibrant-greenblue $lightgrey;
+  overflow-x:hidden;
+  
   
   
 }
+
+
+
 
 .example-box {
   padding: 20px 10px;
