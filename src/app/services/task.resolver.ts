@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Task } from '../models/task.model';
 import { map } from 'rxjs/operators';
 import { Project } from '../models/project.model';
+import { Router } from '@angular/router';
 
 @Injectable(
     
@@ -14,10 +15,15 @@ import { Project } from '../models/project.model';
 
 export class TaskResolver implements Resolve<Task> {
     project: Project;
-    constructor(private _restService: RestService) { }
+    constructor(private _restService: RestService, private routeA: Router) { }
     
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot):
         Observable<Task> | Promise<Task> {
-            return this._restService.getTaskByid(this.project._id, route.params['id']).pipe(map(task => task));
+            // console.log(this.routeA.url);
+            // console.log(route);
+            // console.log(state);
+            let a = this.routeA.url.split('/');
+            
+            return this._restService.getTaskByid(a[1], route.params['id']).pipe(map(task => task));
         }
 }

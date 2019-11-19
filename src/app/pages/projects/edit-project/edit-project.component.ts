@@ -13,6 +13,7 @@ export class EditProjectComponent implements OnInit {
   project: Project;
   form: FormGroup;
   staff: User[];
+  startDate = new Date();
   constructor(private _restService: RestService, private router: Router, private route: ActivatedRoute) { }
 
   // pour avoir valeur de la checkbox inProgress de createProject
