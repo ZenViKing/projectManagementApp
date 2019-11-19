@@ -68,18 +68,15 @@ export class KanbanComponent implements OnInit {
   }
 
   ngOnInit() {
-    /* ---------------------------- get the id in url --------------------------- */
+    // /* ---------------------------- get the id in url --------------------------- */
     let a = this.router.url.split('/');
-    /* ------------------------------------ x ----------------------------------- */
+    // /* ------------------------------------ x ----------------------------------- */
 
-
-    this.route.data.subscribe(data => {
-      // console.log(data);
-      console.log(data.project.project);
-
-      this.project = data.project.project;
-      // console.log(this.project);
-    })
+    //     this.route.data.subscribe(data => {
+    //       console.log(this.route);
+    //       this.project = data.project.project
+    //       // console.log(this.project);
+    //     })
     this._restService.getTasks(a[2]).subscribe(data => {
 
       this.task = this._restService.filter(data, 'project')
