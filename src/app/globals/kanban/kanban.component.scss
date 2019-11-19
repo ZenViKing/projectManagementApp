@@ -7,6 +7,7 @@
   display: inline-block;
   vertical-align: top;
   font-family: 'open_sansregular';
+  
 }
 
 .example-list {
@@ -16,6 +17,8 @@
   border-radius: 4px;
   overflow: scroll;
   display: block;
+  
+  
 }
 
 .example-box {
@@ -28,8 +31,13 @@
   justify-content: space-between;
   box-sizing: border-box;
   cursor: move;
-  background-color: $pastelyellow;
+  background-color: $pastel-greenblue;
   font-size: 14px;
+  margin: 0 auto;
+  margin:10px;
+  
+  
+  
 }
 
 .cdk-drag-preview {
