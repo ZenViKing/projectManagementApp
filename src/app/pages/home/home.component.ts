@@ -12,7 +12,8 @@ export class HomeComponent implements OnInit {
   constructor(private _restService: RestService) { }
 
   ngOnInit() {
-    this._restService.listProjects().subscribe((data: Project[]) => {    
+    this._restService.listProjects().subscribe((data: Project[]) => { 
+      console.log(data);   
       this.projects = data;
     });
   }
