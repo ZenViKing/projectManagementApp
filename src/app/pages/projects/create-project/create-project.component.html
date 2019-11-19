@@ -54,15 +54,19 @@
 
           <div>
             <mat-form-field>
-              <mat-label for="time">Estimated time</mat-label>
+              <mat-label for="time">Estimated time in hours</mat-label>
               <!-- <input matInput type="number" name="time-estimation" id="time" placeholder="42" formControlName="time"> -->
               <!-- pattern juste pour des chiffres -->
               <!-- https://www.npmjs.com/package/ng-pattern-restrict -->
               <!-- <input matInput type="number" name="time-estimation" id="time" placeholder="42" formControlName="time"
                   pattern="[0-9]+" ng-pattern-restrict> -->
               <!-- https://stackblitz.com/edit/angular-input-pattern-digits-only?file=src%2Fapp%2Fapp.component.html -->
+              <!-- <input matInput type="text" name="time-estimation" id="time" placeholder="42" formControlName="time"
+                pattern="\d+"> -->
+              <!-- https://www.iamrohit.in/only-allow-digits-in-input-box-angular-directive-ngx-digit-only/ -->
+              <!-- https://codeburst.io/digit-only-directive-in-angular-3db8a94d80c3 -->
               <input matInput type="text" name="time-estimation" id="time" placeholder="42" formControlName="time"
-                pattern="\d+">
+                digitOnly>
               <!-- <input matInput type="number" name="time-estimation" id="time" placeholder="42" formControlName="time"
                 pattern="/^[a-zA-Z]+$/"> -->
               <!-- https://angular.io/api/forms/PatternValidator -->
