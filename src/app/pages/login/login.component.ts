@@ -6,6 +6,7 @@ import { User } from 'src/app/models/user.model';
 import { RestService } from 'src/app/services/rest.service';
 import { MatListIconCssMatStyler } from '@angular/material';
 import { tap, map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,19 +16,9 @@ import { tap, map } from 'rxjs/operators';
 export class LoginComponent implements OnInit {
   form: FormGroup;
   user: User;
-  // user: User = {
-  //   email: "chou@mail.be",
-  //   password: "chouchou"
-  // };
-
-  // constructor(private authentificate: AuthService, private router: Router) {
-  //   // if(this.authentificate.currentUserValue) {
-  //   //   this.router.navigate(['/home']);
-  //   // }
-  // }
-  constructor(private restService: RestService) {
-    this.restService.loginUser(this.user)
-                            .subscribe(data => console.log(data));
+ 
+  constructor(private restService: RestService, private router: Router) {
+    
   }
 
   ngOnInit() {
@@ -38,7 +29,13 @@ export class LoginComponent implements OnInit {
     
   }
   submitForm() {
-    // this.user.email = email;
+    this.user = {
+      email : this.form.controls.email.value,
+      password : this.form.controls.password.value
+    }
+    this.restService.loginUser(this.user)
+        .subscribe(data => console.log(data));
+    this.router.navigate(['/']);
   }
 
 }
