@@ -31,6 +31,7 @@ export class ListProjectComponent implements OnInit {
     this._restService.listProjects().subscribe((data: Project[]) => {
       this.projects = data;
     });
+    
   }
 
 }

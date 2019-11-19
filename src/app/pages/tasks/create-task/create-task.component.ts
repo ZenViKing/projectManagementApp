@@ -27,14 +27,12 @@ export class CreateTaskComponent implements OnInit {
   onSubmit(){
     console.warn(this.form.value);
   }
-
+  //No need : we already have a placeholder in Description area that does this job.
   //Description clear
-  desc = "description here ...";
-  clear(){
-    console.log('hello');
-    this.desc = '';
-
-  }
+  // desc = "description here ...";
+  // clear(){
+  //   this.desc = '';
+  // }
   
   //Submit
   submitForm(){
