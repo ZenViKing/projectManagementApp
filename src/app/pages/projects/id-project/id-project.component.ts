@@ -11,19 +11,19 @@ import { Project } from 'src/app/models/project.model';
 })
 export class IdProjectComponent implements OnInit {
   // tasks: Task[];
-  // project: Project;
+  project: Project;
 
   constructor(
-    // private _restService: RestService,
-    // private route: ActivatedRoute
+    private _restService: RestService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    // this.route.data.subscribe(data => {
-    //   console.log(data);
-    //   this.project = data.project.project
-    //   // console.log(this.project);
-    // })
+    this.route.data.subscribe(data => {
+      console.log(data);
+      this.project = data.project.project;
+      // console.log(this.project);
+    })
   }
 
 }
