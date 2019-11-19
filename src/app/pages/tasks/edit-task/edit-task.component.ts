@@ -22,6 +22,8 @@ export class EditTaskComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute
   ) { }
+
+  
   submitForm() {
     let a = this.router.url.split('/');
     // console.log(a);

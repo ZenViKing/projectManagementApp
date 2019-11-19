@@ -66,15 +66,16 @@ export class EditProjectComponent implements OnInit {
     // pour avoir liste users existants
     this._restService.getUsers().subscribe((data: User[]) => {
       this.staff = data;
-      console.log(data)
+      console.log(this.staff)
     });
     // console.log(Project);
 
     this.route.data.subscribe(data => {
-      console.log(data);
+      // console.log(data);
 
       this.form.setValue(data.project.projects);
       this.project = data.project.projects
+      // console.log(this.project);
     });
   }
 
