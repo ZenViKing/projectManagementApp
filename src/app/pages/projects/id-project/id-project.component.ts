@@ -10,17 +10,18 @@ import { Project } from 'src/app/models/project.model';
   styleUrls: ['./id-project.component.scss']
 })
 export class IdProjectComponent implements OnInit {
-  tasks: Task[];
+  // tasks: Task[];
   project: Project;
 
-  constructor(private _restService: RestService,
+  constructor(
+    private _restService: RestService,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
     this.route.data.subscribe(data => {
       console.log(data);
-      this.project = data.project.project
+      this.project = data.project.project;
       // console.log(this.project);
     })
   }

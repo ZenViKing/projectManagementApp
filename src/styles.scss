@@ -108,16 +108,18 @@ body{
 }
 
 .main-div{
-
   height: 100vh;
-   display: flex;
+  display: flex;
   justify-content: center;
    align-items: center;
   width:1024px;
   max-width:100vw;
   margin: 0 auto;
-  
 }
+// #kanban{
+//     display: flex;
+//     justify-content: center;
+// }
 
 a{
     font-family:$titles-font;
