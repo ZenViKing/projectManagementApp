@@ -127,13 +127,13 @@ a{
 .mat-card-content{
 
    margin: 0 auto;
-   width: 700px;
    padding: 20px;
    border-radius: 5px;
 }
 
 .mat-card{
     background-color:$pastelyellow;
+    height: 70vh;
     
 }
 
@@ -157,6 +157,16 @@ p{
     font-family: 'open_sansregular';
 
     
+}
+
+h4{
+
+    color:$titles;
+    transition: all .3s;
+    &:hover{
+        color:$pastelyellow;
+        transition: all .3s;
+    }
 }
 
 

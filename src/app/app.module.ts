@@ -23,6 +23,7 @@ import { CreateProjectComponent } from './pages/projects/create-project/create-p
 import { EditProjectComponent } from './pages/projects/edit-project/edit-project.component';
 import { ListProjectComponent } from './pages/projects/list-project/list-project.component';
 import { IdProjectComponent } from './pages/projects/id-project/id-project.component';
+import { DigitOnlyModule } from '@uiowa/digit-only';
 
 import { CreateTaskComponent } from './pages/tasks/create-task/create-task.component';
 import { EditTaskComponent } from './pages/tasks/edit-task/edit-task.component';
@@ -41,7 +42,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { LoginComponent } from './pages/login/login.component';
 import { KanbanComponent } from './globals/kanban/kanban.component'
 
-import {DragDropModule} from '@angular/cdk/drag-drop';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { FooterComponent } from './globals/footer/footer.component';
 
 
@@ -85,7 +86,8 @@ import { FooterComponent } from './globals/footer/footer.component';
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    DragDropModule
+    DragDropModule,
+    DigitOnlyModule
   ],
   providers: [],
   bootstrap: [AppComponent]

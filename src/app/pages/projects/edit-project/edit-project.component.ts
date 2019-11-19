@@ -34,9 +34,8 @@ export class EditProjectComponent implements OnInit {
   getErrorMessage(field: string): string {
     const error = {
       required: 'This field is required',
-      // time: ['', [Validators.pattern('^[0-9]+')]]
-      pattern: 'Only numbers'
-      // staff: 'Assign at least one user'
+      // était utilisé pour le validator regex
+      // pattern: 'Only numbers'
     }
 
     let returnValue = '';
@@ -55,8 +54,9 @@ export class EditProjectComponent implements OnInit {
       name: new FormControl(null, [Validators.required]),
       date: new FormControl(null, [Validators.required]),
       deadline: new FormControl(null, [Validators.required]),
-      // time: new FormControl(null, [Validators.required]),
-      time: new FormControl(null, Validators.compose([Validators.required, Validators.pattern(/\d+/)])),
+      time: new FormControl(null, [Validators.required]),
+      // était utilisé pour le validator regex
+      // time: new FormControl(null, Validators.compose([Validators.required, Validators.pattern(/\d+/)])),
       staff: new FormControl(null, [Validators.required]),
       desc: new FormControl(null),
       // pour avoir valeur false si on ne clique pas la checkbox inProgress
@@ -66,15 +66,16 @@ export class EditProjectComponent implements OnInit {
     // pour avoir liste users existants
     this._restService.getUsers().subscribe((data: User[]) => {
       this.staff = data;
-      console.log(data)
+      console.log(this.staff)
     });
     // console.log(Project);
 
     this.route.data.subscribe(data => {
       console.log(data);
 
-      this.form.setValue(data.project.projects);
-      this.project = data.project.projects
+      this.form.setValue(data.project.project);
+      this.project = data.project.project;
+      // console.log(this.project);
     });
   }
 
