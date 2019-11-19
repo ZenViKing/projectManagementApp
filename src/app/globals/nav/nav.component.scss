@@ -4,13 +4,16 @@
 
 
 
-
+.container{
+    margin: 50px;
+    max-height:140px;
+}
 
 .login{
     border : 1px solid rgb(146, 146, 146);
     border-radius: 4px;
     font-weight:800;
-    color:white;
+    color:white!important;
     padding: 10px;
     background-color: rgb(235, 235, 235);
     background-color: $vibrant-greenblue;
@@ -44,7 +47,6 @@ ul{
 }
  
 
-
 .navflex{
     line-height:80px;  
     margin:0 auto;
@@ -75,7 +77,7 @@ li{
         #logo{
             position:absolute;
             top:0;
-            left:10%;
+            left:0%;
             
         }
         
