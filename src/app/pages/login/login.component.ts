@@ -7,6 +7,7 @@ import { RestService } from 'src/app/services/rest.service';
 import { MatListIconCssMatStyler } from '@angular/material';
 import { tap, map } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
   form: FormGroup;
   user: User;
  
-  constructor(private restService: RestService, private router: Router) {
+  constructor(private authService: AuthService, private router: Router) {
     
   }
 
@@ -33,8 +34,7 @@ export class LoginComponent implements OnInit {
       email : this.form.controls.email.value,
       password : this.form.controls.password.value
     }
-    this.restService.loginUser(this.user)
-        .subscribe(data => console.log(data));
+    this.authService.login(this.user);
     this.router.navigate(['/']);
   }
 

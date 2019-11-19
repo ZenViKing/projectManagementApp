@@ -43,6 +43,7 @@ import { KanbanComponent } from './globals/kanban/kanban.component'
 
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { FooterComponent } from './globals/footer/footer.component';
+import { TokenInterceptor } from './services/token.interceptor';
 
 
 
@@ -87,9 +88,7 @@ import { FooterComponent } from './globals/footer/footer.component';
     MatNativeDateModule,
     DragDropModule
   ],
-  providers: [
-    
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
