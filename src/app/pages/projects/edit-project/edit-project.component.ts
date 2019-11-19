@@ -71,10 +71,10 @@ export class EditProjectComponent implements OnInit {
     // console.log(Project);
 
     this.route.data.subscribe(data => {
-      // console.log(data);
+      console.log(data);
 
-      this.form.setValue(data.project.projects);
-      this.project = data.project.projects
+      this.form.setValue(data.project.project);
+      this.project = data.project.project;
       // console.log(this.project);
     });
   }
