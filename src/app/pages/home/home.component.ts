@@ -13,9 +13,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this._restService.listProjects().subscribe((data: Project[]) => { 
-      console.log(data);   
       this.projects = data;
     });
   }
-
 }

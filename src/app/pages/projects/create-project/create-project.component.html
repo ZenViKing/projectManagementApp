@@ -7,13 +7,10 @@
 
       <section>
         <form [formGroup]="form" (submit)="submitForm()">
-
-
-
           <div>
             <mat-form-field>
               <!-- https://angular.io/guide/form-validation -->
-              <mat-label for="name">Name</mat-label>
+              <mat-label for="name">Project name : </mat-label>
               <input matInput type="text" name="project-name" id="name" placeholder="Name your project"
                 formControlName="name">
               <!-- <mat-error *ngIf="form.controls['name'].invalid">Choose a name for your project</mat-error> -->
@@ -25,7 +22,7 @@
             <mat-form-field>
               <!-- datePicker -->
               <!-- https://material.angular.io/components/datepicker/overview -->
-              <mat-label for="date">Starting date</mat-label>
+              <mat-label for="date">Starting date : </mat-label>
               <!-- <input matInput [matDatepicker]="date" placeholder="Choose a starting date" formControlName="date"> -->
               <!-- pour avoir la date du jour de création du projet -->
               <input matInput [matDatepicker]="date" [min]="startDate" placeholder="Choose a starting date"
@@ -40,7 +37,7 @@
 
           <div>
             <mat-form-field>
-              <mat-label for="deadline">Deadline</mat-label>
+              <mat-label for="deadline">Deadline : </mat-label>
               <!-- <input matInput [matDatepicker]="deadline" placeholder="Choose a deadline" formControlName="deadline"> -->
               <!-- pour avoir la date du jour de création du projet -->
               <input matInput [matDatepicker]="deadline" [min]="startDate" placeholder="Choose a deadline"
@@ -54,7 +51,7 @@
 
           <div>
             <mat-form-field>
-              <mat-label for="time">Estimated time in hours</mat-label>
+              <mat-label for="time">Estimated time (in hours) : </mat-label>
               <!-- <input matInput type="number" name="time-estimation" id="time" placeholder="42" formControlName="time"> -->
               <!-- pattern juste pour des chiffres -->
               <!-- https://stackblitz.com/edit/angular-input-pattern-digits-only?file=src%2Fapp%2Fapp.component.html -->
@@ -76,11 +73,9 @@
             </mat-form-field>
           </div>
 
-
-
           <div>
             <mat-form-field>
-              <mat-label for="staff">Crew members</mat-label>
+              <mat-label for="staff">Assigned user(s) : </mat-label>
               <mat-select multiple name="crew-members" id="staff" formControlName="staff">
                 <mat-option *ngFor="let user of staff" value="{{user.firstname}} {{user.lastname}}">{{user.firstname}}
                   {{user.lastname}}</mat-option>
@@ -90,12 +85,8 @@
             </mat-form-field>
           </div>
 
-
-          <!-- TODO: ? afficher le(s) user(s) ajouté(s) ? -->
-
-
           <div>
-            <mat-label for="desc" class="desc">Description</mat-label>
+            <mat-label for="desc" class="desc">Description : </mat-label>
             <textarea name="description-project" id="desc" cols="20" rows="3" placeholder="Describe your project"
               formControlName="desc"></textarea>
           </div>
@@ -106,24 +97,12 @@
             <!-- pour avoir false par default et pas null -->
             <input type="checkbox" name="in-progress" id="inProgress" formControlName="inProgress"
               [class]="isInProgress" (click)="setInProgress()"> YES
-
           </div>
-
-
-          <!-- https://stackoverflow.com/questions/18407832/how-to-create-a-html-cancel-button-that-redirects-to-a-url -->
-          <!--<a href="http://localhost:4200/">Cancel</a>-->
-          <!-- routerLink au lieu de href car angular -->
-          <!--<a routerLink="/">Cancel</a>-->
-          <!-- <button type="submit">Create</button> -->
-          <!-- <button mat-raised-button type="submit" [disabled]="form.invalid">Create project</button>-->
-
-
-
 
           <div class="containerbtns">
             <section class="btns">
               <div class="click"> <a routerLink="/">Cancel</a></div>
-              <div class="click"> <button class="click" type="submit" [disabled]="form.invalid">Submit</button></div>
+              <div class="click"> <button class="click" type="submit" [disabled]="form.invalid">Create project</button></div>
             </section>
           </div>
         </form>

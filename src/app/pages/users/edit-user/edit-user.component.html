@@ -3,14 +3,14 @@
 <mat-card>
     <mat-card-content>
     <section>
-      <h1>Let's edit this user !</h1>
+      <h1>Edit this user</h1>
     </section>
   
     <section>
       <form [formGroup]="form" (submit)="submitForm()">
         <section>
           <mat-form-field>
-            <mat-label>Firstname: </mat-label>
+            <mat-label>Firstname : </mat-label>
             <input type="text" name="firstname" id="firstname" matInput placeholder="Firstname"
               formControlName="firstname" />
           </mat-form-field>
@@ -18,20 +18,20 @@
   
         <section>
           <mat-form-field>
-            <mat-label>Lastname: </mat-label>
+            <mat-label>Lastname : </mat-label>
             <input type="text" name="lastname" id="lastname" matInput placeholder="Lastname" formControlName="lastname">
           </mat-form-field>
         </section>
   
         <section>
           <mat-form-field>
-            <mat-label>Email: </mat-label>
+            <mat-label>Email : </mat-label>
             <input type="email" name="email" id="email" matInput placeholder="Email" formControlName="email">
           </mat-form-field>
         </section>
   
         <section class="selectBox">
-          <mat-label> Function </mat-label>
+          <mat-label> Function : </mat-label>
           <mat-select name="fonction" id="fonction-mat-" formControlName="fonction" matInput placeholder="Choose below">
             <!-- <mat-option value="">--Choose below--</mat-option> -->
             <mat-option value="Project Manager">Project Manager</mat-option>
@@ -44,7 +44,7 @@
   
         <div class="containerbtns"><section class="btns">
             <div class="click"> <a routerLink="/">Cancel</a></div>    
-             <div class="click"> <button class="click" >Submit</button></div>
+             <div class="click"> <button class="click" >Edit this user</button></div>
            </section></div>
        
       </form>

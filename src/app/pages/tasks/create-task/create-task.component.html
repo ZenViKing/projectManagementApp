@@ -1,10 +1,9 @@
 <div class="main-div">
 <mat-card>
     <mat-card-content>
-        <section> <h1>Let's create a task!</h1></section>
+        <section> <h1>Let's create a task</h1></section>
 <section>
     <form  (submit)="submitForm()" [formGroup]="form">
-
         <section>
         <mat-form-field>
         <mat-label for="name">Task name : </mat-label>
@@ -13,43 +12,54 @@
             type="text"
             name="task-name"
             id="name"
-            placeholder="task name"
-            formControlName="name"
-            >
+            placeholder="Name your task"
+            formControlName="name">
+
             <mat-error *ngIf="form.controls['name'].invalid">{{getErrorMessage('name')}}</mat-error>
-            
         </mat-form-field>
         </section>
-
+<!-- ---------------------------- mat radio ---------------------------- -->
+        <section>
+        <mat-label for="priority">Priority status : </mat-label>
+        <mat-radio-group formControlName="priority">
+            <mat-label for="lowPriority">low </mat-label>
+            <mat-radio-button id="lowPiority"  name="priority" value="low priority"></mat-radio-button>
+            <mat-label for="mediumPiority">medium </mat-label>
+            <mat-radio-button id="mediumPiority"  name="priority" value="medium priority"></mat-radio-button>
+            <mat-label for="highPriority">high </mat-label>
+            <mat-radio-button id="highPriority"  name="priority" value="high priority"></mat-radio-button>
+            <mat-error *ngIf="form.controls['priority'].invalid && ['priority'].touched">{{getErrorMessage('priority')}}</mat-error>
+        </mat-radio-group>
+        </section>
 <!-- ------------------------- mat assigned users ------------------------- -->
         <section>
         <mat-form-field>
-        <mat-label for="assignedUsers">Choose user(s) to assign:</mat-label>
+        <mat-label for="assignedUsers">Assigned user(s) : </mat-label>
         <mat-select 
                 multiple
                 name="assignedUsers"
                 id="assignedUsers"
-                formControlName="assignedUsers"
-            >
-                <mat-option *ngFor="let user of users" value="{{user.firstname}}">{{user.firstname}}</mat-option>
+                formControlName="assignedUsers">
+
+                <mat-option *ngFor="let user of users" value="{{user.firstname}} {{user.lastname}}">{{user.firstname}} {{user.lastname}}</mat-option>
         </mat-select>
         </mat-form-field>
         </section>
         
         <section>
-        <label  class="desc" for="desc">Task description: </label>
-        <!-- value="{{desc}}" -->
+        <label  class="desc" for="desc">Description : </label>
         <textarea
                     name="desc"
                     id="description"
-                    placeholder="Description :"
+                    placeholder="Describe your task"
                     cols="30"
                     rows="10"
-                    formControlName="desc"
-                    (click)="clear()">
-                    
+                    formControlName="desc">
+                    <!-- (click)="clear()" -->
         </textarea>
         </section>
+<<<<<<< HEAD
+=======
     
         <!-- ---------------------------- mat radio ---------------------------- -->
         <section>
@@ -64,11 +74,12 @@
                 <mat-error *ngIf="form.controls['priority'].invalid && ['priority'].touched">{{getErrorMessage('priority')}}</mat-error>
             </mat-radio-group>
             </section>
+>>>>>>> 1e1b5ac6f0f2c0111b01e5af28d6c683e0e35ef2
 
         <div class="containerbtns">
                 <section class="btns">
                <div class="click"> <a routerLink="/">Cancel</a></div>    
-                <div class="click"> <button class="click" type="submit" [disabled]="form.invalid">Create Task</button></div>
+                <div class="click"> <button class="click" type="submit" [disabled]="form.invalid">Create task</button></div>
               </section>
             </div>
     

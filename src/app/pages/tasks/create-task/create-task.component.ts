@@ -5,10 +5,6 @@ import { Task } from 'src/app/models/task.model';
 import { User } from 'src/app/models/user.model';
 import { Router } from '@angular/router';
 import { Project } from 'src/app/models/project.model';
-import { CompilerConfig } from '@angular/compiler';
-
-// import { Task } from 'src/app/models/task.model';
-// import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-task',
@@ -34,16 +30,15 @@ export class CreateTaskComponent implements OnInit {
   //   this.desc = '';
   // }
   
-  //Submit
   submitForm(){
-    let a = this.router.url.split('/');
+    let idgetter = this.router.url.split('/');
     
     this.task = this.form.value;
-    console.log(a[2]);
-    this._restService.postTask(a[2], this.task).subscribe((data: Task)=>{
+    console.log(idgetter[2]);
+    this._restService.postTask(idgetter[2], this.task).subscribe((data: Task)=>{
       this.task = data;
       console.log(data);
-      this.router.navigate([`/idproject/${a[2]}`])
+      this.router.navigate([`/idproject/${idgetter[2]}`])
     })
   }
 

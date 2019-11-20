@@ -5,19 +5,21 @@
                 <h1>Log In</h1>
             </section>
             <form [formGroup]="form" (submit)="submitForm()">
-            <section>
-                <mat-form-field>
-                    <mat-label>Email: </mat-label>
-                    <input type=" email" name="email" id="email" matInput placeholder="Email" formControlName="email">
-                    <!-- <mat-error *ngIf="form.controls['email'].invalid">{{getErrorMessage('email')}}</mat-error> -->
+                <section>
+                    <mat-form-field>
+                        <mat-label>Email : </mat-label>
+                        <input type=" email" name="email" id="email" matInput placeholder="Email"
+                            formControlName="email">
+                        <!-- <mat-error *ngIf="form.controls['email'].invalid">{{getErrorMessage('email')}}</mat-error> -->
 
-                </mat-form-field>
+                    </mat-form-field>
                 </section>
 
                 <section>
                     <mat-form-field>
-                        <mat-label>Password: </mat-label>
-                        <input type="password" name="password" id="password" matInput placeholder="Password" formControlName="password">
+                        <mat-label>Password : </mat-label>
+                        <input type="password" name="password" id="password" matInput placeholder="Password"
+                            formControlName="password">
                     </mat-form-field>
                 </section>
 
@@ -31,4 +33,3 @@
         </mat-card-content>
     </mat-card>
 </div>
-
