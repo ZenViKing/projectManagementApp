@@ -1,11 +1,14 @@
 <div class="main-div">
   <div class="project-infos">
-    <h1>{{project.name}}</h1>
-    <p>Date : {{project.date | date : 'mediumDate'}}</p>
+    <div class="wrapper"><h1>{{project.name}}</h1>
     <p>Deadline : {{project.deadline | date : 'mediumDate'}}</p>
     <p>Time : {{project.time}}</p>
+    <p>Desc : {{project.desc}}</p>
     <p>Members : {{project.staff}}</p>
-    <p>{{project.desc}}</p>
+    
+  </div>
+
+  <p>Date : {{project.date | date : 'mediumDate'}}</p>
     <a [routerLink]="['/idproject',project._id,'task','add']">Create a task</a>
     <app-kanban></app-kanban>
   </div>
