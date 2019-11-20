@@ -1,10 +1,18 @@
 @import '../../../variables.scss';
 
+#kanban{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
 .example-container {
-  width: 200px;
+  
+  width: 24%;
   max-width: 100%;
-  margin: 0 25px 25px 0;
+  margin: 0 0px 25px 0;
   display: inline-block;
+  justify-content:space-between;
   vertical-align: top;
   font-family: 'open_sansregular';
   
