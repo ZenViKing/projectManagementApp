@@ -36,7 +36,6 @@ export class CreateProjectComponent implements OnInit {
   }
 
   getErrorMessage(field: string): string {
-    // let time = ['', [Validators.pattern(/\d/)]];
     const error = {
       required: 'This field is required'
       // était utilisé pour le validator ave regex
