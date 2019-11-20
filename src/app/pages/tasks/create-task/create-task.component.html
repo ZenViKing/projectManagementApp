@@ -58,6 +58,23 @@
                     <!-- (click)="clear()" -->
         </textarea>
         </section>
+<<<<<<< HEAD
+=======
+    
+        <!-- ---------------------------- mat radio ---------------------------- -->
+        <section>
+            <mat-label for="priority">Priority status : </mat-label>
+            <mat-radio-group formControlName="priority">
+                <mat-label for="lowPriority">low </mat-label>
+                <mat-radio-button id="lowPiority"  name="lol" value="low priority"></mat-radio-button>
+                <mat-label for="mediumPiority">Medium </mat-label>
+                <mat-radio-button id="mediumPiority"  name="lol" value="medium priority"></mat-radio-button>
+                <mat-label for="highPriority">High </mat-label>
+                <mat-radio-button id="highPriority"  name="lol" value="high priority"></mat-radio-button>
+                <mat-error *ngIf="form.controls['priority'].invalid && ['priority'].touched">{{getErrorMessage('priority')}}</mat-error>
+            </mat-radio-group>
+            </section>
+>>>>>>> 1e1b5ac6f0f2c0111b01e5af28d6c683e0e35ef2
 
         <div class="containerbtns">
                 <section class="btns">
