@@ -50,7 +50,9 @@
   margin: 0 auto;
   margin:10px;
   
-  
+  &:hover{
+    background-color: darken($pastel-greenblue, 5%)
+  }
   
 }
 
