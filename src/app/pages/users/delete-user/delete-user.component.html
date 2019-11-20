@@ -1,39 +1,37 @@
 <mat-card>
   <mat-card-content>
     <section>
-      <h2>Are you sure to delete this user?</h2>
+      <h2>Are you sure to delete this user ?</h2>
     </section>
 
-<section>
-    <form [formGroup]="form" (submit)="deleteForm()">
+    <section>
+      <form [formGroup]="form" (submit)="deleteForm()">
 
-      <section>
-        <mat-form-field>
-          <mat-label>Firstname: </mat-label>
-          <input type="text" name="firstname" id="firstname" matInput placeholder="Firstname"
-            formControlName="firstname" />
-        </mat-form-field>
-      </section>
+        <section>
+          <mat-form-field>
+            <mat-label>Firstname : </mat-label>
+            <input type="text" name="firstname" id="firstname" matInput placeholder="Firstname"
+              formControlName="firstname" />
+          </mat-form-field>
+        </section>
 
-      <section>
-        <mat-form-field>
-          <mat-label>Lastname: </mat-label>
-          <input type="text" name="lastname" id="lastname" matInput placeholder="Lastname" formControlName="lastname">
-        </mat-form-field>
-      </section>
+        <section>
+          <mat-form-field>
+            <mat-label>Lastname : </mat-label>
+            <input type="text" name="lastname" id="lastname" matInput placeholder="Lastname" formControlName="lastname">
+          </mat-form-field>
+        </section>
 
-      <section>
-        <mat-form-field>
-          <mat-label>Email: </mat-label>
-          <input type="email" name="email" id="email" matInput placeholder="Email" formControlName="email">
-        </mat-form-field>
-      </section>
+        <section>
+          <mat-form-field>
+            <mat-label>Email : </mat-label>
+            <input type="email" name="email" id="email" matInput placeholder="Email" formControlName="email">
+          </mat-form-field>
+        </section>
 
-<a routerLink="/users"><button>Cancel</button></a>
-<button type="submit">Delete ?</button>
-  </form>
-
-</section>
-
+        <a routerLink="/users"><button>Cancel</button></a>
+        <button type="submit">Delete</button>
+      </form>
+    </section>
   </mat-card-content>
 </mat-card>

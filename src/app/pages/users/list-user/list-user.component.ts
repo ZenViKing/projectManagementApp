@@ -3,9 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user.model';
 import { Router } from '@angular/router';
 
-
-
-
 @Component({
   selector: 'app-list-user',
   templateUrl: './list-user.component.html',
@@ -17,8 +14,8 @@ export class ListUserComponent implements OnInit {
   constructor(private _restService: RestService, private router:Router) { }
 
   deleteUser(id){
-    var r = confirm('Deleted user ?');
-    if(r == true) {
+    var delconfirm = confirm('Deleted user ?');
+    if(delconfirm == true) {
       console.log('ok');
       this._restService.deleteUser(id).subscribe(response => {
         this._restService.getUsers().subscribe((data: User[]) => {
@@ -30,25 +27,9 @@ export class ListUserComponent implements OnInit {
     }
   }
 
-
-  //  delUser(){
-  //   var txt;
-  //   var r = confirm ("Are you sure that you want to delete this user?");
-  //   if (r==true){
-
-
-
-  // //   else {
-  // //     txt= "Blablabla"
-  // //   }
-
-  // //   }
-  // // }
-
   ngOnInit() {
     this._restService.getUsers().subscribe((data: User[]) => {
       this.users = data;
     })
   }
-
 }

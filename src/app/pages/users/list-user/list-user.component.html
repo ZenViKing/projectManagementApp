@@ -1,26 +1,22 @@
 <div class="main-div">
 
-<mat-card>
-  <mat-card-content>
-    <section>
-      <h1>User(s) list</h1>
-    </section>
-    <mat-list>
-      <mat-list-item *ngFor="let user of users">
-        <p matLine>Firstname : {{user.firstname}}</p>
-        <p matLine>Lastname : {{user.lastname}}</p>
-        <p matLine>Email : {{user.email}}</p>
-        <p matLine>Function : {{user.fonction}}</p>
-
-        <section class="btnsListUsers">
-          <div class="click"><a routerLink="/users/{{user._id}}">Edit</a></div> 
-          <div class="click"><a (click)="deleteUser(user._id)">Delete user?</a></div>
-        </section>
-      </mat-list-item>
-    </mat-list>
-
-
-
-  </mat-card-content>
-</mat-card>
+  <mat-card>
+    <mat-card-content>
+      <section>
+        <h1>User(s) list</h1>
+      </section>
+      <mat-list>
+        <mat-list-item *ngFor="let user of users">
+          <p matLine>Firstname : {{user.firstname}}</p>
+          <p matLine>Lastname : {{user.lastname}}</p>
+          <p matLine>Email : {{user.email}}</p>
+          <p matLine>Function : {{user.fonction}}</p>
+          <section class="btnsListUsers">
+            <div class="click"><a routerLink="/users/{{user._id}}">Edit</a></div>
+            <div class="click"><a (click)="deleteUser(user._id)">Delete</a></div>
+          </section>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
 </div>

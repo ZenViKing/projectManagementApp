@@ -1,39 +1,27 @@
 <div class="main-div">
-
   <mat-card>
     <mat-card-content>
-
       <section>
         <h1>Project(s) list</h1>
       </section>
       <mat-list *ngFor="let project of projects">
         <mat-list-item [ngClass]="project.inProgress == false ? 'todo' : 'inProgress'">
           <h2 matLine><a href="/">> {{project.name}}</a></h2>
-          <!-- <li>{{project.deadline}}</li> -->
           <!-- changer l'affichage de la date avec le pipe dateDisplay -->
           <!-- https://angular.io/api/common/DatePipe -->
-          <!-- <li>{{project.deadline | date : 'longDate'}}</li> -->
           <!-- <p matLine>Deadline : {{project.deadline | date : 'longDate'}}</p> -->
-          <p matLine>Deadline: {{project.deadline | date : 'mediumDate'}}</p>
+          <p matLine>Deadline : {{project.deadline | date : 'mediumDate'}}</p>
           <p matLine>User(s) : {{project.staff}}</p>
-          <p *ngIf="project.inProgress" class="inProgress-text">
-            In progress
-          </p>
-          <p *ngIf="!project.inProgress" class="todo-text" >
-            To do
-          </p>
-
-          <!-- <app-list-task></app-list-task> -->
+          <p *ngIf="project.inProgress" class="inProgress-text">In progress</p>
+          <p *ngIf="!project.inProgress" class="todo-text">To do</p>
 
           <section class="btnsListUsers">
             <div class="click"><a routerLink="/projects/{{project._id}}">Edit</a></div>
-            <div class="click"><a (click)="deleteProject(project._id)">Delete project?</a></div>
+            <div class="click"><a (click)="deleteProject(project._id)">Delete</a></div>
           </section>
-
 
         </mat-list-item>
       </mat-list>
-
     </mat-card-content>
   </mat-card>
 </div>
