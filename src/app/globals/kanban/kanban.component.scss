@@ -15,6 +15,10 @@
   justify-content:space-between;
   vertical-align: top;
   font-family: 'open_sansregular';
+
+  h2{
+    font-size: 18px;
+  }
   
   
 }
@@ -51,7 +55,12 @@
   font-size: 14px;
   margin: 0 auto;
   margin:10px;
-  
+
+  &:hover{
+
+    background-color: darken($pastel-greenblue, 5%);
+  }
+
   
   
 }
@@ -88,7 +97,7 @@
 
 #backlog{
 
-  background-color:$lightgrey;
+  background-color:lighten($lightgrey, 10%);
 }
 
 .project-infos{
