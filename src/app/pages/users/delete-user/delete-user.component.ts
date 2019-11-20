@@ -22,8 +22,6 @@ export class DeleteUserComponent implements OnInit {
     })
   }
 
-
-
   ngOnInit() {
     this.form=new FormGroup({
       _id : new FormControl (Validators.required),
@@ -35,19 +33,8 @@ export class DeleteUserComponent implements OnInit {
     })
 
     this.route.data.subscribe(data => {
-      console.log(data.user.Users)
       this.form.setValue(data.user.Users);
       this.user = data.user.Users;
     })
   }
 }
-
-
-
-  // deleteUser(id) {
-  //   this._restService.deleteUser(id).subscribe(res => {
-  //     this._restService.getUsers().subscribe((data: User[]) => {
-  //       this.users = data;
-  //     })
-  //   })
-  // }

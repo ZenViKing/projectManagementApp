@@ -3,7 +3,6 @@ import { Project } from './../../../models/project.model';
 import { Component, OnInit, Input } from '@angular/core';
 import { RestService } from 'src/app/services/rest.service';
 import { Router } from '@angular/router';
-// test ajout user
 import { User } from 'src/app/models/user.model';
 
 @Component({
@@ -25,7 +24,6 @@ export class CreateProjectComponent implements OnInit {
   setInProgress() {
     this.isInProgress = !this.isInProgress;
   }
-
 
   submitForm() {
     this.project = this.form.value;

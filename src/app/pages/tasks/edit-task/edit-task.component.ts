@@ -22,16 +22,13 @@ export class EditTaskComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute
   ) { }
-
   
   submitForm() {
-    let a = this.router.url.split('/');
-    console.log(a);
+    let idgetter = this.router.url.split('/');
     this.task = this.form.value;
-    this._restService.updateTask(a[3],this.task).subscribe((data: Task) => {
+    this._restService.updateTask(idgetter[3],this.task).subscribe((data: Task) => {
       this.task = data;
-      this.router.navigate([`/idproject/${a[2]}`]);
-      
+      this.router.navigate([`/idproject/${idgetter[2]}`]);
     })
   }
 
@@ -42,14 +39,12 @@ export class EditTaskComponent implements OnInit {
     };
     let returnValue = '';
 
-
     Object.keys(this.form.controls[field].errors).map((key, index) => {
       returnValue += `Rule ${index} - ${errors[key]} `;
     });
     return returnValue;
   }
   ngOnInit() {
-    // console.log(this.route.data);
     this.form = new FormGroup({
       _id: new FormControl(Validators.required),
       __v: new FormControl(Validators.required),
@@ -70,5 +65,4 @@ export class EditTaskComponent implements OnInit {
       this.task = data.task;
     });
   }
-
 }

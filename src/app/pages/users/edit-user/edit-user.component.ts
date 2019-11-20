@@ -12,11 +12,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class EditUserComponent implements OnInit {
   user: User;
   form: FormGroup;
-  // fonction: any
 
   constructor(private _restService: RestService, private router: Router, private route: ActivatedRoute) { }
-
-
 
   submitForm() {
     this.user = this.form.value;
@@ -27,7 +24,6 @@ export class EditUserComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.user);
     this.form = new FormGroup({
       _id: new FormControl(Validators.required),
       __v: new FormControl(Validators.required),
@@ -37,12 +33,9 @@ export class EditUserComponent implements OnInit {
       fonction: new FormControl(null, [Validators.required])
     })
 
-
     this.route.data.subscribe(data => {
-      console.log(data.user)
       this.form.setValue(data.user.Users);
       this.user = data.user.Users;
     })
-
   }
 }
