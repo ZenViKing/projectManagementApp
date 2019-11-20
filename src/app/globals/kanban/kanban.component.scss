@@ -16,17 +16,19 @@
   vertical-align: top;
   font-family: 'open_sansregular';
   
+  
 }
 
 .example-list {
   border: solid 1px #ccc;
-  min-height: 50vh;
+  height: 60vh;
   background-color: $pastelyellow;
   border-radius: 4px;
   overflow: scroll;
   display: block;
   scrollbar-color: $vibrant-greenblue $lightgrey;
   overflow-x:hidden;
+  
   
   
   
