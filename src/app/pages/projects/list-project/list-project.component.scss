@@ -30,6 +30,8 @@ p.mat-line {
   button {
 
     margin-left: 15px;
+    font-size:12px;
+    border-radius:5px;
   }
 
 }
@@ -102,11 +104,30 @@ text-align:left;
 .todo{
 
   background-color:$pastel-greenblue;
+
+  
+  
+}
+
+.todo-text{
+
+  color:$titles;
+  white-space:nowrap;
+  font-size: 10px;
   
 }
 
 .inProgress {
   background-color: $pastelyellow;
+}
+
+.inProgress-text{
+
+  color:$titles;
+  white-space:nowrap;
+  font-size:10px;
+
+
 }
 
 
