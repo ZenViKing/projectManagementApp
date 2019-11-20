@@ -23,7 +23,6 @@ export class EditProjectComponent implements OnInit {
   }
 
   submitForm() {
-    console.log(this.project)
     this.project = this.form.value;
     this._restService.patchProject(this.project).subscribe((data: Project) => {
       this.project = data;
@@ -66,17 +65,11 @@ export class EditProjectComponent implements OnInit {
     // pour avoir liste users existants
     this._restService.getUsers().subscribe((data: User[]) => {
       this.staff = data;
-      console.log(this.staff)
     });
-    // console.log(Project);
 
     this.route.data.subscribe(data => {
-      console.log(data);
-
       this.form.setValue(data.project.project);
       this.project = data.project.project;
-      // console.log(this.project);
     });
   }
-
 }
