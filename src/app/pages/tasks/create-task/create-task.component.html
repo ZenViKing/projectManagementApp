@@ -18,19 +18,7 @@
             <mat-error *ngIf="form.controls['name'].invalid">{{getErrorMessage('name')}}</mat-error>
         </mat-form-field>
         </section>
-<!-- ---------------------------- mat radio ---------------------------- -->
-        <section>
-        <mat-label for="priority">Priority status : </mat-label>
-        <mat-radio-group formControlName="priority">
-            <mat-label for="lowPriority">low </mat-label>
-            <mat-radio-button id="lowPiority"  name="priority" value="low priority"></mat-radio-button>
-            <mat-label for="mediumPiority">medium </mat-label>
-            <mat-radio-button id="mediumPiority"  name="priority" value="medium priority"></mat-radio-button>
-            <mat-label for="highPriority">high </mat-label>
-            <mat-radio-button id="highPriority"  name="priority" value="high priority"></mat-radio-button>
-            <mat-error *ngIf="form.controls['priority'].invalid && ['priority'].touched">{{getErrorMessage('priority')}}</mat-error>
-        </mat-radio-group>
-        </section>
+
 <!-- ------------------------- mat assigned users ------------------------- -->
         <section>
         <mat-form-field>
@@ -58,6 +46,20 @@
                     <!-- (click)="clear()" -->
         </textarea>
         </section>
+
+        <!-- ---------------------------- mat radio ---------------------------- -->
+        <section>
+            <mat-label for="priority">Priority status : </mat-label>
+            <mat-radio-group formControlName="priority">
+                <mat-label for="lowPriority">low </mat-label>
+                <mat-radio-button id="lowPiority"  name="priority" value="low priority"></mat-radio-button>
+                <mat-label for="mediumPiority">medium </mat-label>
+                <mat-radio-button id="mediumPiority"  name="priority" value="medium priority"></mat-radio-button>
+                <mat-label for="highPriority">high </mat-label>
+                <mat-radio-button id="highPriority"  name="priority" value="high priority"></mat-radio-button>
+                <mat-error *ngIf="form.controls['priority'].invalid && ['priority'].touched">{{getErrorMessage('priority')}}</mat-error>
+            </mat-radio-group>
+            </section>
 
         <div class="containerbtns">
                 <section class="btns">
