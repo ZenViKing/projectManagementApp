@@ -28,7 +28,8 @@ form{
  .mat-card-content{
   width: 50vw;
   height: 50vh;
-  overflow: scroll;
+  overflow: scroll; 
+  overflow-x: hidden;
 }
 
 
