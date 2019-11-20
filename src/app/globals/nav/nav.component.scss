@@ -5,11 +5,12 @@
 
 
 
+
 .login{
     
     border-radius: 4px;
     font-weight:800;
-    color:$lightgrey!important ;
+    color:$lightgrey!important;
     padding: 10px;
     background-color: $lightergrey;
     
@@ -27,10 +28,7 @@ ul{
     margin:0;
     padding:0;
     height:80px;
-    display:flex;
-    justify-content:flex-end;
     background-color: $pastelyellow;
-    width:100%;
     top: 0; left: 0;
     
 }
@@ -43,9 +41,10 @@ ul{
 }
  
 
-
 .navflex{
     line-height:80px;  
+    display:flex;
+    justify-content:flex-end;
     margin:0 auto;
     width:100%;
     position:absolute;
@@ -74,7 +73,7 @@ li{
         #logo{
             position:absolute;
             top:0;
-            left:10%;
+            left:0%;
             
         }
         

@@ -78,9 +78,6 @@ $projectPlannerApp-theme: mat-light-theme($projectPlannerApp-primary, $projectPl
 /*NAV*/
 
 
-
-
-
 /*BASIC*/
 
 
@@ -101,7 +98,7 @@ body{
     background-color:$lightergrey;
     font-size: 16px;
     margin:0 auto;
-    max-width:100vw;
+    max-width:1024px;
     position:relative;
     
   
@@ -132,6 +129,7 @@ a{
    margin: 0 auto;
    padding: 20px;
    border-radius: 5px;
+   overflow-x: hidden;
 }
 
 .mat-card{
@@ -247,6 +245,5 @@ footer{
     color:$lightgrey;
     }
 }
-
 
 

@@ -1,12 +1,13 @@
 @import '../../../variables.scss';
 
 .example-container {
-  width: 150px;
+  width: 200px;
   max-width: 100%;
   margin: 0 25px 25px 0;
   display: inline-block;
   vertical-align: top;
   font-family: 'open_sansregular';
+  
 }
 
 .example-list {
@@ -16,7 +17,15 @@
   border-radius: 4px;
   overflow: scroll;
   display: block;
+  scrollbar-color: $vibrant-greenblue $lightgrey;
+  overflow-x:hidden;
+  
+  
+  
 }
+
+
+
 
 .example-box {
   padding: 20px 10px;
@@ -28,8 +37,13 @@
   justify-content: space-between;
   box-sizing: border-box;
   cursor: move;
-  background-color: $pastelyellow;
+  background-color: $pastel-greenblue;
   font-size: 14px;
+  margin: 0 auto;
+  margin:10px;
+  
+  
+  
 }
 
 .cdk-drag-preview {
@@ -62,3 +76,13 @@
   border-radius:20px;
 }
 
+#backlog{
+
+  background-color:$lightgrey;
+}
+
+.project-infos{
+
+  clear:both;
+  
+}
