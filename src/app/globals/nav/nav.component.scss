@@ -7,18 +7,18 @@
 
 
 .login{
-    border : 1px solid rgb(146, 146, 146);
+    
     border-radius: 4px;
     font-weight:800;
-    color:white;
+    color:$lightgrey!important;
     padding: 10px;
-    background-color: rgb(235, 235, 235);
-    background-color: $vibrant-greenblue;
+    background-color: $lightergrey;
+    
 }
 
 .login:hover{
-    color:$vibrant-greenblue;
-    background-color: $pastelyellow;
+    color: $pastelyellow!important ;
+    background-color: $vibrant-greenblue;
 
 
 }
@@ -28,10 +28,7 @@ ul{
     margin:0;
     padding:0;
     height:80px;
-    display:flex;
-    justify-content:flex-end;
     background-color: $pastelyellow;
-    width:100%;
     top: 0; left: 0;
     
 }
@@ -44,9 +41,10 @@ ul{
 }
  
 
-
 .navflex{
     line-height:80px;  
+    display:flex;
+    justify-content:flex-end;
     margin:0 auto;
     width:100%;
     position:absolute;
@@ -75,7 +73,7 @@ li{
         #logo{
             position:absolute;
             top:0;
-            left:10%;
+            left:0%;
             
         }
         

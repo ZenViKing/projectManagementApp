@@ -38,11 +38,9 @@ export class CreateProjectComponent implements OnInit {
   getErrorMessage(field: string): string {
     // let time = ['', [Validators.pattern(/\d/)]];
     const error = {
-      required: 'This field is required',
-      // time: ['', [Validators.pattern(/\d/)]]
-      // time: ['Just digits', [Validators.pattern(/\d/)]],
-      pattern: 'Only numbers'
-      // staff: 'Assign at least one user'
+      required: 'This field is required'
+      // était utilisé pour le validator ave regex
+      // pattern: 'Only numbers'
     }
 
     let returnValue = '';
@@ -59,10 +57,9 @@ export class CreateProjectComponent implements OnInit {
       name: new FormControl(null, [Validators.required]),
       date: new FormControl(null, [Validators.required]),
       deadline: new FormControl(null, [Validators.required]),
-      // time: new FormControl(null, [Validators.required]),
+      time: new FormControl(null, [Validators.required]),
       // https://stackblitz.com/edit/angular-input-pattern-digits-only
-      time: new FormControl(null, Validators.compose([Validators.required, Validators.pattern(/\d+/)])),
-      // time: new FormControl(null, Validators.compose([Validators.required, Validators.pattern("/^[a-zA-Z]+$/")])),
+      // time: new FormControl(null, Validators.compose([Validators.required, Validators.pattern(/\d+/)])),
       staff: new FormControl(null, [Validators.required]),
       desc: new FormControl(null),
       // pour avoir valeur false si on ne clique pas la checkbox inProgress
