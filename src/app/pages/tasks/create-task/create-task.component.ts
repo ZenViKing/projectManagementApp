@@ -16,13 +16,15 @@ export class CreateTaskComponent implements OnInit {
   task: Task;
   form: FormGroup;
   project: Project;
+  
 
   constructor(private _restService: RestService, private router: Router) { }
-
+  idgetterc = this.router.url.split('/')[2];
   //Form validation (submit disabled if not true)
-  onSubmit(){
-    console.warn(this.form.value);
-  }
+  // submit(){
+  //   console.warn(this.form.value);
+  //   console.log('hello');
+  // }
   //No need : we already have a placeholder in Description area that does this job.
   //Description clear
   // desc = "description here ...";
@@ -31,15 +33,15 @@ export class CreateTaskComponent implements OnInit {
   // }
   
   submitForm(){
-    let idgetter = this.router.url.split('/');
     
+    let idgetter = this.router.url.split('/');
     this.task = this.form.value;
-    console.log(idgetter[2]);
+    
     this._restService.postTask(idgetter[2], this.task).subscribe((data: Task)=>{
       this.task = data;
-      console.log(data);
       this.router.navigate([`/idproject/${idgetter[2]}`])
     })
+    console.log('hello');
   }
 
   //Errors handling
@@ -66,7 +68,5 @@ export class CreateTaskComponent implements OnInit {
     this._restService.getUsers().subscribe((data: User[])=>{
       this.users = data;
     })
-    
   }
-
 }
