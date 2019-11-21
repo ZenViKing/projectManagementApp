@@ -25,7 +25,7 @@
                 <!-- https://material.angular.io/components/datepicker/overview -->
                 <!-- <input matInput [matDatepicker]="date" formControlName="date"> -->
                 <!-- <input matInput [matDatepicker]="date" [min]="startDate" formControlName="date"> -->
-                <input matInput [matDatepicker]="date" formControlName="date">
+                <input matInput [matDatepicker]="date" [min]="project.date" formControlName="date">
                 <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
                 <mat-datepicker #date></mat-datepicker>
                 <!-- <mat-error *ngIf="form.controls['date'].invalid">Choose a starting date</mat-error> -->
@@ -38,7 +38,7 @@
                 <mat-label for="deadline">Deadline : </mat-label>
                 <!-- <input matInput [matDatepicker]="deadline" formControlName="deadline"> -->
                 <!-- <input matInput [matDatepicker]="deadline" [min]="startDate" formControlName="deadline"> -->
-                <input matInput [matDatepicker]="deadline" formControlName="deadline">
+                <input matInput [matDatepicker]="deadline" [min]="project.date" formControlName="deadline">
                 <mat-datepicker-toggle matSuffix [for]="deadline"></mat-datepicker-toggle>
                 <mat-datepicker #deadline></mat-datepicker>
                 <!-- <mat-error *ngIf="form.controls['deadline'].invalid">Choose a name for your project</mat-error> -->
