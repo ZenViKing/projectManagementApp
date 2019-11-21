@@ -3,20 +3,18 @@
     <h1>{{project.name}}</h1>
       <div class="wrapper">
         <div class="projInfos">
-          <span><p>Deadline: {{project.deadline | date : 'mediumDate'}}</p></span>
-          <span><p>Time: {{project.time}} hour(s)</p></span>
-          <span><p>Members:{{project.staff}}</p></span>  
-          <span><p class="deadLine">Date : {{project.date | date : 'mediumDate'}}</p></span>
+          <p><span>Deadline:</span> {{project.deadline | date : 'mediumDate'}}</p>
+          <p><span>Time:</span> {{project.time}} hour(s)</p>
+          <p><span>Members:</span> {{project.staff}}</p>  
+          <p><span>Date:</span> {{project.date | date : 'mediumDate'}}</p>
       </div>
       
-      <div class="projDesc">
-      <p>Desc: {{project.desc}}</p>
-    </div>      
-
+   
     </div>
+      <div>
+      <p>Desc: {{project.desc}}</p>
+    </div>   
 
-
-  <a [routerLink]="['/idproject',project._id,'task','add']" class="click">new task</a>
     <app-kanban></app-kanban>
   </div>
 </div>
