@@ -35,9 +35,10 @@ export class CreateProjectComponent implements OnInit {
 
   getErrorMessage(field: string): string {
     const error = {
-      required: 'This field is required'
+      required: 'This field is required',
       // était utilisé pour le validator ave regex
       // pattern: 'Only numbers'
+      // date: 'mm/dd/yyyy or use calendar'
     }
 
     let returnValue = '';
