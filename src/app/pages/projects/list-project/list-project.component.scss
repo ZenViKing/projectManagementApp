@@ -6,6 +6,23 @@ h2 {
 
 }
 
+.project-list-h2{
+
+  
+
+  a{
+    text-decoration:none;
+    color:$titles;
+    
+    
+
+    &:hover{
+
+      color:$vibrant-greenblue;
+    }
+  }
+}
+
 .click-on-project{
   text-decoration:none;
 }
