@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginComponent } from 'src/app/pages/login/login.component';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'nav',
@@ -7,10 +8,16 @@ import { LoginComponent } from 'src/app/pages/login/login.component';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-  loget: LoginComponent
+  token;
 
-  constructor() { }
+  constructor(private auth: AuthService) { 
+    this.token = localStorage.getItem('tokenUser') || null;
+  }
 
   ngOnInit() {
+  }
+
+  goLogout() {
+    return this.auth.logout();
   }
 }
