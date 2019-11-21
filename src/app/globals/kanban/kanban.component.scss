@@ -1,5 +1,25 @@
 @import '../../../variables.scss';
 
+.click{
+  position:absolute;
+  bottom:500px;
+  left:140px;
+  text-decoration:none;
+  text-transform:uppercase;
+  color:$titles;
+  background-color:$pastel-greenblue;
+  padding:10px;
+  border-radius:5px;
+  transition: all .3s;
+  font-size:12px;
+
+  &:hover{
+      background-color:$vibrant-greenblue;
+      color:$pastelyellow;
+      transition: all .3s;
+  }
+}
+
 #kanban{
   padding-top:15px;
   display:flex;
