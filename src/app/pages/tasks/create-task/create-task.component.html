@@ -2,66 +2,56 @@
 
   <mat-card>
     <mat-card-content>
-      <section> <h1>Let's create a task</h1> </section>
+      <section>
+        <h1>Let's create a task</h1>
+      </section>
       <section>
         <form (submit)="submitForm()" [formGroup]="form">
 
           <section>
             <mat-form-field>
               <mat-label for="name">Task name : </mat-label>
-              <input matInput type="text" name="task-name" id="name" placeholder="Name your task" formControlName="name"/>
+              <input matInput type="text" name="task-name" id="name" placeholder="Name your task"
+                formControlName="name" />
               <mat-error *ngIf="form.controls['name'].invalid">
                 {{getErrorMessage("name")}}
               </mat-error>
             </mat-form-field>
 
           </section>
-        
+
           <!-- ------------------------- mat assigned users ------------------------- -->
 
           <section>
             <mat-form-field>
               <mat-label for="assignedUsers">Assigned user(s) : </mat-label>
               <mat-select multiple name="assignedUsers" id="assignedUsers" formControlName="assignedUsers">
-                <mat-option *ngFor="let user of users" value="{{user.firstname}} {{user.lastname}}">{{user.firstname}} {{user.lastname}}</mat-option>
+                <mat-option *ngFor="let user of users" value="{{user.firstname}} {{user.lastname}}">{{user.firstname}}
+                  {{user.lastname}}</mat-option>
               </mat-select>
             </mat-form-field>
           </section>
 
           <section>
-              <label class="desc" for="desc">Description : </label>
-              <textarea name="desc" id="description" placeholder="Describe your task" cols="30" rows="10" formControlName="desc"></textarea>
+            <label class="desc" for="desc">Description : </label>
+            <textarea name="desc" id="description" placeholder="Describe your task" cols="30" rows="10"
+              formControlName="desc"></textarea>
           </section>
-          
+
           <!-- ---------------------------- mat radio ---------------------------- -->
           <section>
             <mat-label for="priority">Priority status : </mat-label>
             <mat-radio-group formControlName="priority">
               <mat-label for="lowPriority">low </mat-label>
-              <mat-radio-button
-                id="lowPiority"
-                name="priority"
-                value="low priority"
-              ></mat-radio-button>
+              <mat-radio-button id="lowPiority" name="priority" value="low priority"></mat-radio-button>
               <mat-label for="mediumPiority">medium </mat-label>
-              <mat-radio-button
-                id="mediumPiority"
-                name="priority"
-                value="medium priority"
-              ></mat-radio-button>
+              <mat-radio-button id="mediumPiority" name="priority" value="medium priority"></mat-radio-button>
               <mat-label for="highPriority">high </mat-label>
-              <mat-radio-button
-                id="highPriority"
-                name="priority"
-                value="high priority"
-              ></mat-radio-button>
-              <mat-error
-                *ngIf="
+              <mat-radio-button id="highPriority" name="priority" value="high priority"></mat-radio-button>
+              <mat-error *ngIf="
                   form.controls['priority'].invalid && ['priority'].touched
-                "
-              >
-                {{ getErrorMessage("priority") }}</mat-error
-              >
+                ">
+                {{ getErrorMessage("priority") }}</mat-error>
             </mat-radio-group>
           </section>
 
