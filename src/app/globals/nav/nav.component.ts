@@ -10,14 +10,10 @@ import { AuthService } from 'src/app/services/auth.service';
 export class NavComponent implements OnInit {
   token;
 
-  constructor(private auth: AuthService) { 
+  constructor() { 
     this.token = localStorage.getItem('tokenUser') || null;
   }
 
   ngOnInit() {
-  }
-
-  goLogout() {
-    return this.auth.logout();
   }
 }
