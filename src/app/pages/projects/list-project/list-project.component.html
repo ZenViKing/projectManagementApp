@@ -5,22 +5,29 @@
         <h1>Project(s) list</h1>
       </section>
       <mat-list *ngFor="let project of projects">
-        <mat-list-item [ngClass]="project.inProgress == false ? 'todo' : 'inProgress'">
-          <h2 matLine><a href="/">> {{project.name}}</a></h2>
-          <!-- changer l'affichage de la date avec le pipe dateDisplay -->
-          <!-- https://angular.io/api/common/DatePipe -->
-          <!-- <p matLine>Deadline : {{project.deadline | date : 'longDate'}}</p> -->
-          <p matLine>Deadline : {{project.deadline | date : 'mediumDate'}}</p>
-          <p matLine>User(s) : {{project.staff}}</p>
-          <p *ngIf="project.inProgress" class="inProgress-text">In progress</p>
-          <p *ngIf="!project.inProgress" class="todo-text">To do</p>
+        <a routerLink="/idproject/{{project._id}}">
+          <!-- <mat-list-item routerLink="./idproject/{{project._id}}"> -->
+          <mat-list-item [ngClass]="project.inProgress == false ? 'todo' : 'inProgress'">
+            <!-- <h2 matLine><a href="/"> {{project.name}}</a></h2> -->
 
-          <section class="btnsListUsers">
-            <div class="click"><a routerLink="/projects/{{project._id}}">Edit</a></div>
-            <div class="click"><a (click)="deleteProject(project._id)">Delete</a></div>
-          </section>
+            <h2 matLine>{{project.name}}</h2>
 
-        </mat-list-item>
+            <!-- <h2 matLine><a [routerLink]="['./idproject',project._id]">{{project.name}}</a></h2> -->
+            <!-- changer l'affichage de la date avec le pipe dateDisplay -->
+            <!-- https://angular.io/api/common/DatePipe -->
+            <!-- <p matLine>Deadline : {{project.deadline | date : 'longDate'}}</p> -->
+            <p matLine>Deadline : {{project.deadline | date : 'mediumDate'}}</p>
+            <p matLine>User(s) : {{project.staff}}</p>
+            <p *ngIf="project.inProgress" class="inProgress-text">In progress</p>
+            <p *ngIf="!project.inProgress" class="todo-text">To do</p>
+
+            <section class="btnsListUsers">
+              <div class="click"><a routerLink="/projects/{{project._id}}">Edit</a></div>
+              <div class="click"><a (click)="deleteProject(project._id)">Delete</a></div>
+            </section>
+
+          </mat-list-item>
+        </a>
       </mat-list>
     </mat-card-content>
   </mat-card>
