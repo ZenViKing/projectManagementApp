@@ -5,7 +5,7 @@
         <h1>Project(s) list</h1>
       </section>
       <mat-list *ngFor="let project of projects">
-        <a routerLink="/idproject/{{project._id}}">
+        <a routerLink="/idproject/{{project._id}}" class="click-on-project">
           <!-- <mat-list-item routerLink="./idproject/{{project._id}}"> -->
           <mat-list-item [ngClass]="project.inProgress == false ? 'todo' : 'inProgress'">
             <!-- <h2 matLine><a href="/"> {{project.name}}</a></h2> -->
