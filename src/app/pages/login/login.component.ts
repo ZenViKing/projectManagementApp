@@ -17,6 +17,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class LoginComponent implements OnInit {
   form: FormGroup;
   user: User;
+  isloged = false;
  
   constructor(private authService: AuthService, private router: Router) {
     
@@ -35,6 +36,7 @@ export class LoginComponent implements OnInit {
       password : this.form.controls.password.value
     }
     this.authService.login(this.user);
+    this.isloged = true;
     this.router.navigate(['/']);
   }
 

@@ -3,7 +3,6 @@ import { Observable, BehaviorSubject } from 'rxjs';
 import { User } from '../models/user.model';
 // import { Router } from '@angular/router';
 import { RestService } from './rest.service';
-import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
