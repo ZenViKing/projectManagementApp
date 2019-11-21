@@ -34,11 +34,16 @@
 
 }
 
+.deadLine{
+    position:absolute;
+    top: 30px;
+    font-weight: bolder;
+}
 
 .click{
     position:absolute;
-    top:85px;
-    left:160px;
+    top:75px;
+    left:150px;
     text-decoration:none;
     text-transform:uppercase;
     color:$titles;

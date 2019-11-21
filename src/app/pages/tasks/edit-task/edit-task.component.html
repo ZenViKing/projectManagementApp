@@ -1,72 +1,63 @@
 <div class="main-div">
-<mat-card>
-  <mat-card-content>
-        <section> <h1>Edit your task</h1></section>
-    <section>
-      <form (submit)="submitForm()" [formGroup]="form">
-
+  <mat-card>
+    <mat-card-content>
         <section>
-          <mat-form-field>
-            <mat-label for="name">Task name : </mat-label>
-            <input matInput type="text" name="task-name" id="name" placeholder="Name your task" formControlName="name">
-            <mat-error *ngIf="form.controls['name'].invalid">{{getErrorMessage('name')}}</mat-error>
-
-          </mat-form-field>
+          <h1>Edit your task</h1>
         </section>
-        <!-- ---------------------------- mat radio ---------------------------- -->
         <section>
-            <mat-label for="priority">Priority status : </mat-label>
-            <mat-radio-group formControlName="priority">
-                <mat-label for="lowPriority">low </mat-label>
-                <mat-radio-button id="lowPiority"  name="priority" value="low priority"></mat-radio-button>
-                <mat-label for="mediumPiority">medium </mat-label>
-                <mat-radio-button id="mediumPiority"  name="priority" value="medium priority"></mat-radio-button>
-                <mat-label for="highPriority">high </mat-label>
-                <mat-radio-button id="highPriority"  name="priority" value="high priority"></mat-radio-button>
-                <mat-error *ngIf="form.controls['priority'].invalid && ['priority'].touched">{{getErrorMessage('priority')}}</mat-error>
-            </mat-radio-group>
+          <form (submit)="submitForm()" [formGroup]="form">
+
+            <section>
+              <mat-form-field>
+                <mat-label for="name">Task name : </mat-label>
+                <input matInput type="text" name="task-name" id="name" placeholder="Name your task"
+                  formControlName="name">
+                <mat-error *ngIf="form.controls['name'].invalid">{{getErrorMessage('name')}}</mat-error>
+
+              </mat-form-field>
             </section>
-        <!-- ------------------------- mat assigned users ------------------------- -->
-        <section>
-          <mat-form-field>
-            <mat-label for="assignedUsers">Assigned user(s) : </mat-label>
-            <mat-select multiple name="assignedUsers" id="assignedUsers" formControlName="assignedUsers">
-              <mat-option *ngFor="let user of users" value="{{user.firstname}}">{{user.firstname}}</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </section>
 
-        <section>
-            <mat-label class="desc" for="desc">Description: </mat-label>
-            <textarea  name="desc" id="description" placeholder="Describe your task" cols="30" rows="10"
-              formControlName="desc" value="{{task.desc}}">
+            <!-- ------------------------- mat assigned users ------------------------- -->
+            <section>
+              <mat-form-field>
+                <mat-label for="assignedUsers">Assigned user(s) : </mat-label>
+                <mat-select multiple name="assignedUsers" id="assignedUsers" formControlName="assignedUsers">
+                  <mat-option *ngFor="let user of users" value="{{user.firstname}}">{{user.firstname}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </section>
+
+            <section>
+              <mat-label class="desc" for="desc">Description: </mat-label>
+              <textarea name="desc" id="description" placeholder="Describe your task" cols="30" rows="10"
+                formControlName="desc" value="{{task.desc}}">
         </textarea>
+            </section>
+
+            <!-- ---------------------------- mat radio ---------------------------- -->
+            <section>
+              <mat-label for="priority">Priority status : </mat-label>
+              <mat-radio-group formControlName="priority">
+                <mat-label for="lowPriority">low </mat-label>
+                <mat-radio-button id="lowPiority" name="lol" value="low priority"></mat-radio-button>
+                <mat-label for="mediumPiority">medium </mat-label>
+                <mat-radio-button id="mediumPiority" name="lol" value="medium priority"></mat-radio-button>
+                <mat-label for="highPriority">high </mat-label>
+                <mat-radio-button id="highPriority" name="lol" value="high priority"></mat-radio-button>
+                <mat-error *ngIf="form.controls['priority'].invalid && ['priority'].touched">
+                  {{getErrorMessage('priority')}}</mat-error>
+              </mat-radio-group>
+            </section>
+
+            <div class="containerbtns">
+              <section class="btns">
+                <div class="click"> <a [routerLink]="['/idproject',task.project]">Cancel</a></div>
+                <div class="click"> <button class="click" type="submit" [disabled]="form.invalid">Edit task</button>
+                </div>
+              </section>
+            </div>
+          </form>
         </section>
-
-                <!-- ---------------------------- mat radio ---------------------------- -->
-                <section>
-                  <mat-label  for="priority">Priority status : </mat-label>
-                  <mat-radio-group formControlName="priority">
-                      <mat-label for="lowPriority">low </mat-label>
-                      <mat-radio-button id="lowPiority"  name="lol" value="low priority"></mat-radio-button>
-                      <mat-label for="mediumPiority">medium </mat-label>
-                      <mat-radio-button id="mediumPiority"  name="lol" value="medium priority"></mat-radio-button>
-                      <mat-label for="highPriority">high </mat-label>
-                      <mat-radio-button id="highPriority"  name="lol" value="high priority"></mat-radio-button>
-                      <mat-error *ngIf="form.controls['priority'].invalid && ['priority'].touched">{{getErrorMessage('priority')}}</mat-error>
-                  </mat-radio-group>
-                  </section>
-
-        <div class="containerbtns">
-            <section class="btns">
-           <div class="click"> <a [routerLink]="['/idproject',task.project]">Cancel</a></div>    
-            <div class="click"> <button class="click" type="submit" [disabled]="form.invalid">Edit task</button></div>
-          </section>
-        </div>
-
-      </form>
-    </section>
-  </mat-card-content>
-</mat-card>
+    </mat-card-content>
+  </mat-card>
 </div>
-
