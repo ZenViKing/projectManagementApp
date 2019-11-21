@@ -1,15 +1,22 @@
 <div class="main-div">
   <div class="project-infos">
-    <div class="wrapper"><h1>{{project.name}}</h1>
-    <span ><p>Deadline: </p><p>{{project.deadline | date : 'mediumDate'}}</p></span>
-    <span><p>Time: </p><p>{{project.time}} hour(s)</p></span>
-    <span><p>Desc: </p><p>{{project.desc}}</p></span>
-    <span><p>Members:</p><p>{{project.staff}}</p></span>
-    
-  </div>
+    <h1>{{project.name}}</h1>
+      <div class="wrapper">
+        <div class="projInfos">
+          <span><p>Deadline: </p><p>{{project.deadline | date : 'mediumDate'}}</p></span>
+          <span><p>Time: </p><p>{{project.time}} hour(s)</p></span>
+          <span><p>Members:</p><p>{{project.staff}}</p></span>  
+          <span><p class="deadLine">Date : {{project.date | date : 'mediumDate'}}</p></span>
+      </div>
+      
+      <div class="projDesc">
+      <p>Desc: {{project.desc}}</p>
+    </div>      
 
-  <p class="deadLine">Date : {{project.date | date : 'mediumDate'}}</p>
-    <a [routerLink]="['/idproject',project._id,'task','add']" class="click">new task</a>
+    </div>
+
+
+  <a [routerLink]="['/idproject',project._id,'task','add']" class="click">new task</a>
     <app-kanban></app-kanban>
   </div>
 </div>

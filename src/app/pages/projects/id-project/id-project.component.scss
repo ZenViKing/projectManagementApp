@@ -18,30 +18,33 @@
     }
 
     p{
-        line-height:5px;
+        //line-height:5px;
         color:$titles;
 
-        .span{
-
-            font-weight: bold;
-           
-            
-        }
-
-        
-        
     }
+}
 
+.projDesc{
+    width:70%;
+    p{
+        white-space:normal;
+        word-wrap : break-word; 
+    }
+}
+
+
+.projInfos{
+    width: 30%
 }
 
 .deadLine{
-    position:absolute;
+    // position:absolute;
     top: 30px;
-    font-weight: bolder;
+
 }
 
 .click{
-    position:absolute;
+    // position:absolute;
     top:75px;
     left:150px;
     text-decoration:none;
