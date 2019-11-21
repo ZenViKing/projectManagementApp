@@ -3,9 +3,9 @@
     <h1>{{project.name}}</h1>
       <div class="wrapper">
         <div class="projInfos">
-          <span><p>Deadline: </p><p>{{project.deadline | date : 'mediumDate'}}</p></span>
-          <span><p>Time: </p><p>{{project.time}} hour(s)</p></span>
-          <span><p>Members:</p><p>{{project.staff}}</p></span>  
+          <span><p>Deadline: {{project.deadline | date : 'mediumDate'}}</p></span>
+          <span><p>Time: {{project.time}} hour(s)</p></span>
+          <span><p>Members:{{project.staff}}</p></span>  
           <span><p class="deadLine">Date : {{project.date | date : 'mediumDate'}}</p></span>
       </div>
       
