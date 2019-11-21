@@ -48,7 +48,7 @@
         <div class="containerbtns">
             <section class="btns">
            <div class="click"> <a [routerLink]="['/idproject',task.project]">Cancel</a></div>    
-            <div class="click"> <button class="click" type="submit" [disabled]="form.invalid">Edit task</button></div>
+            <div class="click"> <button class="click" type="submit" [disabled]="!form.valid">Edit task</button></div>
           </section>
         </div>
 
