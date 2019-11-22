@@ -1,5 +1,17 @@
 @import '../../../variables.scss';
 
+h3{
+  font-size: 14px;
+  font-family: 'open_sansbold';
+  margin:0;
+}
+
+.editdeletecontainer{
+
+  display:flex;
+  flex-direction:column;
+}
+
 #kanban{
   padding-top:15px;
   display:flex;
@@ -16,9 +28,17 @@
   justify-content:space-between;
   vertical-align: top;
   font-family: 'open_sansregular';
+ 
 
   h2{
     font-size: 18px;
+    
+  }
+
+  h3{
+    font-size: 14px;
+    font-family: 'open_sansbold';
+    margin:0;
   }
   
   
@@ -26,13 +46,15 @@
 
 .example-list {
   border: solid 1px #ccc;
-  height: 60vh;
+  height: 50vh;
   background-color: $pastelyellow;
   border-radius: 4px;
   overflow: scroll;
   display: block;
   scrollbar-color: $vibrant-greenblue $lightgrey;
   overflow-x:hidden;
+
+  
   
   
   
@@ -56,6 +78,7 @@
   font-size: 14px;
   margin: 0 auto;
   margin:10px;
+  
 
   &:hover{
 
@@ -99,10 +122,44 @@
 #backlog{
 
   background-color:lighten($lightgrey, 10%);
+
 }
 
 .project-infos{
 
   clear:both;
   
+}
+
+
+
+  a{
+    font-size:10px;
+    text-decoration: none;
+    color:$titles;
+    padding:10px;
+    text-transform: uppercase;
+    text-align:center;
+    cursor: pointer;
+
+    &:hover{
+
+      color:white;
+
+
+    }
+    
+  }
+
+
+
+
+.container-box{
+
+ p{
+   color: $titles;
+   padding:0;
+   margin:0;
+   line-height:auto;
+ }
 }
