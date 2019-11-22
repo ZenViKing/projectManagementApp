@@ -10,11 +10,11 @@ import { MatListModule } from '@angular/material/list';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button';
 
+import {MatDialogModule} from '@angular/material/dialog';
+
+
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatNativeDateModule} from '@angular/material';
-
-
-
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -93,6 +93,7 @@ import { DialogPopupComponent } from './globals/dialog-popup/dialog-popup.compon
     MatNativeDateModule,
     DragDropModule,
     DigitOnlyModule,
+    MatDialogModule
     
   ],
   providers: [],
