@@ -64,7 +64,6 @@ export class CreateProjectComponent implements OnInit {
       required: 'This field is required',
       // était utilisé pour le validator ave regex
       // pattern: 'Only numbers'
-      // date: 'mm/dd/yyyy or use calendar'
     }
 
     let returnValue = '';

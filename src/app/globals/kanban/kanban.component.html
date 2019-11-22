@@ -10,8 +10,8 @@
       [cdkDropListConnectedTo]="[todoList,inprogressList,doneList]" class="example-list"
       (cdkDropListDropped)="drop($event)">
       <div class="example-box" *ngFor="let task of backlog" [cdkDragData]="task" cdkDrag>
-        <p>{{task.name}}</p>
-        <p>{{task.priority}}</p>
+       <div class="container-box"> <h3>{{task.name}}</h3>
+        <p>{{task.priority}}</p></div>
         <button mat-raised-button (click)="openDialog(task._id)">...</button>
       </div>
     </div>
@@ -22,8 +22,8 @@
     <div id="todo" cdkDropList #todoList="cdkDropList" [cdkDropListData]="todos"
       [cdkDropListConnectedTo]="[inprogressList,doneList]" class="example-list" (cdkDropListDropped)="drop($event)">
       <div class="example-box" *ngFor="let task of todos" [cdkDragData]="task" cdkDrag>
-        {{task.name}}
-        {{task.priority}}
+         <div class="container-box"><h3>{{task.name}}</h3>
+          <p>{{task.priority}}</p></div> 
         <button mat-raised-button (click)="openDialog(task._id)">...</button>
       </div>
     </div>
@@ -34,8 +34,8 @@
     <div id="inprogress" cdkDropList #inprogressList="cdkDropList" [cdkDropListData]="inprogress"
       [cdkDropListConnectedTo]="[todoList,doneList]" class="example-list" (cdkDropListDropped)="drop($event)">
       <div class="example-box" *ngFor="let task of inprogress" [cdkDragData]="task" cdkDrag>
-        {{task.name}}
-        {{task.priority}}
+          <div class="container-box"> <h3>{{task.name}}</h3>
+          <p>{{task.priority}}</p></div>
         <button mat-raised-button (click)="openDialog(task._id)">...</button>
       </div>
     </div>
@@ -46,8 +46,8 @@
     <div id="done" cdkDropList #doneList="cdkDropList" [cdkDropListData]="done"
       [cdkDropListConnectedTo]="[todoList,inprogressList]" class="example-list" (cdkDropListDropped)="drop($event)">
       <div class="example-box" *ngFor="let task of done" [cdkDragData]="task" cdkDrag>
-        {{task.name}}
-        {{task.priority}}
+         <div class="container-box"><h3>{{task.name}}</h3>
+          <p>{{task.priority}}</p></div> 
         <button mat-raised-button (click)="openDialog(task._id)">...</button>
       </div>
     </div>
