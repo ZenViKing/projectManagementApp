@@ -27,7 +27,7 @@
 
 .example-list {
   border: solid 1px #ccc;
-  height: 60vh;
+  height: 50vh;
   background-color: $pastelyellow;
   border-radius: 4px;
   overflow: scroll;
@@ -100,10 +100,48 @@
 #backlog{
 
   background-color:lighten($lightgrey, 10%);
+
 }
 
 .project-infos{
 
   clear:both;
   
+}
+
+#todo{
+
+  a{
+    font-size:10px;
+    text-decoration: none;
+    color:$titles;
+    padding:10px;
+    text-transform: uppercase;
+    text-align:center;
+    cursor: pointer;
+
+    &:hover{
+
+      color:white;
+
+
+    }
+    
+  }
+}
+
+.editdeletecontainer{
+
+  display:flex;
+  flex-direction:column;
+}
+
+.container-box{
+
+ p{
+   color: $titles;
+   padding:0;
+   margin:0;
+   line-height:auto;
+ }
 }
