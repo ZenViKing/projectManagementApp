@@ -12,8 +12,8 @@
 <h1 mat-dialog-title>{{data.name}}</h1>
 <mat-dialog-content>
     <h3>Priority : {{data.priority}}</h3>
-    <h3>{{data.assignedUsers}}</h3>
-    <h3>{{data.desc}}</h3>
+    <h3>Assigned users : {{data.assignedUsers}}</h3>
+    <h3>Description : {{data.desc}}</h3>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
     <button mat-dialog-close [routerLink]="['/idproject',data.project,'task','edit',data._id]">Edit</button>
