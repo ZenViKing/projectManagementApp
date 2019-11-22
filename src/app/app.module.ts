@@ -11,7 +11,10 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button';
 
 import { MatDatepickerModule } from "@angular/material/datepicker";
-import { MatNativeDateModule } from '@angular/material';
+import { MatNativeDateModule} from '@angular/material';
+
+
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -44,6 +47,7 @@ import { KanbanComponent } from './globals/kanban/kanban.component'
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { FooterComponent } from './globals/footer/footer.component';
+import { DialogPopupComponent } from './globals/dialog-popup/dialog-popup.component';
 
 
 
@@ -68,7 +72,8 @@ import { FooterComponent } from './globals/footer/footer.component';
     NotFoundComponent,
     LoginComponent,
     KanbanComponent,
-    FooterComponent
+    FooterComponent,
+    DialogPopupComponent
   ],
   imports: [
     BrowserModule,
@@ -87,9 +92,13 @@ import { FooterComponent } from './globals/footer/footer.component';
     MatDatepickerModule,
     MatNativeDateModule,
     DragDropModule,
-    DigitOnlyModule
+    DigitOnlyModule,
+    
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    DialogPopupComponent
+  ]
 })
 export class AppModule { }

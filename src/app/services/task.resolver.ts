@@ -23,7 +23,6 @@ export class TaskResolver implements Resolve<Task> {
             // console.log(route);
             // console.log(state);
             let a = this.routeA.url.split('/');
-            
             return this._restService.getTaskByid(a[1], route.params['id']).pipe(map(task => task));
         }
 }

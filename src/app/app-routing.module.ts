@@ -23,6 +23,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { LoginComponent } from './pages/login/login.component';
 import { IdProjectComponent } from './pages/projects/id-project/id-project.component';
+// import { Task } from './models/task.model';
 
 
 
@@ -87,7 +88,9 @@ const routes: Routes = [
   {
     path: 'idproject/:id',
     component: IdProjectComponent,
-    resolve: {project: ProjectResolver}
+    resolve: {
+      project: ProjectResolver
+    }
   },
   {
     path: 'projects',
@@ -113,9 +116,9 @@ const routes: Routes = [
   },
 
 
-  
+
   {
-    path: '**', 
+    path: '**',
     component: NotFoundComponent
   }
   // {
