@@ -67,10 +67,10 @@ export class KanbanComponent implements OnInit {
  
   openDialog(id): any {
     let idgetter = this.router.url.split('/');
-    console.log(id);
+    
       this._restService.getTaskByid(idgetter[2],id).subscribe((data:Task)=>{
       this.task = data;
-    console.log(this.task);
+    
 
     const dialogRef = this.dialog.open(DialogPopupComponent, {
       // width: '250px',
@@ -95,7 +95,7 @@ export class KanbanComponent implements OnInit {
     let idgetter = this.router.url.split('/');
     // /* ------------------------------------ x ----------------------------------- */
     this._restService.getTasks(idgetter[2]).subscribe(data => {
-      // this.task = this._restService.filter(data, 'project')
+      this.task = this._restService.filter(data, 'project')
       this.backlog = this._restService.filter(data, 'backlogs');
       this.todos = this._restService.filter(data, 'todo');
       this.inprogress = this._restService.filter(data, 'inprogress');

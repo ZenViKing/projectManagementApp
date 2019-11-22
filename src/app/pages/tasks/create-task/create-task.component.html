@@ -26,8 +26,8 @@
             <mat-form-field>
               <mat-label for="assignedUsers">Assigned user(s) : </mat-label>
               <mat-select multiple name="assignedUsers" id="assignedUsers" formControlName="assignedUsers">
-                <mat-option *ngFor="let user of users" value="{{user.firstname}} {{user.lastname}}">{{user.firstname}}
-                  {{user.lastname}}</mat-option>
+                <mat-option *ngFor="let user of users" value="{{user.firstname}}">{{user.firstname}}
+                  </mat-option>
               </mat-select>
             </mat-form-field>
           </section>
