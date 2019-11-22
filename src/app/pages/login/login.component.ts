@@ -17,7 +17,6 @@ import { AuthService } from 'src/app/services/auth.service';
 export class LoginComponent implements OnInit {
   form: FormGroup;
   user: User;
-  isloged = false;
  
   constructor(private authService: AuthService, private router: Router) {
     
@@ -30,14 +29,15 @@ export class LoginComponent implements OnInit {
     })
     
   }
-  submitForm() {
+  async submitForm() {
     this.user = {
       email : this.form.controls.email.value,
       password : this.form.controls.password.value
     }
-    this.authService.login(this.user);
-    this.isloged = true;
-    this.router.navigate(['/']);
+    await this.authService.login(this.user);
+    await setTimeout(() => {
+      this.router.navigate(['/']);
+    }, 100)
   }
 
 }

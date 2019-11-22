@@ -32,7 +32,7 @@ import { ListTaskComponent } from './pages/tasks/list-task/list-task.component';
 import { CreateUserComponent } from './pages/users/create-user/create-user.component';
 import { EditUserComponent } from './pages/users/edit-user/edit-user.component';
 import { ListUserComponent } from './pages/users/list-user/list-user.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DateDisplayPipe } from './pipes/date-display.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './pages/home/home.component'
@@ -44,6 +44,7 @@ import { KanbanComponent } from './globals/kanban/kanban.component'
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { FooterComponent } from './globals/footer/footer.component';
+import { TokenInterceptor } from './services/token.service';
 
 
 
@@ -89,7 +90,13 @@ import { FooterComponent } from './globals/footer/footer.component';
     DragDropModule,
     DigitOnlyModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
