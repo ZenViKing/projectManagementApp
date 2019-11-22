@@ -73,7 +73,8 @@ export class KanbanComponent implements OnInit {
     
 
     const dialogRef = this.dialog.open(DialogPopupComponent, {
-      // width: '250px',
+      width: '30vw',
+      
       data: {
         name : this.task.name,
         priority: this.task.priority,
