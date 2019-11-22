@@ -43,25 +43,24 @@
 }
 
 .projDesc{
-    width:100%;
     p{
         white-space:normal;
-        word-wrap : break-word; 
+        word-wrap : break-word;
+        font-style: italic; 
     }
 
+}
+span{
+    font-weight:bold;
+    font-size:16px
 }
 
 
 .projInfos{
-    width: 100%;
     display:flex;
     justify-content:flex-start;
     p{
         padding-right: 30px;
-    }
-    span{
-        font-weight:bold;
-        font-size:16px
     }
 
 }
