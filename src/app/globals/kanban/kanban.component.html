@@ -10,12 +10,12 @@
       [cdkDropListConnectedTo]="[todoList,inprogressList,doneList]" class="example-list"
       (cdkDropListDropped)="drop($event)">
       <div class="example-box" *ngFor="let task of backlog" [cdkDragData]="task" cdkDrag>
-          <div class="container-box"><p>{{task.name}}</p>
+          <div class="container-box"><h3>{{task.name}}</h3>
         <p>{{task.priority}}</p>
         <p>{{task.assignedUsers}}</p>
         <p>{{task.desc}}</p></div>
-        <a [routerLink]="['/idproject',task.project,'task','edit',task._id]">Edit</a>
-        <a (click)="deleteTask(task._id)">Delete</a>
+        <div class="editdeletecontainer"><a [routerLink]="['/idproject',task.project,'task','edit',task._id]">Edit</a>
+        <a (click)="deleteTask(task._id)">Delete</a></div>
       </div>
     </div>
   </div>
@@ -26,7 +26,7 @@
       [cdkDropListConnectedTo]="[inprogressList,doneList]" class="example-list" (cdkDropListDropped)="drop($event)">
 
       <div class="example-box" *ngFor="let task of todos" [cdkDragData]="task" cdkDrag>
-        <div class="container-box"><p>{{task.name}}</p>
+        <div class="container-box"><h3>{{task.name}}</h3>
           <p>{{task.priority}}</p>
           <p>{{task.assignedUsers}}</p>
           <p>{{task.desc}}</p></div>
@@ -42,12 +42,12 @@
       [cdkDropListConnectedTo]="[todoList,doneList]" class="example-list" (cdkDropListDropped)="drop($event)">
       <div class="example-box" *ngFor="let task of inprogress" [cdkDragData]="task" cdkDrag>
           <div class="container-box">
-       <p> {{task.name}}</p>
+       <h3> {{task.name}}</h3>
        <p>{{task.priority}}</p>
           <p>{{task.assignedUsers}}</p>
               <p> {{task.desc}}</p></div>
-        <a [routerLink]="['/idproject',task.project,'task','edit',task._id]">Edit</a>
-        <a (click)="deleteTask(task._id)">Delete</a>
+              <div class="editdeletecontainer"><a [routerLink]="['/idproject',task.project,'task','edit',task._id]">Edit</a>
+        <a (click)="deleteTask(task._id)">Delete</a></div>
       </div>
     </div>
   </div>
@@ -57,12 +57,12 @@
     <div id="done" cdkDropList #doneList="cdkDropList" [cdkDropListData]="done"
       [cdkDropListConnectedTo]="[todoList,inprogressList]" class="example-list" (cdkDropListDropped)="drop($event)">
       <div class="example-box" *ngFor="let task of done" [cdkDragData]="task" cdkDrag>
-          <div class="container-box"> {{task.name}}
-        {{task.priority}}
-        {{task.assignedUsers}}
-        {{task.desc}}</div>
-        <a [routerLink]="['/idproject',task.project,'task','edit',task._id]">Edit</a>
-        <a (click)="deleteTask(task._id)">Delete</a>
+          <div class="container-box"> <h3>{{task.name}}</h3>
+        <p>{{task.priority}}</p>
+       <p> {{task.assignedUsers}}</p>
+        <p>{{task.desc}}</p></div>
+        <div class="editdeletecontainer"><a [routerLink]="['/idproject',task.project,'task','edit',task._id]">Edit</a>
+        <a (click)="deleteTask(task._id)">Delete</a></div>
       </div>
     </div>
   </div>

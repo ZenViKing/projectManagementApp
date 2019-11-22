@@ -1,5 +1,16 @@
 @import '../../../variables.scss';
 
+h3{
+  font-size: 14px;
+  font-family: 'open_sansbold';
+  margin:0;
+}
+
+.editdeletecontainer{
+
+  display:flex;
+  flex-direction:column;
+}
 
 #kanban{
   padding-top:15px;
@@ -21,6 +32,13 @@
 
   h2{
     font-size: 18px;
+    
+  }
+
+  h3{
+    font-size: 14px;
+    font-family: 'open_sansbold';
+    margin:0;
   }
   
   
@@ -35,6 +53,8 @@
   display: block;
   scrollbar-color: $vibrant-greenblue $lightgrey;
   overflow-x:hidden;
+
+  
   
   
   
@@ -58,6 +78,7 @@
   font-size: 14px;
   margin: 0 auto;
   margin:10px;
+  
 
   &:hover{
 
@@ -110,7 +131,7 @@
   
 }
 
-#todo{
+
 
   a{
     font-size:10px;
@@ -129,13 +150,9 @@
     }
     
   }
-}
 
-.editdeletecontainer{
 
-  display:flex;
-  flex-direction:column;
-}
+
 
 .container-box{
 
