@@ -1,9 +1,21 @@
 @import '../../../../variables.scss';
 
 
+.formFlex{
+  display: flex;
+  .mat-form-field{
+    background-color:red;
+    width:100%;
+    flex-direction: row;
+    justify-content:space-around;
+    padding: 0px 15px;
+
+  }
+}
+
 
 form{
-    text-align: center;
+    text-align: left;
     width: 100%;
     margin : 0 auto;
   }
