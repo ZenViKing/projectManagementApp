@@ -16,7 +16,7 @@ export class EditProjectComponent implements OnInit {
   // startDate = new Date();
   constructor(private _restService: RestService, private router: Router, private route: ActivatedRoute) { }
 
-  // pour avoir valeur de la checkbox inProgress de createProject
+  // get value from checkbox inProgress de createProject
   @Input('isInProgress') isInProgress: boolean;
   setInProgress() {
     this.isInProgress = !this.isInProgress;
@@ -33,7 +33,7 @@ export class EditProjectComponent implements OnInit {
   getErrorMessage(field: string): string {
     const error = {
       required: 'This field is required',
-      // était utilisé pour le validator regex
+      // was used for validator with regex : estimated time
       // pattern: 'Only numbers'
     }
 
@@ -54,15 +54,13 @@ export class EditProjectComponent implements OnInit {
       date: new FormControl(null, [Validators.required]),
       deadline: new FormControl(null, [Validators.required]),
       time: new FormControl(null, [Validators.required]),
-      // était utilisé pour le validator regex
+      // was used for validator with regex
       // time: new FormControl(null, Validators.compose([Validators.required, Validators.pattern(/\d+/)])),
       staff: new FormControl(null, [Validators.required]),
       desc: new FormControl(null),
-      // pour avoir valeur false si on ne clique pas la checkbox inProgress
-      // false à la place de null
       inProgress: new FormControl(false, [Validators.required]),
     })
-    // pour avoir liste users existants
+    // get list of existing users
     this._restService.getUsers().subscribe((data: User[]) => {
       this.staff = data;
     });
