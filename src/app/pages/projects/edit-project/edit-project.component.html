@@ -17,64 +17,69 @@
                 <mat-error *ngIf="form.controls['name'].invalid">{{getErrorMessage('name')}}</mat-error>
               </mat-form-field>
             </div>
+            <div class="formFlex">
 
-            <div>
-              <mat-form-field>
-                <mat-label for="date">Starting date : </mat-label>
-                <!-- datePicker -->
-                <!-- https://material.angular.io/components/datepicker/overview -->
-                <!-- <input matInput [matDatepicker]="date" formControlName="date"> -->
-                <!-- <input matInput [matDatepicker]="date" [min]="startDate" formControlName="date"> -->
-                <input matInput [matDatepicker]="date" [min]="project.date" formControlName="date">
-                <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
-                <mat-datepicker #date></mat-datepicker>
-                <!-- <mat-error *ngIf="form.controls['date'].invalid">Choose a starting date</mat-error> -->
-                <mat-error *ngIf="form.controls['date'].invalid">{{getErrorMessage('date')}}</mat-error>
-              </mat-form-field>
+              <div>
+                <mat-form-field>
+                  <mat-label for="date">Starting date : </mat-label>
+                  <!-- datePicker -->
+                  <!-- https://material.angular.io/components/datepicker/overview -->
+                  <!-- <input matInput [matDatepicker]="date" formControlName="date"> -->
+                  <!-- <input matInput [matDatepicker]="date" [min]="startDate" formControlName="date"> -->
+                  <!-- <input matInput [matDatepicker]="date" [min]="project.date" formControlName="date"> -->
+                  <input matInput [matDatepicker]="date" [min]="project.date" formControlName="date" readonly>
+                  <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
+                  <mat-datepicker #date></mat-datepicker>
+                  <!-- <mat-error *ngIf="form.controls['date'].invalid">Choose a starting date</mat-error> -->
+                  <mat-error *ngIf="form.controls['date'].invalid">{{getErrorMessage('date')}}</mat-error>
+                </mat-form-field>
+              </div>
+
+              <div>
+                <mat-form-field>
+                  <mat-label for="deadline">Deadline : </mat-label>
+                  <!-- <input matInput [matDatepicker]="deadline" formControlName="deadline"> -->
+                  <!-- <input matInput [matDatepicker]="deadline" [min]="startDate" formControlName="deadline"> -->
+                  <!-- <input matInput [matDatepicker]="deadline" [min]="project.date" formControlName="deadline"> -->
+                  <input matInput [matDatepicker]="deadline" [min]="project.date" formControlName="deadline" readonly>
+                  <mat-datepicker-toggle matSuffix [for]="deadline"></mat-datepicker-toggle>
+                  <mat-datepicker #deadline></mat-datepicker>
+                  <!-- <mat-error *ngIf="form.controls['deadline'].invalid">Choose a name for your project</mat-error> -->
+                  <mat-error *ngIf="form.controls['deadline'].invalid">{{getErrorMessage('deadline')}}</mat-error>
+                </mat-form-field>
+              </div>
             </div>
-
-            <div>
-              <mat-form-field>
-                <mat-label for="deadline">Deadline : </mat-label>
-                <!-- <input matInput [matDatepicker]="deadline" formControlName="deadline"> -->
-                <!-- <input matInput [matDatepicker]="deadline" [min]="startDate" formControlName="deadline"> -->
-                <input matInput [matDatepicker]="deadline" [min]="project.date" formControlName="deadline">
-                <mat-datepicker-toggle matSuffix [for]="deadline"></mat-datepicker-toggle>
-                <mat-datepicker #deadline></mat-datepicker>
-                <!-- <mat-error *ngIf="form.controls['deadline'].invalid">Choose a name for your project</mat-error> -->
-                <mat-error *ngIf="form.controls['deadline'].invalid">{{getErrorMessage('deadline')}}</mat-error>
-              </mat-form-field>
-            </div>
-
-            <div>
-              <mat-form-field>
-                <mat-label for="time">Estimated time : </mat-label>
-                <!-- <input matInput type="number" name="time-estimation" id="time" formControlName="time"> -->
-                <!-- <input matInput type="text" name="time-estimation" id="time" placeholder="42" formControlName="time"
+            <div class="formFlex">
+              <div>
+                <mat-form-field>
+                  <mat-label for="time">Estimated time : </mat-label>
+                  <!-- <input matInput type="number" name="time-estimation" id="time" formControlName="time"> -->
+                  <!-- <input matInput type="text" name="time-estimation" id="time" placeholder="42" formControlName="time"
                   pattern="\d+"> -->
-                <input matInput type="text" name="time-estimation" id="time" placeholder="42" formControlName="time"
-                  digitOnly>
-                <!-- <mat-error *ngIf="form.controls['time'].invalid">Choose the estimated time for your project</mat-error> -->
-                <!-- <mat-error *ngIf="form.controls['time'].invalid">{{getErrorMessage('time')}}</mat-error> -->
-                <mat-error *ngIf="form.controls['time'].invalid">{{getErrorMessage('time')}}</mat-error>
-              </mat-form-field>
-            </div>
+                  <input matInput type="text" name="time-estimation" id="time" placeholder="42" formControlName="time"
+                    digitOnly>
+                  <!-- <mat-error *ngIf="form.controls['time'].invalid">Choose the estimated time for your project</mat-error> -->
+                  <!-- <mat-error *ngIf="form.controls['time'].invalid">{{getErrorMessage('time')}}</mat-error> -->
+                  <mat-error *ngIf="form.controls['time'].invalid">{{getErrorMessage('time')}}</mat-error>
+                </mat-form-field>
+              </div>
 
-            <div>
-              <!-- https://stackoverflow.com/questions/50614991/angular-mat-select-multiple-selectionchange-finding-which-option-was-changed -->
-              <mat-form-field>
-                <mat-label for="staff">Assigned user(s) : </mat-label>
-                <mat-select multiple name="crew-members" id="staff" formControlName="staff">
-                  <mat-option *ngFor="let user of staff" value="{{user.firstname}} {{user.lastname}}">{{user.firstname}}
-                    {{user.lastname}}</mat-option>
-                </mat-select>
-                <!-- <mat-error *ngIf="form.controls['staff'].invalid">Choose at least one crew member</mat-error> -->
-                <mat-error *ngIf="form.controls['staff'].invalid">{{getErrorMessage('staff')}}</mat-error>
-              </mat-form-field>
+              <div>
+                <!-- https://stackoverflow.com/questions/50614991/angular-mat-select-multiple-selectionchange-finding-which-option-was-changed -->
+                <mat-form-field>
+                  <mat-label for="staff">Assigned user(s) : </mat-label>
+                  <mat-select multiple name="crew-members" id="staff" formControlName="staff">
+                    <mat-option *ngFor="let user of staff" value="{{user.firstname}} {{user.lastname}}">
+                      {{user.firstname}}
+                      {{user.lastname}}</mat-option>
+                  </mat-select>
+                  <!-- <mat-error *ngIf="form.controls['staff'].invalid">Choose at least one crew member</mat-error> -->
+                  <mat-error *ngIf="form.controls['staff'].invalid">{{getErrorMessage('staff')}}</mat-error>
+                </mat-form-field>
+              </div>
             </div>
-
             <div>
-              <label for="desc" class="desc">Description : </label>
+              <!-- <label for="desc" class="desc">Description : </label> -->
               <textarea name="description-project" id="desc" cols="30" rows="10" placeholder="Describe your project"
                 formControlName="desc"></textarea>
             </div>

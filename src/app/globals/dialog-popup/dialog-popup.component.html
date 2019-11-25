@@ -1,0 +1,22 @@
+<!-- <h1 mat-dialog-title>Hi {{data.name}}</h1>
+<div mat-dialog-content>
+  <p>What's your favorite animal?</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.animal">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
+</div> -->
+
+<mat-dialog-content>
+    <h1 mat-dialog-title>{{data.name}}</h1>
+    <p>Priority : {{data.priority}}</p>
+    <p>Users : {{data.assignedUsers}}</p>
+    <p> Description : {{data.desc}}</p>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+    <button mat-dialog-close [routerLink]="['/idproject',data.project,'task','edit',data._id]" class="button-popup">Edit</button>
+    <button mat-dialog-close (click)="deleteTask(data._id)" class="button-popup">Delete</button>
+</mat-dialog-actions>

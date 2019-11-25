@@ -3,6 +3,9 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 import { Task } from '../../models/task.model';
 import { RestService } from '../../services/rest.service';
 import { Router } from '@angular/router';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { DialogPopupComponent } from '../dialog-popup/dialog-popup.component';
+
 
 @Component({
   selector: 'app-kanban',
@@ -20,7 +23,9 @@ export class KanbanComponent implements OnInit {
   done: Task[] = [];
 
   constructor(private _restService: RestService,
-              private router: Router) { }
+              private router: Router,
+              public dialog: MatDialog
+              ) { }
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
@@ -41,21 +46,49 @@ export class KanbanComponent implements OnInit {
     }
   }
 
-  deleteTask(id) {
-    let idgetter = this.router.url.split('/');
+  //MOVED to dialog-popup component
+  // deleteTask(id) {
+  //   let idgetter = this.router.url.split('/');
 
-    let r = confirm('Delete task ?')
-    if (r === true) {
-      console.log('task deleted');
-      this._restService.deleteTask(idgetter[2], id).subscribe(res => {
-        this._restService.getTasks(idgetter[2]).subscribe((data: Task[]) => {
-          this.tasks = data;
-          window.location.reload();
-        });
-      })
-    } else {
-      console.log('action aborded');
-    }
+  //   let r = confirm('Delete task ?')
+  //   if (r === true) {
+  //     console.log('task deleted');
+  //     this._restService.deleteTask(idgetter[2], id).subscribe(res => {
+  //       this._restService.getTasks(idgetter[2]).subscribe((data: Task[]) => {
+  //         this.tasks = data;
+  //         window.location.reload();
+  //       });
+  //     })
+  //   } else {
+  //     console.log('action aborded');
+  //   }
+  // }
+
+ 
+  openDialog(id): any {
+    let idgetter = this.router.url.split('/');
+    
+      this._restService.getTaskByid(idgetter[2],id).subscribe((data:Task)=>{
+      this.task = data;
+    
+
+    const dialogRef = this.dialog.open(DialogPopupComponent, {
+      width: '30vw',
+      
+      data: {
+        name : this.task.name,
+        priority: this.task.priority,
+        assignedUsers: this.task.assignedUsers,
+        desc : this.task.desc,
+        project: this.task.project,
+        _id: this.task._id
+      }
+    });
+    })
+    
+    
+    
+   
   }
 
   ngOnInit() {
@@ -69,5 +102,6 @@ export class KanbanComponent implements OnInit {
       this.inprogress = this._restService.filter(data, 'inprogress');
       this.done = this._restService.filter(data, 'done');
     });
+    
   }
 }

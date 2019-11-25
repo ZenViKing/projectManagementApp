@@ -10,8 +10,11 @@ import { MatListModule } from '@angular/material/list';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button';
 
+import {MatDialogModule} from '@angular/material/dialog';
+
+
 import { MatDatepickerModule } from "@angular/material/datepicker";
-import { MatNativeDateModule } from '@angular/material';
+import { MatNativeDateModule} from '@angular/material';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -45,6 +48,7 @@ import { KanbanComponent } from './globals/kanban/kanban.component'
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { FooterComponent } from './globals/footer/footer.component';
 import { TokenInterceptor } from './services/token.service';
+import { DialogPopupComponent } from './globals/dialog-popup/dialog-popup.component';
 
 
 
@@ -69,7 +73,8 @@ import { TokenInterceptor } from './services/token.service';
     NotFoundComponent,
     LoginComponent,
     KanbanComponent,
-    FooterComponent
+    FooterComponent,
+    DialogPopupComponent
   ],
   imports: [
     BrowserModule,
@@ -88,7 +93,9 @@ import { TokenInterceptor } from './services/token.service';
     MatDatepickerModule,
     MatNativeDateModule,
     DragDropModule,
-    DigitOnlyModule
+    DigitOnlyModule,
+    MatDialogModule
+    
   ],
   providers: [
     {
@@ -97,6 +104,9 @@ import { TokenInterceptor } from './services/token.service';
       multi: true
     }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    DialogPopupComponent
+  ]
 })
 export class AppModule { }

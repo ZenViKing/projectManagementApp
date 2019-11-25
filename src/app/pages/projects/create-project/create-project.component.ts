@@ -14,6 +14,7 @@ export class CreateProjectComponent implements OnInit {
   project: Project;
   form: FormGroup;
   staff: User[];
+  error: String;
   // pour avoir la date du jour de création du projet
   startDate = new Date();
 
@@ -27,15 +28,40 @@ export class CreateProjectComponent implements OnInit {
 
   submitForm() {
     this.project = this.form.value;
-    this._restService.postProject(this.project).subscribe((data: Project) => {
-      this.project = data;
-      this.router.navigate(['/projects'])
-    })
+    if (this.form.invalid) {
+      const error = {
+        required: 'Date field is required'
+      }
+
+      if (!this.form.controls['deadline'] || !this.form.controls['date']) {
+        this.error = error.required;
+        console.log("eefrjfnskdfn");
+      }
+      return false;
+    } else {
+      this._restService.postProject(this.project).subscribe((data: Project) => {
+        this.project = data;
+        this.router.navigate(['/projects'])
+      })
+    }
+  }
+
+  checkField(): null {
+    console.log("Hey");
+    const error = {
+      required: 'Date field is required'
+    }
+
+    let returnValue = '';
+    if (!this.form.controls['deadline'] || !this.form.controls['date']) {
+      this.error = error.required;
+    }
+    return null;
   }
 
   getErrorMessage(field: string): string {
     const error = {
-      required: 'This field is required'
+      required: 'This field is required',
       // était utilisé pour le validator ave regex
       // pattern: 'Only numbers'
     }

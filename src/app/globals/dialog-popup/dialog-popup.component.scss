@@ -1,0 +1,35 @@
+@import '../../../variables.scss';
+
+
+
+
+.mat-dialog-content{
+
+    
+
+    width: 400px;
+    text-align: center;
+
+    h1{
+        font-family: 'open_sansbold';
+    }
+
+    p{
+
+        font-family: 'open_sansregular';
+        font-size: 12px;
+        text-align: left;
+
+    
+    }
+
+}
+
+.button-popup{
+
+    border:none;
+    padding: 0.5em 1em;
+    margin: 10px;
+    border-radius: 5px;
+
+}
