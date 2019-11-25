@@ -18,9 +18,23 @@ export class LoginComponent implements OnInit {
   form: FormGroup;
   user: User;
  
-  constructor(private authService: AuthService, private router: Router) {
-    
+  constructor(private authService: AuthService, private router: Router) {}
+
+  getErrorMessage(field: string): string {
+    const error = {
+      required: 'This field is required',
+      email: 'This field requires a valid email'
+    }
+
+    let returnValue = '';
+
+    Object.keys(this.form.controls[field].errors).map(key => {
+      returnValue += `${error[key]}`
+    })
+
+    return returnValue;
   }
+
 
   ngOnInit() {
     this.form = new FormGroup({
