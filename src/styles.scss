@@ -115,8 +115,10 @@ nav li{
     line-height: 80px;
     
 
-    a{
+    a, .login{
         text-decoration: none;
+        outline: none;
+        border: none;
         color: #b9c0be;
         font-family:'open_sansregular';
         text-transform:uppercase;
