@@ -1,18 +1,14 @@
-<ul class="navflex">
-      <li><a href=""><img src="assets/imgs/logo.png" alt="logo-6pm" height="90" id="logo" /></a></li>
-      <li><a routerLink="./" title="Home. Free Beers, topless encoders and false promises">Home</a></li>
-      <li><a routerLink="./projects" title="Project list">Projects list</a></li>
-      <li><a class=" addBtn" routerLink="./project/add"><img src="assets/imgs/addBtn.svg" alt="add+project" id="addBtn" title="Add Project" /></a></li>
-      <!-- <li>
-            <a routerLink="./login" class="login">Login</a>
-      </li> -->
+<div>
+  <a href="/"><img src="assets/imgs/logo.png" alt="logo-6pm" height="90" id="logo" /></a>
+</div>
+<div>
+  <ul>
+    <li><a routerLink="./" title="Home. Free Beers, topless encoders and false promises">Home</a></li>
+    <li><a routerLink="./projects" title="Project list">Projects list</a></li>
+    <li><a class=" addBtn" routerLink="./project/add"><img src="assets/imgs/addBtn.svg" alt="add+project" id="addBtn"
+          title="Add Project" OnMouseOver="this.src='assets/imgs/addBtnHover.svg'" onmouseout="this.src='assets/imgs/addBtn.svg'" /></a></li>
       <li *ngIf="token">
             <button (click)="logout()" class="login">Logout</button>
       </li> 
-      <!-- <li *ngIf="token; #elseBlock">
-            <button (click)="logout()" class="login">Logout</button>
-      </li>
-      <li #elseBlock>
-            <a routerLink="./login" class="login">Login</a>
-      </li> -->
-</ul>
+  </ul>
+</div>

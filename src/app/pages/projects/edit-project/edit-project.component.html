@@ -22,7 +22,6 @@
               <div>
                 <mat-form-field>
                   <mat-label for="date">Starting date : </mat-label>
-                  <!-- datePicker -->
                   <!-- https://material.angular.io/components/datepicker/overview -->
                   <!-- <input matInput [matDatepicker]="date" formControlName="date"> -->
                   <!-- <input matInput [matDatepicker]="date" [min]="startDate" formControlName="date"> -->
@@ -86,7 +85,6 @@
 
             <div>
               <label for="inProgress">Is your project already in progress ?</label>
-              <!-- pour avoir false par default et pas null -->
               <input type="checkbox" name="in-progress" id="inProgress" formControlName="inProgress"
                 [class]="isInProgress" (click)="setInProgress()"> YES
             </div>

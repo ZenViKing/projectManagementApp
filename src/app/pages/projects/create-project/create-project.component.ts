@@ -15,12 +15,12 @@ export class CreateProjectComponent implements OnInit {
   form: FormGroup;
   staff: User[];
   error: String;
-  // pour avoir la date du jour de création du projet
+  // to have the min. starting date of the project the day you create it
   startDate = new Date();
 
   constructor(private _restService: RestService, private router: Router) { }
 
-  // pour avoir valeur false si on ne clique pas la checkbox inProgress
+  // to have value false if you don't click the checkbox : is your project already in progress
   @Input('isInProgress') isInProgress: boolean;
   setInProgress() {
     this.isInProgress = !this.isInProgress;
@@ -62,7 +62,7 @@ export class CreateProjectComponent implements OnInit {
   getErrorMessage(field: string): string {
     const error = {
       required: 'This field is required',
-      // était utilisé pour le validator ave regex
+      // was used for validator with regex for estimated time before using digitOnly
       // pattern: 'Only numbers'
     }
 
@@ -82,14 +82,14 @@ export class CreateProjectComponent implements OnInit {
       deadline: new FormControl(null, [Validators.required]),
       time: new FormControl(null, [Validators.required]),
       // https://stackblitz.com/edit/angular-input-pattern-digits-only
+      // was used for validator with regex for estimated time before using digitOnly
       // time: new FormControl(null, Validators.compose([Validators.required, Validators.pattern(/\d+/)])),
       staff: new FormControl(null, [Validators.required]),
       desc: new FormControl(null),
-      // pour avoir valeur false si on ne clique pas la checkbox inProgress
-      // false à la place de null
+      // to have value false if you don't click the checkbox : is your project already in progress
       inProgress: new FormControl(false, [Validators.required]),
     })
-    // pour avoir liste users existants
+    // get the list of existing users
     this._restService.getUsers().subscribe((data: User[]) => {
       this.staff = data;
     })

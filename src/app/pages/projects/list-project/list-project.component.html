@@ -9,9 +9,10 @@
         <mat-list-item [ngClass]="project.inProgress == false ? 'todo' : 'inProgress'">
           <!-- <h2 matLine><a href="/"> {{project.name}}</a></h2> -->
           <h2 matLine class="project-list-h2"><a routerLink="/idproject/{{project._id}}">{{project.name}}</a></h2>
-          <!-- changer l'affichage de la date avec le pipe dateDisplay -->
+          <!-- change the display of the date using pipe dateDisplay -->
           <!-- https://angular.io/api/common/DatePipe -->
           <!-- <p matLine>Deadline : {{project.deadline | date : 'longDate'}}</p> -->
+          <!-- shorter display date to please de css team -->
           <p matLine>Deadline : {{project.deadline | date : 'mediumDate'}}</p>
           <p matLine>User(s) : {{project.staff}}</p>
           <p *ngIf="project.inProgress" class="inProgress-text">In progress</p>

@@ -20,17 +20,15 @@
 
           <div>
             <mat-form-field>
-              <!-- datePicker -->
-              <!-- https://material.angular.io/components/datepicker/overview -->
               <mat-label for="date">Starting date : </mat-label>
+              <!-- https://material.angular.io/components/datepicker/overview -->
               <!-- <input matInput [matDatepicker]="date" placeholder="Choose a starting date" formControlName="date"> -->
-              <!-- pour avoir la date du jour de création du projet -->
+              <!-- to have the min. starting date of the project the day you create it -->
               <!-- <input matInput [matDatepicker]="date" [min]="startDate" placeholder="mm/dd/yyyy" formControlName="date"> -->
               <!-- to use only the calendar -->
               <!-- <input matInput [matDatepicker]="date" [min]="startDate" placeholder="mm/dd/yyyy" formControlName="date"
                 disabled> -->
-              <input matInput [matDatepicker]="date" [min]="startDate" placeholder="mm/dd/yyyy" formControlName="date"
-                readonly>
+              <input matInput [matDatepicker]="date" [min]="startDate" formControlName="date" readonly>
               <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
               <mat-datepicker #date></mat-datepicker>
               <!-- <mat-datepicker #date disabled="false"></mat-datepicker> -->
@@ -44,11 +42,10 @@
             <mat-form-field>
               <mat-label for="deadline">Deadline : </mat-label>
               <!-- <input matInput [matDatepicker]="deadline" placeholder="Choose a deadline" formControlName="deadline"> -->
-              <!-- pour avoir la date du jour de création du projet -->
+              <!-- to have the min. starting date of the project the day you create it -->
               <!-- <input matInput [matDatepicker]="deadline" [min]="startDate" placeholder="mm/dd/yyyy"
                 formControlName="deadline"> -->
-              <input matInput [matDatepicker]="deadline" [min]="startDate" placeholder="mm/dd/yyyy"
-                formControlName="deadline" readonly>
+              <input matInput [matDatepicker]="deadline" [min]="startDate" formControlName="deadline" readonly>
               <mat-datepicker-toggle matSuffix [for]="deadline"></mat-datepicker-toggle>
               <mat-datepicker #deadline></mat-datepicker>
               <!-- <mat-error *ngIf="form.controls['deadline'].invalid">Choose a deadline for your project</mat-error> -->
@@ -60,7 +57,7 @@
             <mat-form-field>
               <mat-label for="time">Estimated time (in hours) : </mat-label>
               <!-- <input matInput type="number" name="time-estimation" id="time" placeholder="42" formControlName="time"> -->
-              <!-- pattern juste pour des chiffres -->
+              <!-- pattern just for numbers -->
               <!-- https://stackblitz.com/edit/angular-input-pattern-digits-only?file=src%2Fapp%2Fapp.component.html -->
               <!-- <input matInput type="text" name="time-estimation" id="time" placeholder="42" formControlName="time"
                 pattern="\d+"> -->
@@ -101,7 +98,7 @@
           <div>
             <label for="inProgress">Is your project already in progress ?</label>
             <!-- <input type="checkbox" name="inProgress" value="0" formControlName="inProgress"> -->
-            <!-- pour avoir false par default et pas null -->
+            <!-- to have value false if you don't click the checkbox : is your project already in progress -->
             <input type="checkbox" name="in-progress" id="inProgress" formControlName="inProgress"
               [class]="isInProgress" (click)="setInProgress()"> YES
           </div>
