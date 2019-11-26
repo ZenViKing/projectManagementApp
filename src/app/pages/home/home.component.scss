@@ -113,6 +113,16 @@
   font-size: 1.1em;
 }
 
+
+.slogan{
+  position: relative;
+  top: -27px;
+  border: 2px solid
+  #bcdfd4;
+  height: 120px;
+}
+
+
 .pmslogan{
 
   text-transform: uppercase;
@@ -120,6 +130,18 @@
   font-family: 'open_sansbold';
   color: $pastel-greenblue;
   text-align:center;
+
+}
+.pmsSloganUnder{
+
+  text-transform: uppercase;
+  font-weight:800;
+  font-size: 1.9em;
+  font-family: 'open_sansbold';
+  color: $pastel-greenblue;
+  text-align:center;
+  position: relative;
+top: -20px;
 
 }
 
