@@ -12,10 +12,6 @@ export class HomeComponent implements OnInit {
   constructor(private _restService: RestService) { }
 
   ngOnInit() {
-    // if(!window.location.hash) {
-    //   window.location.assign(window.location + '#loaded');
-    //   setTimeout("window.location.reload(true)"),50;
-    // }
     this._restService.listProjects().subscribe((data: Project[]) => { 
       this.projects = data;
     });
